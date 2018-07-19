@@ -1,0 +1,64 @@
+@charset 'utf-8';
+@import '_normalize';
+@import '_normalizeCustomConfig';
+@import '_variable';
+@import '_font';
+@import '_debugger';
+@import '_mediaQuery';
+
+
+
+// DEFAULT REACT LEVEL ----------------------------------------------------------------------------
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+
+// ELEMENT LEVEL ----------------------------------------------------------------------------------
+
+
+
+
+// CLASS LEVEL ------------------------------------------------------------------------------------
+.mainWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+  border: 1px dashed red;
+  @include tablet {
+    flex-direction: initial;
+  }
+  @include desktop {
+    flex-direction: initial;
+  }
+}
