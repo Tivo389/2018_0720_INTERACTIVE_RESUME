@@ -377,6 +377,9 @@ a {
   overflow-x: scroll;
   overflow-y: hidden; }
 
+header {
+  position: fixed; }
+
 section {
   width: 100vw;
   height: 100vh;
