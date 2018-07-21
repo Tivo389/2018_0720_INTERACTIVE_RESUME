@@ -372,7 +372,7 @@ a {
 .hidden {
   display: none !important; }
 
-#App {
+#app {
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden; }
@@ -380,7 +380,12 @@ a {
 section {
   width: 100vw;
   height: 100vh;
-  flex: 0 0 100%; }
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  section:nth-child(odd) {
+    background-color: #cccccc; }
 
 .mainWrapper {
   align-items: center;
