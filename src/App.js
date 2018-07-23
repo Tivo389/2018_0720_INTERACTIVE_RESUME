@@ -52,34 +52,35 @@ class App extends Component {
     e.preventDefault();
     const slideWidth = window.innerWidth;
     let scrollTotal = this.state.scrollTotal;
+    let scrollThreshold = 0.8;
     let currentTotal = scrollTotal += Math.floor(e.deltaY);
 
     this.setState({ scrollTotal: currentTotal });
 
-    if(scrollTotal > slideWidth*0.85) {
-      // const scrollRight = e.currentTarget.scrollLeft += slideWidth;
-      this.scrollTo(e.currentTarget, 1000, 1000);
+    if(scrollTotal > slideWidth*scrollThreshold) {
+      const scrollRight = e.currentTarget.scrollLeft += slideWidth;
+      // this.scrollTo(e.currentTarget, 1000, 1000);
       this.resetScroll();
-    } else if(scrollTotal < slideWidth*-0.85) {
-      // const scrollLeft = e.currentTarget.scrollLeft -= slideWidth;
-      this.scrollTo(e.currentTarget, 1000, 1000);
+    } else if(scrollTotal < slideWidth*-scrollThreshold) {
+      const scrollLeft = e.currentTarget.scrollLeft -= slideWidth;
+      // this.scrollTo(e.currentTarget, 1000, 1000);
       this.resetScroll();
     }
   };
 
 
   // CONTINUE HERE. NEED TO FIX THE SCROLL ANIMATION
-  scrollTo = (element, to, duration) => {
-    if (duration <= 0) return;
-    var difference = to - element.scrollLeft;
-    var perTick = difference / duration * 10;
-    if(difference > 0) {
-      setInterval(() => {
-        element.scrollLeft = element.scrollLeft + perTick;
-        // if (element.scrollLeft === to) return;
-      }, 10);
-    }
-  };
+  // scrollTo = (element, to, duration) => {
+    // if (duration <= 0) return;
+    // var difference = to - element.scrollLeft;
+    // var perTick = difference / duration * 10;
+    // if(difference > 0) {
+    //   setInterval(() => {
+    //     element.scrollLeft = element.scrollLeft + perTick;
+    //     // if (element.scrollLeft === to) return;
+    //   }, 10);
+    // }
+  // };
 
 
 
