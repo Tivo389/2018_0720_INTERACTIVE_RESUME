@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+  // STATE OF COMPONENT
   state = {
-    scrollTotal: 0,
-    test: 'hello'
+    scrollActivation: 0
   };
 
-
-
+  // RENDER OF COMPONENT
   render() {
     return (
-      <main id="app" onWheel={this.scroll}>
+      <main id="app" onWheel={this.handleWheel}>
         <header>
           <ul>
             <li>
@@ -46,46 +45,41 @@ class App extends Component {
     );
   }
 
-
-
-  scroll = (e) => {
+  // FUNCTION FOR WHEEL EVENT
+  // - Stores amount scrolled and will activate 'scrollAnimate()' when it reaches the threshold.
+  handleWheel = (e) => {
     e.preventDefault();
-    const slideWidth = window.innerWidth;
-    let scrollTotal = this.state.scrollTotal;
-    let scrollThreshold = 0.8;
-    let currentTotal = scrollTotal += Math.floor(e.deltaY);
-
-    this.setState({ scrollTotal: currentTotal });
-
-    if(scrollTotal > slideWidth*scrollThreshold) {
-      const scrollRight = e.currentTarget.scrollLeft += slideWidth;
-      // this.scrollTo(e.currentTarget, 1000, 1000);
-      this.resetScroll();
-    } else if(scrollTotal < slideWidth*-scrollThreshold) {
-      const scrollLeft = e.currentTarget.scrollLeft -= slideWidth;
-      // this.scrollTo(e.currentTarget, 1000, 1000);
-      this.resetScroll();
+    const scrollThreshold = 0.8;
+    let scrollActivation = this.state.scrollActivation;
+    let currentTotal = scrollActivation += Math.floor(e.deltaY);
+    this.setState({ scrollActivation: currentTotal });
+    if (scrollActivation > window.innerWidth * scrollThreshold) {
+      this.scrollAnimate(e.currentTarget);
+      this.setState({ scrollActivation: 0 });
+    } else if (scrollActivation < window.innerWidth * -scrollThreshold) {
+      this.scrollAnimate(e.currentTarget);
+      this.setState({ scrollActivation: 0 });
     }
   };
 
-
-  // CONTINUE HERE. NEED TO FIX THE SCROLL ANIMATION
-  // scrollTo = (element, to, duration) => {
-    // if (duration <= 0) return;
-    // var difference = to - element.scrollLeft;
-    // var perTick = difference / duration * 10;
-    // if(difference > 0) {
-    //   setInterval(() => {
-    //     element.scrollLeft = element.scrollLeft + perTick;
-    //     // if (element.scrollLeft === to) return;
-    //   }, 10);
-    // }
-  // };
-
-
-
-  resetScroll = () => {
-    this.setState({ scrollTotal: 0 });
+  // FUNCTION FOR ANIMATING THE SLIDE SCROLL
+  // - When the threshold is reached, it will animate-scroll to the slide.
+  scrollAnimate = (element) => {
+    const scrollDuration = 350;
+    const scrollWidth = window.innerWidth;
+    const perTick = scrollWidth / scrollDuration * 10;
+    const currentSlide = Math.floor(element.scrollLeft / scrollWidth);
+    let scrollCycle = 0;
+    const scrollAnimation = setInterval(() => {
+      if (scrollCycle > scrollWidth) {
+        element.scrollLeft = (currentSlide + 1) * scrollWidth;
+        clearInterval(scrollAnimation);
+        scrollCycle = 0;
+        return;
+      }
+      element.scrollLeft = element.scrollLeft + perTick;
+      scrollCycle = element.scrollLeft - (scrollWidth * currentSlide);
+    }, 15);
   };
 }
 
