@@ -26,7 +26,7 @@ export function wheelNormalise(/*object*/ event) /*object*/ {
   if ('deltaX' in event) { pX = event.deltaX; }
 
   if ((pX || pY) && event.deltaMode) {
-    if (event.deltaMode == 1) {          // delta in LINE units
+    if (event.deltaMode === 1) {          // delta in LINE units
       pX *= LINE_HEIGHT;
       pY *= LINE_HEIGHT;
     } else {                             // delta in PAGE units
