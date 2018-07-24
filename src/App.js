@@ -59,7 +59,7 @@ class App extends Component {
     }
   };
 
-  // FUNCTION FOR ANIMATING THE SLIDE SCROLL
+  // FUNCTION FOR ANIMATING THE SCROLL
   // - Will animate-scroll the slide, if direction is true it will scroll ==>.
   scrollAnimate = debounce((e, direction) => {
     // console.log('scrollAnimate');
