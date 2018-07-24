@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { wheelNormalise } from './js/wheelNormalise.js';
+import { debounce } from './js/debounce.js';
 
 class App extends Component {
   // STATE OF COMPONENT
@@ -13,18 +14,10 @@ class App extends Component {
       <main id="app" onWheel={this.handleWheel}>
         <header>
           <ul>
-            <li>
-              <a href="#1">one</a>
-            </li>
-            <li>
-              <a href="#5">five</a>
-            </li>
-            <li>
-              <a href="#10">ten</a>
-            </li>
-            <li>
-              <a href="#15">fifteen</a>
-            </li>
+            <li><a href="#1">one</a></li>
+            <li><a href="#5">five</a></li>
+            <li><a href="#10">ten</a></li>
+            <li><a href="#15">fifteen</a></li>
           </ul>
         </header>
         <section id="1"><h1>01</h1></section>
@@ -49,14 +42,16 @@ class App extends Component {
   // FUNCTION FOR WHEEL EVENT
   // - Stores amount scrolled and will activate 'scrollAnimate()' when it reaches the threshold.
   handleWheel = (e) => {
+    // console.log('handleWheel');
+    e.persist();
     e.preventDefault();
     let scrolledPx = this.state.scrolledPx;
-    const pixelY = Math.floor(wheelNormalise(e).pixelY);
+    let pixelY = Math.floor(wheelNormalise(e).pixelY);
+    if (pixelY > window.innerWidth) pixelY = window.innerWidth;
     const threshold = window.innerWidth * 0.8;
     const activateScroll = scrolledPx > threshold || -scrolledPx > threshold;
     const scrollDirection = scrolledPx >= 0 ? true : false;
     const currentTotal = scrolledPx += pixelY;
-    // let currentTotal = scrolledPx += Math.floor(e.deltaY);  // Browser-dependent
     this.setState({ scrolledPx: currentTotal });
     if (activateScroll) {
       this.scrollAnimate(e.currentTarget, scrollDirection);
@@ -66,7 +61,8 @@ class App extends Component {
 
   // FUNCTION FOR ANIMATING THE SLIDE SCROLL
   // - Will animate-scroll the slide, if direction is true it will scroll ==>.
-  scrollAnimate = (e, direction) => {
+  scrollAnimate = debounce((e, direction) => {
+    // console.log('scrollAnimate');
     const duration = 350;
     const width = window.innerWidth;
     const perTick = Math.floor(width / duration * 10);
@@ -80,17 +76,12 @@ class App extends Component {
         clearInterval(scroll);
         scrollCycle = 0;
         return;
-      } else {
-        direction ? e.scrollLeft += perTick : e.scrollLeft -= perTick;
-        scrollCycle += perTick;
       }
+      direction ? e.scrollLeft += perTick : e.scrollLeft -= perTick;
+      scrollCycle += perTick;
     };
     const scroll = setInterval(scrollAnimation, 10);
-  };
-
+  }, 250);
 }
-
-
-
 
 export default App;
