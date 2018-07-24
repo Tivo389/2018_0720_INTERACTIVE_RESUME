@@ -4,7 +4,7 @@ import { wheelNormalise } from './js/wheelNormalise.js';
 class App extends Component {
   // STATE OF COMPONENT
   state = {
-    scrollActivation: 0
+    scrolledPx: 0
   };
 
   // RENDER OF COMPONENT
@@ -50,40 +50,42 @@ class App extends Component {
   // - Stores amount scrolled and will activate 'scrollAnimate()' when it reaches the threshold.
   handleWheel = (e) => {
     e.preventDefault();
-    const foo = Math.floor(wheelNormalise(e).pixelY);
-    const scrollThreshold = 0.8;
-    let scrollActivation = this.state.scrollActivation;
-    let currentTotal = scrollActivation += Math.floor(e.deltaY);
-    // let currentTotal = scrollActivation += foo;
-    console.log(currentTotal);
-    this.setState({ scrollActivation: currentTotal });
-    if (scrollActivation > window.innerWidth * scrollThreshold) {
-      this.scrollAnimate(e.currentTarget);
-      this.setState({ scrollActivation: 0 });
-    } else if (scrollActivation < window.innerWidth * -scrollThreshold) {
-      this.scrollAnimate(e.currentTarget);
-      this.setState({ scrollActivation: 0 });
+    let scrolledPx = this.state.scrolledPx;
+    const pixelY = Math.floor(wheelNormalise(e).pixelY);
+    const threshold = window.innerWidth * 0.8;
+    const activateScroll = scrolledPx > threshold || -scrolledPx > threshold;
+    const scrollDirection = scrolledPx >= 0 ? true : false;
+    const currentTotal = scrolledPx += pixelY;
+    // let currentTotal = scrolledPx += Math.floor(e.deltaY);  // Browser-dependent
+    this.setState({ scrolledPx: currentTotal });
+    if (activateScroll) {
+      this.scrollAnimate(e.currentTarget, scrollDirection);
+      this.setState({ scrolledPx: 0 });
     }
   };
 
   // FUNCTION FOR ANIMATING THE SLIDE SCROLL
-  // - When the threshold is reached, it will animate-scroll to the slide.
-  scrollAnimate = (element) => {
-    const scrollDuration = 350;
-    const scrollWidth = window.innerWidth;
-    const perTick = scrollWidth / scrollDuration * 10;
-    const currentSlide = Math.floor(element.scrollLeft / scrollWidth);
+  // - Will animate-scroll the slide, if direction is true it will scroll ==>.
+  scrollAnimate = (e, direction) => {
+    const duration = 350;
+    const width = window.innerWidth;
+    const perTick = Math.floor(width / duration * 10);
+    const currentSlide = Math.floor(e.scrollLeft / width);
+    const scrollRight = (currentSlide + 1) * width;
+    const scrollLeft = (currentSlide - 1) * width;
     let scrollCycle = 0;
-    const scrollAnimation = setInterval(() => {
-      if (scrollCycle > scrollWidth) {
-        element.scrollLeft = (currentSlide + 1) * scrollWidth;
-        clearInterval(scrollAnimation);
+    const scrollAnimation = () => {
+      if (scrollCycle > width) {
+        direction ? e.scrollLeft = scrollRight : e.scrollLeft = scrollLeft;
+        clearInterval(scroll);
         scrollCycle = 0;
         return;
+      } else {
+        direction ? e.scrollLeft += perTick : e.scrollLeft -= perTick;
+        scrollCycle += perTick;
       }
-      element.scrollLeft = element.scrollLeft + perTick;
-      scrollCycle = element.scrollLeft - (scrollWidth * currentSlide);
-    }, 15);
+    };
+    const scroll = setInterval(scrollAnimation, 10);
   };
 
 }
