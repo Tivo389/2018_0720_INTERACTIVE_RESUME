@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { wheelNormalise } from './js/wheelNormalise.js';
 
 class App extends Component {
   // STATE OF COMPONENT
@@ -49,9 +50,12 @@ class App extends Component {
   // - Stores amount scrolled and will activate 'scrollAnimate()' when it reaches the threshold.
   handleWheel = (e) => {
     e.preventDefault();
+    const foo = Math.floor(wheelNormalise(e).pixelY);
     const scrollThreshold = 0.8;
     let scrollActivation = this.state.scrollActivation;
     let currentTotal = scrollActivation += Math.floor(e.deltaY);
+    // let currentTotal = scrollActivation += foo;
+    console.log(currentTotal);
     this.setState({ scrollActivation: currentTotal });
     if (scrollActivation > window.innerWidth * scrollThreshold) {
       this.scrollAnimate(e.currentTarget);
@@ -81,6 +85,10 @@ class App extends Component {
       scrollCycle = element.scrollLeft - (scrollWidth * currentSlide);
     }, 15);
   };
+
 }
+
+
+
 
 export default App;
