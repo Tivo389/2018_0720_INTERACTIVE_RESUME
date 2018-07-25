@@ -3,6 +3,11 @@ import smoothscroll from 'smoothscroll-polyfill';
 import { wheelNormalise } from './js/wheelNormalise';
 import { debounce } from './js/debounce';
 import LoadingStatBar from './components/LoadingStatBar';
+import LandingSlide from './components/LandingSlide';
+import IntroSlide from './components/IntroSlide';
+import JourneySlide from './components/JourneySlide';
+import TextSlide from './components/TextSlide';
+import ContactSlide from './components/ContactSlide';
 
 class App extends Component {
   // STATE OF COMPONENT
@@ -22,7 +27,21 @@ class App extends Component {
     return (
       <main id="app" onWheel={this.handleWheel}>
         <LoadingStatBar/>
-        <header>
+        <LandingSlide/>
+        <IntroSlide/>
+        <IntroSlide/>
+        <TextSlide/>
+        <JourneySlide/>
+        <JourneySlide/>
+        <JourneySlide/>
+        <JourneySlide/>
+        <JourneySlide/>
+        <JourneySlide/>
+        <JourneySlide/>
+        <JourneySlide/>
+        <TextSlide/>
+        <ContactSlide/>
+        {/*<header>
           <ul>
             <li><a href="#one" onClick={this.handleHashClick}>one</a></li>
             <li><a href="#five" onClick={this.handleHashClick}>five</a></li>
@@ -44,7 +63,7 @@ class App extends Component {
         <section><h1>12</h1></section>
         <section><h1>13</h1></section>
         <section><h1>14</h1></section>
-        <section id="fifteen"><h1>15</h1></section>
+        <section id="fifteen"><h1>15</h1></section>*/}
       </main>
     );
   }
