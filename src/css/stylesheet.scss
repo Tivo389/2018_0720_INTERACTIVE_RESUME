@@ -5,6 +5,7 @@
 @import '_font';
 @import '_debugger';
 @import '_mediaQuery';
+@import '_loadingStarBar';
 
 
 // ID LEVEL ----------------------------------------------------------------------------------
@@ -16,8 +17,8 @@
 #app {
   display: flex;
   overflow-x: scroll;
-  overflow-y: hidden;
-  padding-bottom: 10px; // Chrome & FF & Safari Default?
+  padding-bottom: 10px; // Confirmed for Chrome & FF & Safari in OSX.
+  position: relative;
 }
 
 // ELEMENT LEVEL ----------------------------------------------------------------------------------

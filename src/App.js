@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
-import { wheelNormalise } from './js/wheelNormalise.js';
-import { debounce } from './js/debounce.js';
+import { wheelNormalise } from './js/wheelNormalise';
+import { debounce } from './js/debounce';
+import LoadingStatBar from './components/LoadingStatBar';
 
 class App extends Component {
   // STATE OF COMPONENT
   state = {
-    scrolledPx: 0
+    scrolledPx: 0,
+    currentSlide: 1
   };
 
   // LIFECYCLE METHODS
@@ -19,6 +21,7 @@ class App extends Component {
   render() {
     return (
       <main id="app" onWheel={this.handleWheel}>
+        <LoadingStatBar/>
         <header>
           <ul>
             <li><a href="#one" onClick={this.handleHashClick}>one</a></li>
@@ -77,12 +80,12 @@ class App extends Component {
     const width = window.innerWidth;
     const perTick = Math.floor(width / duration * 10);
     const currentSlide = Math.floor(e.scrollLeft / width);
-    const scrollRight = (currentSlide + 1) * width;
-    const scrollLeft = (currentSlide - 1) * width;
+    const scrollRightPx = (currentSlide + 1) * width;
+    const scrollLeftPx = (currentSlide - 1) * width;
     let scrollCycle = 0;
     const scrollAnimation = () => {
       if (scrollCycle > width) {
-        direction ? e.scrollLeft = scrollRight : e.scrollLeft = scrollLeft;
+        direction ? e.scrollLeft = scrollRightPx : e.scrollLeft = scrollLeftPx;
         clearInterval(scroll);
         scrollCycle = 0;
         return;
