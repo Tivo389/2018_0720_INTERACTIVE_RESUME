@@ -8,10 +8,14 @@
 
 
 // ID LEVEL ----------------------------------------------------------------------------------
+#root {
+  overflow-y: hidden;
+}
 #app {
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
+  padding-bottom: 10px; // Chrome & FF & Safari Default?
 }
 
 // ELEMENT LEVEL ----------------------------------------------------------------------------------
