@@ -6,6 +6,7 @@
 @import '_debugger';
 @import '_mediaQuery';
 @import '_loadingStarBar';
+@import '_landingSlide';
 
 
 // ID LEVEL ----------------------------------------------------------------------------------
@@ -33,6 +34,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px dashed red;
   &:nth-child(odd) {
     background-color: $colorLightGray;
   }
