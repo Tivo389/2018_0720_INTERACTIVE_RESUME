@@ -372,10 +372,14 @@ a {
 .hidden {
   display: none !important; }
 
+#root {
+  overflow-y: hidden; }
+
 #app {
   display: flex;
   overflow-x: scroll;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  padding-bottom: 10px; }
 
 header {
   position: fixed; }
