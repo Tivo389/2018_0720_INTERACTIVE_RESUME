@@ -48,17 +48,20 @@ class App extends Component {
 
   // FUNCTION FOR WHEEL EVENT
   // - Stores amount scrolled and will activate 'scrollAnimate()' when it reaches the threshold.
+  // - Caters for mouseWheel (vertical), trackpad vertical-swipe, and trackpad horizontal-swipe.
   handleWheel = (e) => {
     // console.log('handleWheel');
     e.persist();
     e.preventDefault();
     let scrolledPx = this.state.scrolledPx;
-    let pixelY = Math.floor(wheelNormalise(e).pixelY);
-    if (pixelY > window.innerWidth) pixelY = window.innerWidth;
+    const pixelY = Math.floor(wheelNormalise(e).pixelY);
+    const pixelX = Math.floor(wheelNormalise(e).pixelX * -1);
+    let pixels = Math.abs(pixelY) > Math.abs(pixelX) ? pixelY : pixelX;
+    if (pixels > window.innerWidth) pixels = window.innerWidth;
     const threshold = window.innerWidth * 0.8;
     const activateScroll = scrolledPx > threshold || -scrolledPx > threshold;
     const scrollDirection = scrolledPx >= 0 ? true : false;
-    const currentTotal = scrolledPx += pixelY;
+    const currentTotal = scrolledPx += pixels;
     this.setState({ scrolledPx: currentTotal });
     if (activateScroll) {
       this.scrollAnimate(e.currentTarget, scrollDirection);
