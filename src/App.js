@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 import { wheelNormalise } from './js/wheelNormalise.js';
 import { debounce } from './js/debounce.js';
 
@@ -8,33 +9,39 @@ class App extends Component {
     scrolledPx: 0
   };
 
+  // LIFECYCLE METHODS
+  // - smoothscroll.polyfill() for handleHashClick().
+  componentWillMount() {
+    smoothscroll.polyfill();
+  }
+
   // RENDER OF COMPONENT
   render() {
     return (
       <main id="app" onWheel={this.handleWheel}>
         <header>
           <ul>
-            <li><a href="#1">one</a></li>
-            <li><a href="#5">five</a></li>
-            <li><a href="#10">ten</a></li>
-            <li><a href="#15">fifteen</a></li>
+            <li><a href="#one" onClick={this.handleHashClick}>one</a></li>
+            <li><a href="#five" onClick={this.handleHashClick}>five</a></li>
+            <li><a href="#ten" onClick={this.handleHashClick}>ten</a></li>
+            <li><a href="#fifteen" onClick={this.handleHashClick}>fifteen</a></li>
           </ul>
         </header>
-        <section id="1"><h1>01</h1></section>
+        <section id="one"><h1>01</h1></section>
         <section><h1>02</h1></section>
         <section><h1>03</h1></section>
         <section><h1>04</h1></section>
-        <section id="5"><h1>05</h1></section>
+        <section id="five"><h1>05</h1></section>
         <section><h1>06</h1></section>
         <section><h1>07</h1></section>
         <section><h1>08</h1></section>
         <section><h1>09</h1></section>
-        <section id="10"><h1>10</h1></section>
+        <section id="ten"><h1>10</h1></section>
         <section><h1>11</h1></section>
         <section><h1>12</h1></section>
         <section><h1>13</h1></section>
         <section><h1>14</h1></section>
-        <section id="15"><h1>15</h1></section>
+        <section id="fifteen"><h1>15</h1></section>
       </main>
     );
   }
@@ -59,7 +66,7 @@ class App extends Component {
     }
   };
 
-  // FUNCTION FOR ANIMATING THE SLIDE SCROLL
+  // FUNCTION FOR ANIMATING THE SCROLL
   // - Will animate-scroll the slide, if direction is true it will scroll ==>.
   scrollAnimate = debounce((e, direction) => {
     // console.log('scrollAnimate');
@@ -82,6 +89,14 @@ class App extends Component {
     };
     const scroll = setInterval(scrollAnimation, 10);
   }, 250);
+
+  // FUNCTION FOR CLICKING A HASH-LINK ANCHOR
+  // - On click it will .scrollIntoView() the hash link.
+  handleHashClick = (e) => {
+    e.preventDefault();
+    const target = document.querySelector(e.currentTarget.attributes.href.value);
+    target.scrollIntoView({ behavior:'smooth' });
+  };
 }
 
 export default App;
