@@ -13,16 +13,20 @@ import SlideContact from './components/SlideContact';
 
 class App extends Component {
 
-  // STATE OF COMPONENT
+  // STATE & PROPERTIES OF COMPONENT
   state = {
-    scrolledPx: 0,
     loadingStat: 0
   };
+  scrolledPx = 0;
 
   // LIFECYCLE METHODS
   // - smoothscroll.polyfill() for handleHashClick().
   componentWillMount() {
     smoothscroll.polyfill();
+  }
+  // - Used to check if setState() wasn't being rapid-fired.
+  componentWillUpdate() {
+    // console.log('componentWillUpdate!');
   }
 
   // RENDER OF COMPONENT
@@ -80,7 +84,7 @@ class App extends Component {
     // console.log('handleWheel');
     e.persist();
     e.preventDefault();
-    let scrolledPx = this.state.scrolledPx;
+    let scrolledPx = this.scrolledPx;
     const pixelY = Math.floor(wheelNormalise(e).pixelY);
     const pixelX = Math.floor(wheelNormalise(e).pixelX * -1);
     let pixels = Math.abs(pixelY) > Math.abs(pixelX) ? pixelY : pixelX;
@@ -89,10 +93,10 @@ class App extends Component {
     const activateScroll = scrolledPx > threshold || -scrolledPx > threshold;
     const scrollDirection = scrolledPx >= 0 ? true : false;
     const currentTotal = scrolledPx += pixels;
-    this.setState({ scrolledPx: currentTotal });
+    this.scrolledPx = currentTotal;
     if (activateScroll) {
       this.scrollAnimate(e.currentTarget, scrollDirection);
-      this.setState({ scrolledPx: 0 });
+      this.scrolledPx = 0;
     }
   };
 
@@ -148,6 +152,7 @@ class App extends Component {
     }
     this.setState({ loadingStat: loadingStat });
   };
+
 }
 
 export default App;
