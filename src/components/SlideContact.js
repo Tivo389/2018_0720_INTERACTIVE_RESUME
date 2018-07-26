@@ -5,7 +5,10 @@ class SlideContact extends Component {
   // RENDER OF COMPONENT
   render() {
     return (
-      <section className="slideContact" data-slidenum={this.props.slideNum}>
+      <section
+        id={`s${this.props.slideNum}`}
+        className="slideContact"
+        data-slidenum={this.props.slideNum}>
         <p>SlideContact</p>
       </section>
     );

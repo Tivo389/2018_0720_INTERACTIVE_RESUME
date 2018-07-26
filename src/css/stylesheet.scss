@@ -6,6 +6,7 @@
 @import '_debugger';
 @import '_mediaQuery';
 @import '_loadingStarBar';
+@import '_timeline';
 @import '_landingSlide';
 
 
@@ -23,10 +24,6 @@
 }
 
 // ELEMENT LEVEL ----------------------------------------------------------------------------------
-header {
-  position: fixed;
-}
-
 section {
   width: 100vw;
   height: 100vh;
@@ -35,12 +32,7 @@ section {
   align-items: center;
   justify-content: center;
   border: 1px dashed red;
-  &:nth-child(odd) {
-    background-color: $colorLightGray;
-  }
 }
-
-
 
 // CLASS LEVEL ------------------------------------------------------------------------------------
 .mainWrapper {
