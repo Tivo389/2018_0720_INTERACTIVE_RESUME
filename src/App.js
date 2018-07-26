@@ -12,11 +12,11 @@ import SlideText from './components/SlideText';
 import SlideContact from './components/SlideContact';
 
 class App extends Component {
-
   // STATE & PROPERTIES OF COMPONENT
   state = {
     loadingStat: 0
   };
+  // - As a state it would require setState(), resulting in a rapid-rendering.
   scrolledPx = 0;
 
   // LIFECYCLE METHODS
@@ -45,34 +45,9 @@ class App extends Component {
         <SlideJourney slideNum="8"/>
         <SlideJourney slideNum="9"/>
         <SlideJourney slideNum="10"/>
-        <SlideJourney slideNum="11"/>
-        <SlideJourney slideNum="12"/>
-        <SlideText slideNum="13"/>
-        <SlideContact slideNum="14"/>
+        <SlideText slideNum="11"/>
+        <SlideContact slideNum="12"/>
         <Timeline/>
-        {/*<header>
-          <ul>
-            <li><a href="#one" onClick={this.handleHashClick}>one</a></li>
-            <li><a href="#five" onClick={this.handleHashClick}>five</a></li>
-            <li><a href="#ten" onClick={this.handleHashClick}>ten</a></li>
-            <li><a href="#fifteen" onClick={this.handleHashClick}>fifteen</a></li>
-          </ul>
-        </header>
-        <section id="one"><h1>01</h1></section>
-        <section><h1>02</h1></section>
-        <section><h1>03</h1></section>
-        <section><h1>04</h1></section>
-        <section id="five"><h1>05</h1></section>
-        <section><h1>06</h1></section>
-        <section><h1>07</h1></section>
-        <section><h1>08</h1></section>
-        <section><h1>09</h1></section>
-        <section id="ten"><h1>10</h1></section>
-        <section><h1>11</h1></section>
-        <section><h1>12</h1></section>
-        <section><h1>13</h1></section>
-        <section><h1>14</h1></section>
-        <section id="fifteen"><h1>15</h1></section>*/}
       </main>
     );
   }
@@ -125,14 +100,6 @@ class App extends Component {
     const scroll = setInterval(scrollAnimation, 10);
   }, 250);
 
-  // FUNCTION FOR CLICKING A HASH-LINK ANCHOR
-  // - On click it will .scrollIntoView() the hash link.
-  handleHashClick = (e) => {
-    e.preventDefault();
-    const target = document.querySelector(e.currentTarget.attributes.href.value);
-    target.scrollIntoView({ behavior:'smooth' });
-  };
-
   // FUNCTION TO CHECK IF SLIDE HAS loadingStat DATA ATTRIBUTE
   // - If true, it will update the state accordingly.
   checkifLoading = (e) => {
@@ -152,7 +119,6 @@ class App extends Component {
     }
     this.setState({ loadingStat: loadingStat });
   };
-
 }
 
 export default App;

@@ -5,7 +5,10 @@ class SlideLanding extends Component {
   // RENDER OF COMPONENT
   render() {
     return (
-      <section className="slideLanding" data-slidenum={this.props.slideNum}>
+      <section
+        id={`s${this.props.slideNum}`}
+        className="slideLanding"
+        data-slidenum={this.props.slideNum}>
         <p>SlideLanding</p>
       </section>
     );

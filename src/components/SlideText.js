@@ -6,6 +6,7 @@ class SlideText extends Component {
   render() {
     return (
       <section
+        id={`s${this.props.slideNum}`}
         className="slideText"
         data-slidenum={this.props.slideNum}
         data-loadingstat={this.props.loadingStat}>

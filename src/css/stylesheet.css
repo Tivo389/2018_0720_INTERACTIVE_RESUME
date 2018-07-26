@@ -300,6 +300,9 @@ template {
 html {
   box-sizing: border-box; }
 
+a {
+  text-decoration: none; }
+
 *, *::before, *::after {
   box-sizing: inherit; }
 
@@ -383,6 +386,68 @@ a {
   transform-origin: left center;
   transition-duration: 0.3s; }
 
+#timeline {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  transform: translateY(4em);
+  transition-duration: 0.3s; }
+  #timeline:hover {
+    transform: translateY(0); }
+  #timeline ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #timeline ul li {
+      font-family: 'Roboto Condensed';
+      font-weight: lighter;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em; }
+  #timeline .timePeriod {
+    justify-content: space-between;
+    padding: 0 2em;
+    position: relative; }
+    #timeline .timePeriod::after {
+      background-color: #EE86A8;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 100vw;
+      z-index: -10; }
+    #timeline .timePeriod li {
+      background-color: #EE86A8;
+      color: #EE86A8;
+      min-height: 1.6rem;
+      min-width: 1px;
+      text-align: center; }
+      #timeline .timePeriod li:first-child, #timeline .timePeriod li:last-child {
+        background-color: #FFFFFF;
+        border-left: 1px solid #EE86A8;
+        border-right: 1px solid #EE86A8;
+        padding: 0 0.4em 0 0.5em; }
+  #timeline .timeLinks {
+    background-color: #EE86A8;
+    justify-content: center;
+    margin: 1.5em 0 0 0; }
+    #timeline .timeLinks a:last-child > li {
+      border-right: 1px solid #FFFFFF; }
+    #timeline .timeLinks a li {
+      padding: 0.45em 0.9em;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      border-left: 1px solid #FFFFFF; }
+      #timeline .timeLinks a li:hover {
+        background-color: #e85988; }
+      #timeline .timeLinks a li svg {
+        font-size: 125%; }
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -394,9 +459,6 @@ a {
   padding-bottom: 10px;
   position: relative; }
 
-header {
-  position: fixed; }
-
 section {
   width: 100vw;
   height: 100vh;
@@ -405,8 +467,6 @@ section {
   align-items: center;
   justify-content: center;
   border: 1px dashed red; }
-  section:nth-child(odd) {
-    background-color: #cccccc; }
 
 .mainWrapper {
   align-items: center;

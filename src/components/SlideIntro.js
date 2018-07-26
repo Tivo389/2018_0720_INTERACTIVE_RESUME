@@ -6,6 +6,7 @@ class SlideIntro extends Component {
   render() {
     return (
       <section
+        id={`s${this.props.slideNum}`}
         className="slideIntro"
         data-slidenum={this.props.slideNum}
         data-loadingstat={this.props.loadingStat}>
