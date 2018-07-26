@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import { wheelNormalise } from './js/wheelNormalise';
 import { debounce } from './js/debounce';
-import LoadingStatBar from './components/LoadingStatBar';
-import LandingSlide from './components/LandingSlide';
-import IntroSlide from './components/IntroSlide';
-import JourneySlide from './components/JourneySlide';
-import TextSlide from './components/TextSlide';
-import ContactSlide from './components/ContactSlide';
+import Timeline from './components/Timeline';
+import StatBar from './components/StatBar';
+import StatBarLoading from './components/StatBarLoading';
+import SlideLanding from './components/SlideLanding';
+import SlideIntro from './components/SlideIntro';
+import SlideJourney from './components/SlideJourney';
+import SlideText from './components/SlideText';
+import SlideContact from './components/SlideContact';
 
 class App extends Component {
   // STATE OF COMPONENT
   state = {
-    scrolledPx: 0,
-    currentSlide: 1
+    scrolledPx: 0
   };
 
   // LIFECYCLE METHODS
@@ -26,21 +27,23 @@ class App extends Component {
   render() {
     return (
       <main id="app" onWheel={this.handleWheel}>
-        <LoadingStatBar/>
-        <LandingSlide/>
-        <IntroSlide/>
-        <IntroSlide/>
-        <TextSlide/>
-        <JourneySlide/>
-        <JourneySlide/>
-        <JourneySlide/>
-        <JourneySlide/>
-        <JourneySlide/>
-        <JourneySlide/>
-        <JourneySlide/>
-        <JourneySlide/>
-        <TextSlide/>
-        <ContactSlide/>
+        <StatBarLoading/>
+        <StatBar/>
+        <SlideLanding slideNum="1"/>
+        <SlideIntro slideNum="2"/>
+        <SlideIntro slideNum="3"/>
+        <SlideText slideNum="4"/>
+        <SlideJourney slideNum="5"/>
+        <SlideJourney slideNum="6"/>
+        <SlideJourney slideNum="7"/>
+        <SlideJourney slideNum="8"/>
+        <SlideJourney slideNum="9"/>
+        <SlideJourney slideNum="10"/>
+        <SlideJourney slideNum="11"/>
+        <SlideJourney slideNum="12"/>
+        <SlideText slideNum="13"/>
+        <SlideContact slideNum="14"/>
+        <Timeline/>
         {/*<header>
           <ul>
             <li><a href="#one" onClick={this.handleHashClick}>one</a></li>
