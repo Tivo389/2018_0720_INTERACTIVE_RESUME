@@ -5,7 +5,10 @@ class SlideIntro extends Component {
   // RENDER OF COMPONENT
   render() {
     return (
-      <section className="slideIntro" data-slidenum={this.props.slideNum}>
+      <section
+        className="slideIntro"
+        data-slidenum={this.props.slideNum}
+        data-loadingstat={this.props.loadingStat}>
         <p>SlideIntro</p>
       </section>
     );

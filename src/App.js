@@ -12,9 +12,11 @@ import SlideText from './components/SlideText';
 import SlideContact from './components/SlideContact';
 
 class App extends Component {
+
   // STATE OF COMPONENT
   state = {
-    scrolledPx: 0
+    scrolledPx: 0,
+    loadingStat: 0
   };
 
   // LIFECYCLE METHODS
@@ -27,12 +29,12 @@ class App extends Component {
   render() {
     return (
       <main id="app" onWheel={this.handleWheel}>
-        <StatBarLoading/>
+        <StatBarLoading loadingProgress={this.state.loadingStat}/>
         <StatBar/>
         <SlideLanding slideNum="1"/>
-        <SlideIntro slideNum="2"/>
-        <SlideIntro slideNum="3"/>
-        <SlideText slideNum="4"/>
+        <SlideIntro slideNum="2" loadingStat="1/3"/>
+        <SlideIntro slideNum="3" loadingStat="2/3"/>
+        <SlideText slideNum="4" loadingStat="3/3"/>
         <SlideJourney slideNum="5"/>
         <SlideJourney slideNum="6"/>
         <SlideJourney slideNum="7"/>
@@ -109,6 +111,7 @@ class App extends Component {
       if (scrollCycle > width) {
         direction ? e.scrollLeft = scrollRightPx : e.scrollLeft = scrollLeftPx;
         clearInterval(scroll);
+        this.checkifLoading(e);
         scrollCycle = 0;
         return;
       }
@@ -124,6 +127,26 @@ class App extends Component {
     e.preventDefault();
     const target = document.querySelector(e.currentTarget.attributes.href.value);
     target.scrollIntoView({ behavior:'smooth' });
+  };
+
+  // FUNCTION TO CHECK IF SLIDE HAS loadingStat DATA ATTRIBUTE
+  // - If true, it will update the state accordingly.
+  checkifLoading = (e) => {
+    let currentSlide;
+    let loadingStat;
+    e.childNodes.forEach((child) => {
+      const childIsInView = child.getBoundingClientRect().x === 0;
+      const childHasLoading = child.attributes['data-loadingstat'];
+      if(childIsInView && childHasLoading) currentSlide = child;
+    });
+    if (currentSlide) {
+      const numerator = currentSlide.dataset.loadingstat[0];
+      const denominator = currentSlide.dataset.loadingstat[2];
+      loadingStat = numerator / denominator;
+    } else {
+      loadingStat = 0;
+    }
+    this.setState({ loadingStat: loadingStat });
   };
 }
 
