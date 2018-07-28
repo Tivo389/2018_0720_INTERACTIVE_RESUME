@@ -5,7 +5,9 @@ class Timeline extends Component {
   render() {
     return (
       <div id="timeline">
-        <ul className="timePeriod">
+        <ul
+          className="timePeriod"
+          style={{ transform:`scaleX(${this.props.loadingProgress})` }}>
           <li>2008</li>
           <li></li>
           <li></li>

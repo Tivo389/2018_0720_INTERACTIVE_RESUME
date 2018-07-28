@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import { wheelNormalise } from './js/wheelNormalise';
 import { debounce } from './js/debounce';
-import Timeline from './components/Timeline';
 import StatBar from './components/StatBar';
 import StatBarLoading from './components/StatBarLoading';
+import Timeline from './components/Timeline';
+import TimelineLoading from './components/TimelineLoading';
 import SlideLanding from './components/SlideLanding';
 import SlideIntro from './components/SlideIntro';
 import SlideJourney from './components/SlideJourney';
@@ -35,6 +36,8 @@ class App extends Component {
       <main id="app" onWheel={this.handleWheel}>
         <StatBarLoading loadingProgress={this.state.loadingStat}/>
         <StatBar/>
+        <TimelineLoading loadingProgress={this.state.loadingStat}/>
+        <Timeline/>
         <SlideLanding slideNum="1"/>
         <SlideIntro slideNum="2" loadingStat="1/3"/>
         <SlideIntro slideNum="3" loadingStat="2/3"/>
@@ -47,7 +50,6 @@ class App extends Component {
         <SlideJourney slideNum="10"/>
         <SlideText slideNum="11"/>
         <SlideContact slideNum="12"/>
-        <Timeline/>
       </main>
     );
   }
