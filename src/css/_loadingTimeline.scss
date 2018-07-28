@@ -1,0 +1,13 @@
+#loadingTimeline {
+  background-color: $colorSub;
+  bottom: calc(2em - 1px);
+  height: 1px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition-duration: $transitionS;
+  width: 100vw;
+  z-index: -10;
+}

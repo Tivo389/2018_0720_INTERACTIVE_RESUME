@@ -386,6 +386,19 @@ a {
   transform-origin: left center;
   transition-duration: 0.3s; }
 
+#loadingTimeline {
+  background-color: #EE86A8;
+  bottom: calc(2em - 1px);
+  height: 1px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition-duration: 0.3s;
+  width: 100vw;
+  z-index: -10; }
+
 #timeline {
   bottom: 0;
   left: 0;
@@ -409,23 +422,16 @@ a {
     justify-content: space-between;
     padding: 0 2em;
     position: relative; }
-    #timeline .timePeriod::after {
-      background-color: #EE86A8;
-      content: "";
-      display: block;
-      height: 1px;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 50%;
-      width: 100vw;
-      z-index: -10; }
+    #timeline .timePeriod.active li {
+      transform: translateY(0); }
     #timeline .timePeriod li {
       background-color: #EE86A8;
       color: #EE86A8;
       min-height: 1.6rem;
       min-width: 1px;
-      text-align: center; }
+      text-align: center;
+      transform: translateY(5em);
+      transition-duration: 0.3s; }
       #timeline .timePeriod li:first-child, #timeline .timePeriod li:last-child {
         background-color: #FFFFFF;
         border-left: 1px solid #EE86A8;

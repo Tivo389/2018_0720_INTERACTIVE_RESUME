@@ -8,7 +8,6 @@
   &:hover {
     transform: translateY(0);
   }
-
   ul {
     display: flex;
     list-style: none;
@@ -26,17 +25,8 @@
     justify-content: space-between;
     padding: 0 2em;
     position: relative;
-    &::after {
-      background-color: $colorSub;
-      content: "";
-      display: block;
-      height: 1px;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 50%;
-      width: 100vw;
-      z-index: -10;
+    &.active li {
+      transform: translateY(0);
     }
     li {
       background-color: $colorSub;
@@ -44,6 +34,8 @@
       min-height: 1.6rem;
       min-width: 1px;
       text-align: center;
+      transform: translateY(5em);
+      transition-duration: $transitionS;
       &:first-child, &:last-child {
         background-color: $colorWhite;
         border-left: 1px solid $colorSub;
