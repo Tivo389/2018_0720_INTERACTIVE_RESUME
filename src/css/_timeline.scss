@@ -1,3 +1,7 @@
+@mixin delay($nth) {
+  transition-delay: calc(0.05s * #{$nth});
+}
+
 #timeline {
   bottom: 0;
   left: 0;
@@ -25,9 +29,6 @@
     justify-content: space-between;
     padding: 0 2em;
     position: relative;
-    &.active li {
-      transform: translateY(0);
-    }
     li {
       background-color: $colorSub;
       color: $colorSub;
@@ -36,12 +37,26 @@
       text-align: center;
       transform: translateY(5em);
       transition-duration: $transitionS;
-      &:first-child, &:last-child {
+      transition-timing-function: cubic-bezier(0.5 , -0.35, 0.5, 1.35);
+      &:first-of-type, &:last-of-type {
         background-color: $colorWhite;
         border-left: 1px solid $colorSub;
         border-right: 1px solid $colorSub;
         padding: 0 0.4em 0 0.5em; // 0.4em to cater for last-letter-spacing.
       }
+      &:nth-child(1) { @include delay(1); }
+      &:nth-child(2) { @include delay(2); }
+      &:nth-child(3) { @include delay(3); }
+      &:nth-child(4) { @include delay(4); }
+      &:nth-child(5) { @include delay(5); }
+      &:nth-child(6) { @include delay(6); }
+      &:nth-child(7) { @include delay(7); }
+      &:nth-child(8) { @include delay(8); }
+      &:nth-child(9) { @include delay(9); }
+      &:nth-child(10) { @include delay(10); }
+      &:nth-child(11) { @include delay(11); }
+      &:nth-child(12) { @include delay(12); }
+      &:nth-child(13) { @include delay(13); }
     }
   }
 
@@ -67,5 +82,11 @@
         }
       }
     }
+  }
+}
+
+#timeline.active {
+  .timePeriod li {
+    transform: translateY(0);
   }
 }
