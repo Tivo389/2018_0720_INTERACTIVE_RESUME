@@ -5,11 +5,11 @@ class LoadingStatBar extends Component {
   // RENDER OF COMPONENT
   render() {
     const isActive = this.props.statBarActive;
-    const scaleValue = isActive ? 1 : this.props.loadingStat;
+    const loadProgress = isActive ? 1 : this.props.loadProgress;
     return (
       <div
         id="loadingStatBar"
-        style={{ transform:`scaleX(${scaleValue})` }}>
+        style={{ transform:`scaleX(${loadProgress})` }}>
       </div>
     );
   }

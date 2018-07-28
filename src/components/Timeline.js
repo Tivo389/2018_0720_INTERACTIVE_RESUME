@@ -5,11 +5,11 @@ class Timeline extends Component {
   // RENDER OF COMPONENT
   render() {
     const isActive = this.props.timelineActive;
-    const loadingStat = this.props.loadingStat;
+    const loadProgress = this.props.loadProgress;
     const classValue = isActive ? 'active' : '';
     return (
       <div id="timeline" className={ classValue }>
-        <ul className="timePeriod" style={{ transform:`scaleX(${this.props.loadingProgress})` }}>
+        <ul className="timePeriod">
           <li>2008</li>
           <li></li>
           <li></li>
@@ -23,7 +23,7 @@ class Timeline extends Component {
           <li></li>
           <li></li>
           <li>2009</li>
-          <TimelineLoading loadingStat={loadingStat} timelineActive={isActive}/>
+          <TimelineLoading loadProgress={loadProgress} timelineActive={isActive}/>
         </ul>
         <ul className="timeLinks">
           <a href="#s1" onClick={this.handleHashClick}>
@@ -60,17 +60,7 @@ class Timeline extends Component {
   handleHashClick = (e) => {
     e.preventDefault();
     const target = document.querySelector(e.currentTarget.attributes.href.value);
-    const scrollIntoView = () => {
-      target.scrollIntoView({ behavior:'smooth' });
-      console.log('001');
-      return true;
-    }
-    scrollIntoView();
-    // console.log('002');
-    // setTimeout(() => {
-    //   this.props.checkSlideAttributes();
-    //   this.props.updateActiveStatus();
-    // }, 2500);
+    target.scrollIntoView({ behavior:'smooth' });
   };
 }
 
