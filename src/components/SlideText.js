@@ -9,7 +9,7 @@ class SlideText extends Component {
         id={`s${this.props.slideNum}`}
         className="slideText"
         data-slidenum={this.props.slideNum}
-        data-loadingstat={this.props.loadingStat}>
+        data-loadingstatus={this.props.loadingStatus}>
         <p>SlideText</p>
       </section>
     );

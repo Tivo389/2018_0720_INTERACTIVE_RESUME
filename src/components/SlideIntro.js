@@ -9,7 +9,7 @@ class SlideIntro extends Component {
         id={`s${this.props.slideNum}`}
         className="slideIntro"
         data-slidenum={this.props.slideNum}
-        data-loadingstat={this.props.loadingStat}>
+        data-loadingstatus={this.props.loadingStatus}>
         <p>SlideIntro</p>
       </section>
     );
