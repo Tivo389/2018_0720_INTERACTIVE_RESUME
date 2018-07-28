@@ -5,7 +5,6 @@ import { debounce } from './js/debounce';
 import StatBar from './components/StatBar';
 import StatBarLoading from './components/StatBarLoading';
 import Timeline from './components/Timeline';
-import TimelineLoading from './components/TimelineLoading';
 import SlideLanding from './components/SlideLanding';
 import SlideIntro from './components/SlideIntro';
 import SlideJourney from './components/SlideJourney';
@@ -28,21 +27,25 @@ class App extends Component {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
   componentWillUpdate() {
-    console.log('componentWillUpdate!'); // - Check if setState() wasn't being rapid-fired.
+    // console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
   }
   componentDidUpdate() {
-    // console.log('componentWillUpdate!'); // - Check state.loadingState to activate/deactivate.
-    this.addActiveClass();
+    // console.log('componentDidUpdate!');
   }
 
   // RENDER OF COMPONENT
   render() {
     return (
-      <main id="app" onWheel={this.handleWheel}>
-        <StatBarLoading loadingProgress={this.state.loadingStat}/>
+      <main id="app" onWheel={this.handleWheel} onScroll={this.handleScroll}>
+        <StatBarLoading
+          loadingStat={this.state.loadingStat}
+          statBarActive={this.state.statBarActive}/>
         <StatBar/>
-        <TimelineLoading loadingProgress={this.state.loadingStat}/>
-        <Timeline checkSlideAttributes={this.checkSlideAttributes}/>
+        <Timeline
+          loadingStat={this.state.loadingStat}
+          timelineActive={this.state.timelineActive}
+          checkSlideAttributes={this.checkSlideAttributes}
+          checkActiveStatus={this.checkActiveStatus}/>
         <SlideLanding slideNum="1"/>
         <SlideIntro slideNum="2" loadingStat="1/3"/>
         <SlideIntro slideNum="3" loadingStat="2/3"/>
@@ -98,6 +101,7 @@ class App extends Component {
         direction ? e.scrollLeft = scrollRightPx : e.scrollLeft = scrollLeftPx;
         clearInterval(scroll);
         this.checkSlideAttributes();
+        this.checkActiveStatus();
         scrollCycle = 0;
         return;
       }
@@ -107,8 +111,8 @@ class App extends Component {
     const scroll = setInterval(scrollAnimation, 10);
   }, 250);
 
-  // FUNCTION TO CHECK IF SLIDE HAS loadingStat DATA ATTRIBUTE
-  // - If true, it will update the state accordingly.
+  // FUNCTION TO CHECK SLIDE ATTRIBUTES
+  // - Implemented on the scroll event and anchor clicks.
   checkSlideAttributes = () => {
     // console.log('checkSlideAttributes');
     const app = document.querySelector('#app');
@@ -138,11 +142,19 @@ class App extends Component {
 
   // FUNCTION TO CHECK IF ACTIVE CLASS NEEDS TO BE ADDED TO STATBAR & TIMELINE.
   // - If state.loadingState is 1, it will keep active class on.
-  addActiveClass = () => {
-    // console.log('addActiveClass');
-    // console.log(this.state.statBarActive);
-    // console.log(this.state.timelineActive);
+  checkActiveStatus = () => {
+    // console.log('checkActiveStatus');
+    const statBarSlides = [5,6,7,8,9,10];
+    const statBarActive = statBarSlides.find(integer => integer === this.state.currentSlideNum);
+    const timelineSlides = [5,6,7,8,9,10,11,12];
+    const timelineActive = timelineSlides.find(integer => integer === this.state.currentSlideNum);
+    statBarActive ? this.setState({ statBarActive: true }) : this.setState({ statBarActive: false });
+    timelineActive ? this.setState({ timelineActive: true }) : this.setState({ timelineActive: false });
   };
+
+  handleScroll = () => {
+    console.log('handleScroll');
+  }
 }
 
 export default App;

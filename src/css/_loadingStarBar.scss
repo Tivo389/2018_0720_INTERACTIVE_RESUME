@@ -1,11 +1,14 @@
 #loadingStatBar {
-  position: fixed;
+  background-color: $colorMain;
+  height: 10px;
   left: 0;
+  position: fixed;
   right: 0;
   top: 0;
-  height: 10px;
-  background-color: $colorMain;
-  transform: scaleX(0);
   transform-origin: left center;
+  transform: scaleX(0);
   transition-duration: $transitionS;
+  transition-timing-function: ease-in-out;
+  width: 100vw;
+  z-index: -10;
 }

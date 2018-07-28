@@ -4,10 +4,12 @@ class LoadingTimeline extends Component {
 
   // RENDER OF COMPONENT
   render() {
+    const isActive = this.props.timelineActive;
+    const scaleValue = isActive ? 1 : this.props.loadingStat;
     return (
       <div
         id="loadingTimeline"
-        style={{ transform:`scaleX(${this.props.loadingProgress})` }}>
+        style={{ transform:`scaleX(${scaleValue})` }}>
       </div>
     );
   }

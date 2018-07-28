@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import TimelineLoading from './TimelineLoading';
 
 class Timeline extends Component {
   // RENDER OF COMPONENT
   render() {
+    const isActive = this.props.timelineActive;
+    const loadingStat = this.props.loadingStat;
+    const classValue = isActive ? 'active' : '';
     return (
-      <div id="timeline">
-        <ul
-          className="timePeriod"
-          style={{ transform:`scaleX(${this.props.loadingProgress})` }}>
+      <div id="timeline" className={ classValue }>
+        <ul className="timePeriod" style={{ transform:`scaleX(${this.props.loadingProgress})` }}>
           <li>2008</li>
           <li></li>
           <li></li>
@@ -21,6 +23,7 @@ class Timeline extends Component {
           <li></li>
           <li></li>
           <li>2009</li>
+          <TimelineLoading loadingStat={loadingStat} timelineActive={isActive}/>
         </ul>
         <ul className="timeLinks">
           <a href="#s1" onClick={this.handleHashClick}>
@@ -57,8 +60,17 @@ class Timeline extends Component {
   handleHashClick = (e) => {
     e.preventDefault();
     const target = document.querySelector(e.currentTarget.attributes.href.value);
-    target.scrollIntoView({ behavior:'smooth' });
-    setTimeout(() => this.props.checkSlideAttributes(), 2500);
+    const scrollIntoView = () => {
+      target.scrollIntoView({ behavior:'smooth' });
+      console.log('001');
+      return true;
+    }
+    scrollIntoView();
+    // console.log('002');
+    // setTimeout(() => {
+    //   this.props.checkSlideAttributes();
+    //   this.props.updateActiveStatus();
+    // }, 2500);
   };
 }
 
