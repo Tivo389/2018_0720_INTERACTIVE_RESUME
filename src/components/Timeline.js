@@ -58,6 +58,7 @@ class Timeline extends Component {
     e.preventDefault();
     const target = document.querySelector(e.currentTarget.attributes.href.value);
     target.scrollIntoView({ behavior:'smooth' });
+    setTimeout(() => this.props.checkSlideAttributes(), 2500);
   };
 }
 

@@ -15,19 +15,24 @@ import SlideContact from './components/SlideContact';
 class App extends Component {
   // STATE & PROPERTIES OF COMPONENT
   state = {
-    loadingStat: 0
+    loadingStat: 0,
+    currentSlideNum: 1,
+    statBarActive: false,
+    timelineActive: false
   };
   // - As a state it would require setState(), resulting in a rapid-rendering.
   scrolledPx = 0;
 
   // LIFECYCLE METHODS
-  // - smoothscroll.polyfill() for handleHashClick().
   componentWillMount() {
-    smoothscroll.polyfill();
+    smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
-  // - Used to check if setState() wasn't being rapid-fired.
   componentWillUpdate() {
-    // console.log('componentWillUpdate!');
+    console.log('componentWillUpdate!'); // - Check if setState() wasn't being rapid-fired.
+  }
+  componentDidUpdate() {
+    // console.log('componentWillUpdate!'); // - Check state.loadingState to activate/deactivate.
+    this.addActiveClass();
   }
 
   // RENDER OF COMPONENT
@@ -37,7 +42,7 @@ class App extends Component {
         <StatBarLoading loadingProgress={this.state.loadingStat}/>
         <StatBar/>
         <TimelineLoading loadingProgress={this.state.loadingStat}/>
-        <Timeline/>
+        <Timeline checkSlideAttributes={this.checkSlideAttributes}/>
         <SlideLanding slideNum="1"/>
         <SlideIntro slideNum="2" loadingStat="1/3"/>
         <SlideIntro slideNum="3" loadingStat="2/3"/>
@@ -92,7 +97,7 @@ class App extends Component {
       if (scrollCycle > width) {
         direction ? e.scrollLeft = scrollRightPx : e.scrollLeft = scrollLeftPx;
         clearInterval(scroll);
-        this.checkifLoading(e);
+        this.checkSlideAttributes();
         scrollCycle = 0;
         return;
       }
@@ -104,22 +109,39 @@ class App extends Component {
 
   // FUNCTION TO CHECK IF SLIDE HAS loadingStat DATA ATTRIBUTE
   // - If true, it will update the state accordingly.
-  checkifLoading = (e) => {
-    let currentSlide;
+  checkSlideAttributes = () => {
+    // console.log('checkSlideAttributes');
+    const app = document.querySelector('#app');
+    let sHasLoadAttr;
     let loadingStat;
-    e.childNodes.forEach((child) => {
-      const childIsInView = child.getBoundingClientRect().x === 0;
-      const childHasLoading = child.attributes['data-loadingstat'];
-      if(childIsInView && childHasLoading) currentSlide = child;
+    let slideNum = 0;
+    app.childNodes.forEach((slide) => {
+      const sInView = slide.getBoundingClientRect().x === 0;
+      const sHasLoading = slide.attributes['data-loadingstat'];
+      const sHasNumRegex = /[s]\d+/;
+      const sHasNum = slide.id.match(sHasNumRegex);
+      if (sInView && sHasNum) slideNum = +sHasNum[0].slice(1,sHasNum[0].length);
+      if (sInView && sHasLoading) sHasLoadAttr = slide;
+      if (sHasLoadAttr) {
+        const numerator = sHasLoadAttr.dataset.loadingstat[0];
+        const denominator = sHasLoadAttr.dataset.loadingstat[2];
+        loadingStat = numerator / denominator;
+      } else {
+        loadingStat = 0;
+      }
     });
-    if (currentSlide) {
-      const numerator = currentSlide.dataset.loadingstat[0];
-      const denominator = currentSlide.dataset.loadingstat[2];
-      loadingStat = numerator / denominator;
-    } else {
-      loadingStat = 0;
-    }
-    this.setState({ loadingStat: loadingStat });
+    this.setState({
+      loadingStat: loadingStat,
+      currentSlideNum: slideNum
+    });
+  };
+
+  // FUNCTION TO CHECK IF ACTIVE CLASS NEEDS TO BE ADDED TO STATBAR & TIMELINE.
+  // - If state.loadingState is 1, it will keep active class on.
+  addActiveClass = () => {
+    // console.log('addActiveClass');
+    // console.log(this.state.statBarActive);
+    // console.log(this.state.timelineActive);
   };
 }
 
