@@ -17,7 +17,50 @@ class App extends Component {
     loadProgress: 0,
     currentSlideNum: 1,
     statBarActive: false,
-    timelineActive: false
+    timelineActive: false,
+    statApplications: {
+      a1: {
+        appName: 'Photoshop CC',
+        appStat: 80
+      },
+      a2: {
+        appName: 'Illustrator CC',
+        appStat: 100
+      },
+      a3: {
+        appName: 'InDesign CC',
+        appStat: 100
+      },
+      a4: {
+        appName: 'Animate CC',
+        appStat: 30
+      },
+      a5: {
+        appName: 'Sketch',
+        appStat: 70
+      }
+    },
+    statCoding: {
+      c1: {
+        appName: 'HTML',
+        appStat: 100
+      },
+      c2: {
+        appName: 'CSS (Sass)',
+        appStat: 100
+      },
+      c3: {
+        appName: 'JavaScript',
+        appStat: 80
+      },
+      c4: {
+        appName: 'Ruby',
+        appStat: 50
+      }
+    },
+    statTools: {
+      list: ['Angular', 'CLI', 'Google AdWords', 'Google Analytics', 'Github', 'Gulp', 'jQuery', 'Koala', 'Rails', 'React', 'Slack', 'Sublime Text', 'Snap.svg']
+    }
   };
   // - As a state it would require setState(), resulting in a rapid-rendering.
   scrolledPx = 0;
@@ -40,7 +83,11 @@ class App extends Component {
         <StatBarLoading
           loadProgress={this.state.loadProgress}
           statBarActive={this.state.statBarActive}/>
-        <StatBar statBarActive={this.state.statBarActive}/>
+        <StatBar
+          statBarActive={this.state.statBarActive}
+          statCoding={this.state.statCoding}
+          statApplications={this.state.statApplications}
+          statTools={this.state.statTools}/>
         <Timeline
           loadProgress={this.state.loadProgress}
           timelineActive={this.state.timelineActive}

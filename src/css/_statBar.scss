@@ -1,16 +1,20 @@
 #statBar {
-  top: 0;
+  // transform: translateY(-10em); // Adjust height later to appropriate
+  background-color: $colorMain;
+  display: flex;
   left: 0;
+  padding: 3em 6em;
   position: fixed;
   right: 0;
-  transition-duration: $transitionS;
-  transition-delay: $transitionS;
-  background-color: $colorMain;
+  top: 0;
   transform: translateY(0); // temporary while coding;
-  // transform: translateY(-10em); // Adjust height later to appropriate
+  transition-delay: $transitionS;
+  transition-duration: $transitionS;
   width: 100vw;
-  padding: 3em 6em;
   &.active {
     transform: translateY(0);
+  }
+  .statBarBlock {
+    flex: 1 0 auto;
   }
 }

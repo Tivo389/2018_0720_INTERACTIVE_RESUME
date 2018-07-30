@@ -1,0 +1,31 @@
+.barGraphWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  .barTitle {
+    flex: 0 0 auto;
+    max-width: 128px;
+    width: 128px;
+  }
+  .barGraph {
+    flex: 1 1 auto;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    .barWhite, .barDark {
+      border-radius: 50px;
+      height: 4px;
+    }
+    .barWhite {
+      background-color: $colorWhite;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .barDark {
+      background-color: $colorGraphDark;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+#radarGraphObject {
+}
+
+.radarGraphContainer {
+  padding: 2.4em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .top, .br, .bl {
+    position: absolute;
+  }
+  .br, .bl {
+    bottom: 0;
+  }
+  .br {
+    right: 1.2em;
+  }
+  .bl {
+    left: 1.2em;
+  }
+}

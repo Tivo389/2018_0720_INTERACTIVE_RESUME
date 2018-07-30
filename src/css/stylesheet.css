@@ -321,9 +321,6 @@ p, a {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0; }
 
-p + p {
-  margin: 0.75em 0 0 0; }
-
 h1 {
   font-size: calc(1.6rem * 4.48); }
 
@@ -390,18 +387,21 @@ a {
   z-index: -10; }
 
 #statBar {
-  top: 0;
+  background-color: #00A5D5;
+  display: flex;
   left: 0;
+  padding: 3em 6em;
   position: fixed;
   right: 0;
-  transition-duration: 0.3s;
-  transition-delay: 0.3s;
-  background-color: #00A5D5;
+  top: 0;
   transform: translateY(0);
-  width: 100vw;
-  padding: 3em 6em; }
+  transition-delay: 0.3s;
+  transition-duration: 0.3s;
+  width: 100vw; }
   #statBar.active {
     transform: translateY(0); }
+  #statBar .statBarBlock {
+    flex: 1 0 auto; }
 
 #loadingTimeline {
   background-color: #EE86A8;
@@ -499,6 +499,52 @@ a {
 
 #timeline.active .timePeriod li {
   transform: translateY(0); }
+
+.radarGraphContainer {
+  padding: 2.4em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .radarGraphContainer .top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+  .radarGraphContainer .top, .radarGraphContainer .br, .radarGraphContainer .bl {
+    position: absolute; }
+  .radarGraphContainer .br, .radarGraphContainer .bl {
+    bottom: 0; }
+  .radarGraphContainer .br {
+    right: 1.2em; }
+  .radarGraphContainer .bl {
+    left: 1.2em; }
+
+.barGraphWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start; }
+  .barGraphWrapper .barTitle {
+    flex: 0 0 auto;
+    max-width: 128px;
+    width: 128px; }
+  .barGraphWrapper .barGraph {
+    flex: 1 1 auto;
+    max-width: 100%;
+    position: relative;
+    width: 100%; }
+    .barGraphWrapper .barGraph .barWhite, .barGraphWrapper .barGraph .barDark {
+      border-radius: 50px;
+      height: 4px; }
+    .barGraphWrapper .barGraph .barWhite {
+      background-color: #FFFFFF;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0; }
+    .barGraphWrapper .barGraph .barDark {
+      background-color: #0093BF; }
 
 #root {
   width: 100vw;
