@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="184" height="161" viewBox="0 0 184 161">
+  <g fill="none" fill-rule="evenodd" transform="translate(2 2)">
+    <g stroke="#0093BF" stroke-dasharray="1" stroke-linecap="square" stroke-width="2" transform="translate(0 1)">
+      <path d="M90.1820388,0.438202247 L90.1820388,104.199702 M179.077225,155.561798 L90.2020093,103.443488"/>
+      <path d="M90.117,155.561798 L0.000215,103.705407" transform="matrix(-1 0 0 1 90.117 0)"/>
+    </g>
+    <polygon stroke="#FFF" stroke-linejoin="round" stroke-width="3" points="90.2 0 179.68 156.82 .531 156.82"/>
+  </g>
+</svg>
