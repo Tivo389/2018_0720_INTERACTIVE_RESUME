@@ -40,7 +40,7 @@ class App extends Component {
         <StatBarLoading
           loadProgress={this.state.loadProgress}
           statBarActive={this.state.statBarActive}/>
-        <StatBar/>
+        <StatBar statBarActive={this.state.statBarActive}/>
         <Timeline
           loadProgress={this.state.loadProgress}
           timelineActive={this.state.timelineActive}
@@ -139,7 +139,7 @@ class App extends Component {
   };
 
   // FUNCTION TO CHECK IF ACTIVE CLASS NEEDS TO BE ADDED TO STATBAR & TIMELINE.
-  // - If state.loadingStatuse is 1, it will keep active class on.
+  // - If state.loadingStatus is 1, it will keep active class on.
   checkActiveStatus = () => {
     // console.log('checkActiveStatus');
     const sBarSlides = [5,6,7,8,9,10];

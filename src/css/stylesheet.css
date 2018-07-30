@@ -389,6 +389,20 @@ a {
   width: 100vw;
   z-index: -10; }
 
+#statBar {
+  top: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s;
+  background-color: #00A5D5;
+  transform: translateY(0);
+  width: 100vw;
+  padding: 3em 6em; }
+  #statBar.active {
+    transform: translateY(0); }
+
 #loadingTimeline {
   background-color: #EE86A8;
   height: 1px;
