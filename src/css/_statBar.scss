@@ -1,0 +1,16 @@
+#statBar {
+  top: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  transition-duration: $transitionS;
+  transition-delay: $transitionS;
+  background-color: $colorMain;
+  transform: translateY(0); // temporary while coding;
+  // transform: translateY(-10em); // Adjust height later to appropriate
+  width: 100vw;
+  padding: 3em 6em;
+  &.active {
+    transform: translateY(0);
+  }
+}
