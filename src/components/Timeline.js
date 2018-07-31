@@ -45,9 +45,13 @@ class Timeline extends Component {
             <li>2017</li>
           </a>
           <a href="#s10" onClick={this.handleHashClick}>
+            <li><i className="fas fa-code"></i></li>
+            {/*<li><i className="fas fa-shuttle-van"></i></li>*/}
+          </a>
+          <a href="#s11" onClick={this.handleHashClick}>
             <li>2017 – 2018</li>
           </a>
-          <a href="#s12" onClick={this.handleHashClick}>
+          <a href="#s13" onClick={this.handleHashClick}>
             <li><i className="fas fa-paper-plane"></i></li>
           </a>
         </ul>
