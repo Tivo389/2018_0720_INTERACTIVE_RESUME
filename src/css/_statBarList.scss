@@ -1,0 +1,20 @@
+.statBarList {
+  display: flex;
+  flex-direction: column;
+  h5 {
+    display: inline-block;
+    margin: 0;
+  }
+  .listSetContainer {
+    display: flex;
+    .listSet {
+      display: inline-block;
+      + .listSet {
+        margin-left: 2em;
+      }
+      p:not(:first-child) {
+        margin-top: $statLeading;
+      }
+    }
+  }
+}
