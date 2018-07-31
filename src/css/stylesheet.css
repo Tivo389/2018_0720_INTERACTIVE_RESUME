@@ -309,7 +309,7 @@ a {
 html {
   font-size: 62.5%; }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p, a, li {
   color: #222222;
   line-height: 125%; }
 
@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 0 0.25em 0; }
 
-p, a {
+p, a, li {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0; }
 
@@ -340,7 +340,7 @@ h6 {
   font-size: 1.6rem;
   font-weight: bolder; }
 
-p {
+p, li {
   font-size: 1.6rem; }
 
 a {
@@ -386,6 +386,21 @@ a {
   width: 100vw;
   z-index: -10; }
 
+.statBarList {
+  flex: 0 0 auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+  .statBarList h5 {
+    display: inline-block;
+    margin: 0; }
+  .statBarList .listSetContainer {
+    display: flex; }
+    .statBarList .listSetContainer .listSet {
+      display: inline-block; }
+      .statBarList .listSetContainer .listSet + .listSet {
+        margin-left: 2em; }
+
 #statBar {
   background-color: #00A5D5;
   display: flex;
@@ -401,7 +416,9 @@ a {
   #statBar.active {
     transform: translateY(0); }
   #statBar .statBarBlock {
-    flex: 1 0 auto; }
+    flex: 1 0 auto;
+    border: 1px dashed red;
+    margin-left: 3em; }
 
 #loadingTimeline {
   background-color: #EE86A8;
@@ -523,6 +540,7 @@ a {
 .barGraphWrapper {
   align-items: center;
   display: flex;
+  border: 1px dashed red;
   justify-content: flex-start; }
   .barGraphWrapper .barTitle {
     flex: 0 0 auto;
@@ -530,7 +548,7 @@ a {
     width: 128px; }
   .barGraphWrapper .barGraph {
     flex: 1 1 auto;
-    max-width: 100%;
+    max-width: 120px;
     position: relative;
     width: 100%; }
     .barGraphWrapper .barGraph .barWhite, .barGraphWrapper .barGraph .barDark {
@@ -565,6 +583,10 @@ section {
   align-items: center;
   justify-content: center;
   border: 1px dashed red; }
+
+.subText {
+  font-size: 65%;
+  line-height: 65%; }
 
 .mainWrapper {
   align-items: center;

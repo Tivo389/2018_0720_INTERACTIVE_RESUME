@@ -2,7 +2,7 @@ html {
   font-size: 62.5%;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p, a, li {
   color: $colorBlack;
   line-height: 125%;
 }
@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.25em 0;
 }
 
-p, a {
+p, a, li {
   font-family: $ffBody;
   margin: 0;
 }
@@ -46,7 +46,7 @@ h6 {
   font-weight: bolder;
 }
 
-p {
+p, li {
   font-size: $fsP;
 }
 

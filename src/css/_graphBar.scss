@@ -1,6 +1,7 @@
 .barGraphWrapper {
   align-items: center;
   display: flex;
+  border: 1px dashed red;
   justify-content: flex-start;
   .barTitle {
     flex: 0 0 auto;
@@ -9,7 +10,8 @@
   }
   .barGraph {
     flex: 1 1 auto;
-    max-width: 100%;
+    // max-width: 100%;
+    max-width: 120px;
     position: relative;
     width: 100%;
     .barWhite, .barDark {

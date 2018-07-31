@@ -6,13 +6,15 @@
 @import '_debugger';
 @import '_mediaQuery';
 
-@import '_loadingStatBar';
+@import '_statBarLoading';
+@import '_statBarList';
 @import '_statBar';
-@import '_loadingTimeline';
+
+@import '_timelineLoading';
 @import '_timeline';
 
-@import '_radarGraph';
-@import '_barGraph';
+@import '_graphRadar';
+@import '_graphBar';
 
 @import '_landingSlide';
 
@@ -43,6 +45,11 @@ section {
 }
 
 // CLASS LEVEL ------------------------------------------------------------------------------------
+.subText {
+  font-size: 65%;
+  line-height: 65%;
+}
+
 .mainWrapper {
   align-items: center;
   display: flex;

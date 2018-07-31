@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import StatBarRadarGraph from './StatBarRadarGraph';
-import StatBarApplications from './StatBarApplications';
-import StatBarCoding from './StatBarCoding';
+import StatBarSkillGraph from './StatBarSkillGraph';
 import StatBarTools from './StatBarTools';
 
 class StatBar extends Component {
@@ -13,8 +12,8 @@ class StatBar extends Component {
     return (
       <div id="statBar" className={ classValue }>
         <StatBarRadarGraph/>
-        <StatBarCoding statCoding={this.props.statCoding}/>
-        <StatBarApplications statApplications={this.props.statApplications}/>
+        <StatBarSkillGraph title="Applications" stat={this.props.statCoding}/>
+        <StatBarSkillGraph title="Coding" stat={this.props.statApplications}/>
         <StatBarTools statTools={this.props.statTools}/>
       </div>
     );
