@@ -103,8 +103,9 @@ class App extends Component {
         <SlideJourney slideNum="8"/>
         <SlideJourney slideNum="9"/>
         <SlideJourney slideNum="10"/>
-        <SlideText slideNum="11"/>
-        <SlideContact slideNum="12"/>
+        <SlideJourney slideNum="11"/>
+        <SlideText slideNum="12"/>
+        <SlideContact slideNum="13"/>
       </main>
     );
   }
