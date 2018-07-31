@@ -5,11 +5,19 @@
 @import '_font';
 @import '_debugger';
 @import '_mediaQuery';
-@import '_loadingStatBar';
+
+@import '_statBarLoading';
+@import '_statBarList';
 @import '_statBar';
-@import '_loadingTimeline';
+
+@import '_timelineLoading';
 @import '_timeline';
+
+@import '_graphRadar';
+@import '_graphBar';
+
 @import '_landingSlide';
+
 
 
 // ID LEVEL ----------------------------------------------------------------------------------
@@ -37,6 +45,12 @@ section {
 }
 
 // CLASS LEVEL ------------------------------------------------------------------------------------
+.subText {
+  font-size: 60%;
+  line-height: 60%;
+  letter-spacing: 0.085em;
+}
+
 .mainWrapper {
   align-items: center;
   display: flex;

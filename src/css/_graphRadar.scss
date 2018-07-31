@@ -1,0 +1,36 @@
+#radarGraphObject {
+  min-width: 180px;
+  max-width: 200px;
+  width: 70%;
+  height: 70%;
+}
+
+.radarGraphContainer {
+  // padding: 2.4em 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: inherit;
+    font-size: inherit;
+  }
+  .top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .top, .br, .bl {
+    position: absolute;
+  }
+  .br, .bl {
+    bottom: 0;
+  }
+  .br {
+    right: -0.35em;
+  }
+  .bl {
+    left: -0.35em;
+  }
+}
