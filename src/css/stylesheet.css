@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:100,400");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,400");
 html {
   line-height: 1.15;
   /* 1 */
@@ -460,8 +460,8 @@ a {
     margin: 0;
     padding: 0; }
     #timeline ul li {
-      font-family: 'Roboto Condensed';
-      font-weight: lighter;
+      font-family: "Roboto Condensed", "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
       font-size: 1.6rem;
       letter-spacing: 0.1em; }
   #timeline .timePeriod {
