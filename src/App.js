@@ -68,7 +68,6 @@ class App extends Component {
   // LIFECYCLE METHODS
   componentWillMount() {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
-    console.log(this.state.statTools.list);
   }
   componentWillUpdate() {
     console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
