@@ -12,8 +12,8 @@ class StatBar extends Component {
     return (
       <div id="statBar" className={ classValue }>
         <StatBarRadarGraph/>
-        <StatBarSkillGraph title="Applications" stat={this.props.statCoding}/>
-        <StatBarSkillGraph title="Coding" stat={this.props.statApplications}/>
+        <StatBarSkillGraph title="Coding" stat={this.props.statCoding}/>
+        <StatBarSkillGraph title="Applications" stat={this.props.statApplications}/>
         <StatBarTools statTools={this.props.statTools}/>
       </div>
     );

@@ -1,13 +1,13 @@
 #statBar {
-  // transform: translateY(-10em); // Adjust height later to appropriate
   background-color: $colorMain;
   display: flex;
   left: 0;
-  padding: 3em 6em;
+  padding: 2em 4em;
   position: fixed;
   right: 0;
   top: 0;
-  transform: translateY(0); // temporary while coding;
+  transform: translateY(-110%); // Adjust height later to appropriate
+  // transform: translateY(0); // TO SHOW WHILE STLYING;
   transition-delay: $transitionS;
   transition-duration: $transitionS;
   width: 100vw;
@@ -15,8 +15,21 @@
     transform: translateY(0);
   }
   .statBarBlock {
-    flex: 1 0 auto;
-    border: 1px dashed red;
-    margin-left: 3em;
+    flex: 1 0;
+    margin-left: 6.5em;
+  }
+  h6, p {
+    color: $colorWhite;
+    font-size: 1.4rem;
+  }
+  h6 {
+    font-weight: 400;
+    letter-spacing: 0.035em;
+    margin-bottom: $statLeading;
+  }
+  p {
+    font-size: 1.35rem;
+    font-weight: 100;
+    letter-spacing: 0.07em;
   }
 }

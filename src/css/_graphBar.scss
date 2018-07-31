@@ -1,17 +1,17 @@
 .barGraphWrapper {
   align-items: center;
   display: flex;
-  border: 1px dashed red;
-  justify-content: flex-start;
+  + .barGraphWrapper {
+    margin-top: $statLeading;
+  }
   .barTitle {
     flex: 0 0 auto;
-    max-width: 128px;
-    width: 128px;
+    max-width: 114px;
+    width: 114px;
   }
   .barGraph {
     flex: 1 1 auto;
-    // max-width: 100%;
-    max-width: 120px;
+    max-width: 100%;
     position: relative;
     width: 100%;
     .barWhite, .barDark {

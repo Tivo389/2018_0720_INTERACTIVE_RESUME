@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:100,400");
 html {
   line-height: 1.15;
   /* 1 */
@@ -314,11 +315,11 @@ h1, h2, h3, h4, h5, h6, p, a, li {
   line-height: 125%; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 0 0.25em 0; }
 
 p, a, li {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0; }
 
 h1 {
@@ -387,10 +388,8 @@ a {
   z-index: -10; }
 
 .statBarList {
-  flex: 0 0 auto !important;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start; }
+  flex-direction: column; }
   .statBarList h5 {
     display: inline-block;
     margin: 0; }
@@ -400,25 +399,37 @@ a {
       display: inline-block; }
       .statBarList .listSetContainer .listSet + .listSet {
         margin-left: 2em; }
+      .statBarList .listSetContainer .listSet p:not(:first-child) {
+        margin-top: 0.3rem; }
 
 #statBar {
   background-color: #00A5D5;
   display: flex;
   left: 0;
-  padding: 3em 6em;
+  padding: 2em 4em;
   position: fixed;
   right: 0;
   top: 0;
-  transform: translateY(0);
+  transform: translateY(-110%);
   transition-delay: 0.3s;
   transition-duration: 0.3s;
   width: 100vw; }
   #statBar.active {
     transform: translateY(0); }
   #statBar .statBarBlock {
-    flex: 1 0 auto;
-    border: 1px dashed red;
-    margin-left: 3em; }
+    flex: 1 0;
+    margin-left: 6.5em; }
+  #statBar h6, #statBar p {
+    color: #FFFFFF;
+    font-size: 1.4rem; }
+  #statBar h6 {
+    font-weight: 400;
+    letter-spacing: 0.035em;
+    margin-bottom: 0.3rem; }
+  #statBar p {
+    font-size: 1.35rem;
+    font-weight: 100;
+    letter-spacing: 0.07em; }
 
 #loadingTimeline {
   background-color: #EE86A8;
@@ -517,13 +528,21 @@ a {
 #timeline.active .timePeriod li {
   transform: translateY(0); }
 
+#radarGraphObject {
+  min-width: 180px;
+  max-width: 200px;
+  width: 70%;
+  height: 70%; }
+
 .radarGraphContainer {
-  padding: 2.4em;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  .radarGraphContainer p {
+    color: inherit;
+    font-size: inherit; }
   .radarGraphContainer .top {
     top: 0;
     left: 50%;
@@ -533,22 +552,22 @@ a {
   .radarGraphContainer .br, .radarGraphContainer .bl {
     bottom: 0; }
   .radarGraphContainer .br {
-    right: 1.2em; }
+    right: -0.35em; }
   .radarGraphContainer .bl {
-    left: 1.2em; }
+    left: -0.35em; }
 
 .barGraphWrapper {
   align-items: center;
-  display: flex;
-  border: 1px dashed red;
-  justify-content: flex-start; }
+  display: flex; }
+  .barGraphWrapper + .barGraphWrapper {
+    margin-top: 0.3rem; }
   .barGraphWrapper .barTitle {
     flex: 0 0 auto;
-    max-width: 128px;
-    width: 128px; }
+    max-width: 114px;
+    width: 114px; }
   .barGraphWrapper .barGraph {
     flex: 1 1 auto;
-    max-width: 120px;
+    max-width: 100%;
     position: relative;
     width: 100%; }
     .barGraphWrapper .barGraph .barWhite, .barGraphWrapper .barGraph .barDark {
@@ -585,8 +604,9 @@ section {
   border: 1px dashed red; }
 
 .subText {
-  font-size: 65%;
-  line-height: 65%; }
+  font-size: 60%;
+  line-height: 60%;
+  letter-spacing: 0.085em; }
 
 .mainWrapper {
   align-items: center;
