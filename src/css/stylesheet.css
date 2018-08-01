@@ -579,7 +579,9 @@ a {
       left: 0;
       position: absolute;
       right: 0;
-      top: 0; }
+      top: 0;
+      transition-duration: 0.3s;
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
     .barGraphWrapper .barGraph .barDark {
       background-color: #0093BF; }
 
@@ -595,13 +597,12 @@ a {
   position: relative; }
 
 section {
-  width: 100vw;
-  height: 100vh;
-  flex: 0 0 100%;
-  display: flex;
   align-items: center;
+  display: flex;
+  flex: 0 0 100%;
+  height: 100vh;
   justify-content: center;
-  border: 1px dashed red; }
+  width: 100vw; }
 
 .subText {
   font-size: 60%;

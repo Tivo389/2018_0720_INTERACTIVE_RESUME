@@ -11,12 +11,13 @@ class StatBar extends Component {
     const classValue = isActive ? 'active' : '';
     const jData = this.props.journeyDetails;
     const jNum = `j${this.props.currentJourneySlideNum}`;
+    const radarPoints = jData[jNum].stats.radar;
     const statTools = jData[jNum].stats.tools;
     return (
       <div
         id="statBar"
         className={classValue}>
-        <StatBarRadarGraph/>
+        <StatBarRadarGraph radarPoints={radarPoints}/>
         <StatBarSkillGraph
           title="Coding"
           path="codes"

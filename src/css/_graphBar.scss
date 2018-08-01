@@ -25,6 +25,8 @@
       position: absolute;
       right: 0;
       top: 0;
+      transition-duration: $transitionS;
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     .barDark {
       background-color: $colorGraphDark;
