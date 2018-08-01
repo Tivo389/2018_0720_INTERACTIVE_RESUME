@@ -10,14 +10,18 @@ import SlideIntro from './components/SlideIntro';
 import SlideJourney from './components/SlideJourney';
 import SlideText from './components/SlideText';
 import SlideContact from './components/SlideContact';
+import db from './pseudoDB';
 
 class App extends Component {
+
   // STATE & PROPERTIES OF COMPONENT
   state = {
     loadProgress: 0,
     currentSlideNum: 1,
+    currentJourneySlideNum: 1,
     statBarActive: false,
     timelineActive: false,
+    journeyDetails: db,
     statApplications: {
       a1: {
         appName: 'Photoshop CC',
@@ -70,7 +74,7 @@ class App extends Component {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
   componentWillUpdate() {
-    console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
+    // console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
   }
   componentDidUpdate() {
     // console.log('componentDidUpdate!');
@@ -79,31 +83,63 @@ class App extends Component {
   // RENDER OF COMPONENT
   render() {
     return (
-      <main id="app" onWheel={this.handleWheel} onScroll={this.handleScroll}>
+      <main
+        id="app"
+        onWheel={this.handleWheel}
+        onScroll={this.handleScroll}>
         <StatBarLoading
           loadProgress={this.state.loadProgress}
           statBarActive={this.state.statBarActive}/>
         <StatBar
           statBarActive={this.state.statBarActive}
-          statCoding={this.state.statCoding}
-          statApplications={this.state.statApplications}
-          statTools={this.state.statTools}/>
+          journeyDetails={this.state.journeyDetails}
+          currentJourneySlideNum={this.state.currentJourneySlideNum}/>
         <Timeline
           loadProgress={this.state.loadProgress}
           timelineActive={this.state.timelineActive}
           checkSlideAttributes={this.checkSlideAttributes}
-          checkActiveStatus={this.checkActiveStatus}/>
+          checkActiveStatus={this.checkActiveStatus}
+          journeyDetails={this.state.journeyDetails}
+          currentSlideNum={this.state.currentSlideNum}
+          currentJourneySlideNum={this.state.currentJourneySlideNum}/>
         <SlideLanding slideNum="1"/>
-        <SlideIntro slideNum="2" loadingStatus="1/3"/>
-        <SlideIntro slideNum="3" loadingStatus="2/3"/>
-        <SlideText slideNum="4" loadingStatus="3/3"/>
-        <SlideJourney slideNum="5"/>
-        <SlideJourney slideNum="6"/>
-        <SlideJourney slideNum="7"/>
-        <SlideJourney slideNum="8"/>
-        <SlideJourney slideNum="9"/>
-        <SlideJourney slideNum="10"/>
-        <SlideJourney slideNum="11"/>
+        <SlideIntro
+          slideNum="2"
+          loadingStatus="1/3"/>
+        <SlideIntro
+          slideNum="3"
+          loadingStatus="2/3"/>
+        <SlideText
+          slideNum="4"
+          loadingStatus="3/3"/>
+        <SlideJourney
+          slideNum="5"
+          slideJNum="1"
+          details={this.state.journeyDetails.j1}/>
+        <SlideJourney
+          slideNum="6"
+          slideJNum="2"
+          details={this.state.journeyDetails.j2}/>
+        <SlideJourney
+          slideNum="7"
+          slideJNum="3"
+          details={this.state.journeyDetails.j3}/>
+        <SlideJourney
+          slideNum="8"
+          slideJNum="4"
+          details={this.state.journeyDetails.j4}/>
+        <SlideJourney
+          slideNum="9"
+          slideJNum="5"
+          details={this.state.journeyDetails.j5}/>
+        <SlideJourney
+          slideNum="10"
+          slideJNum="6"
+          details={this.state.journeyDetails.j6}/>
+        <SlideJourney
+          slideNum="11"
+          slideJNum="7"
+          details={this.state.journeyDetails.j7}/>
         <SlideText slideNum="12"/>
         <SlideContact slideNum="13"/>
       </main>
@@ -164,14 +200,17 @@ class App extends Component {
     const app = document.querySelector('#app');
     let sHasLoadAttr;
     let loadingStatus;
-    let slideNum = 0;
+    let slideNum = this.state.currentSlideNum;
+    let slideJNum = this.state.currentJourneySlideNum;
     app.childNodes.forEach((slide) => {
       const sInView = slide.getBoundingClientRect().x === 0;
       const sHasLoading = slide.attributes['data-loadingstatus'];
+      const sHasJNum = slide.attributes['data-slidejnum'];
       const sHasNumRegex = /[s]\d+/;
       const sHasNum = slide.id.match(sHasNumRegex);
       if (sInView && sHasNum) slideNum = +sHasNum[0].slice(1,sHasNum[0].length);
       if (sInView && sHasLoading) sHasLoadAttr = slide;
+      if (sInView && sHasJNum) slideJNum = +slide.dataset.slidejnum;
       if (sHasLoadAttr) {
         const numerator = sHasLoadAttr.dataset.loadingstatus[0];
         const denominator = sHasLoadAttr.dataset.loadingstatus[2];
@@ -182,7 +221,8 @@ class App extends Component {
     });
     this.setState({
       loadProgress: loadingStatus,
-      currentSlideNum: slideNum
+      currentSlideNum: slideNum,
+      currentJourneySlideNum: slideJNum
     });
   };
 
@@ -190,9 +230,9 @@ class App extends Component {
   // - If state.loadingStatus is 1, it will keep active class on.
   checkActiveStatus = () => {
     // console.log('checkActiveStatus');
-    const sBarSlides = [5,6,7,8,9,10];
+    const sBarSlides = [5,6,7,8,9,10,11];
     const sBarActive = sBarSlides.find(integer => integer === this.state.currentSlideNum);
-    const timelineSlides = [5,6,7,8,9,10,11,12];
+    const timelineSlides = [5,6,7,8,9,10,11,12,13];
     const tActive = timelineSlides.find(integer => integer === this.state.currentSlideNum);
     sBarActive ? this.setState({ statBarActive: true }) : this.setState({ statBarActive: false });
     tActive ? this.setState({ timelineActive: true }) : this.setState({ timelineActive: false });
@@ -204,6 +244,7 @@ class App extends Component {
     this.checkSlideAttributes();
     this.checkActiveStatus();
   }, 250);
+
 }
 
 export default App;

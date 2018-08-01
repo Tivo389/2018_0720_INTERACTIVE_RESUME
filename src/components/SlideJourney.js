@@ -8,7 +8,8 @@ class SlideJourney extends Component {
       <section
         id={`s${this.props.slideNum}`}
         className="slideJourney"
-        data-slidenum={this.props.slideNum}>
+        data-slidenum={this.props.slideNum}
+        data-slidejnum={this.props.slideJNum}>
         <p>SlideJourney</p>
       </section>
     );

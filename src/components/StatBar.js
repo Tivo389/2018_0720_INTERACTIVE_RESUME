@@ -9,12 +9,23 @@ class StatBar extends Component {
   render() {
     const isActive = this.props.statBarActive;
     const classValue = isActive ? 'active' : '';
+    const jData = this.props.journeyDetails;
+    const jNum = `j${this.props.currentJourneySlideNum}`;
+    const statTools = jData[jNum].stats.tools;
     return (
-      <div id="statBar" className={ classValue }>
+      <div
+        id="statBar"
+        className={classValue}>
         <StatBarRadarGraph/>
-        <StatBarSkillGraph title="Coding" stat={this.props.statCoding}/>
-        <StatBarSkillGraph title="Applications" stat={this.props.statApplications}/>
-        <StatBarTools statTools={this.props.statTools}/>
+        <StatBarSkillGraph
+          title="Coding"
+          path="codes"
+          j={jData[jNum]}/>
+        <StatBarSkillGraph
+          title="Applications"
+          path="apps"
+          j={jData[jNum]}/>
+        <StatBarTools statTools={statTools}/>
       </div>
     );
   }

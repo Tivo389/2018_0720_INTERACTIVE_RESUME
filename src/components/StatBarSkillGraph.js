@@ -5,15 +5,18 @@ class StatBarSkillGraph extends Component {
 
   // RENDER OF COMPONENT
   render() {
+    const {j, path, title} = this.props;
     return (
       <div className="statBarBlock">
-        <h6>{this.props.title}</h6>
-        {Object.keys(this.props.stat).map(key =>
-          <StatBarBarGraph
-            key={key}
-            barIndex={key}
-            details={this.props.stat[key]}/>
-        )}
+        <h6>{title}</h6>
+        {
+          Object.keys(j.stats[path]).map(key =>
+            <StatBarBarGraph
+              key={key}
+              barIndex={key}
+              details={j.stats[path][key]}/>
+          )
+        }
       </div>
     );
   }

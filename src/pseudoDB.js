@@ -1,4 +1,4 @@
-db: {
+const db = {
   j1: {
     yearStart: 2008,
     yearEnd: 2009,
@@ -14,8 +14,8 @@ db: {
           appStat: 20
         }
       },
-      codes: null,
-      tools: null,
+      codes: {},
+      tools: [],
     },
     details: {
       imageurl: '../images/dummy.svg',
@@ -60,8 +60,8 @@ db: {
           appStat: 20
         }
       },
-      codes: null,
-      tools: null
+      codes: {},
+      tools: []
     },
     details: {
       imageurl: '../images/dummy.svg',
@@ -116,7 +116,7 @@ db: {
           appStat: 20
         }
       },
-      tools: null
+      tools: []
     },
     details: {
       imageurl: '../images/dummy.svg',
@@ -170,7 +170,7 @@ db: {
           appStat: 20
         }
       },
-      tools: null
+      tools: []
     },
     details: {
       imageurl: '../images/dummy.svg',
@@ -416,4 +416,6 @@ db: {
       }
     }
   }
-}
+};
+
+export default db;
