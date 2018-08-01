@@ -6,11 +6,15 @@ class Timeline extends Component {
   render() {
     const isActive = this.props.timelineActive;
     const loadProgress = this.props.loadProgress;
+    const jData = this.props.journeyDetails;
+    const sNum = this.props.currentSlideNum;
+    const jNum = `j${this.props.currentJourneySlideNum}`;
+    const j = jData[jNum];
     const classValue = isActive ? 'active' : '';
     return (
-      <div id="timeline" className={ classValue }>
+      <div id="timeline" className={classValue}>
         <ul className="timePeriod">
-          <li>2008</li>
+          { sNum <= 11 ? (<li>{j.yearStart}</li>) : (<li>2019</li>) }
           <li></li>
           <li></li>
           <li></li>
@@ -22,7 +26,7 @@ class Timeline extends Component {
           <li></li>
           <li></li>
           <li></li>
-          <li>2009</li>
+          { sNum <= 11 ? (<li>{j.yearEnd}</li>) : (<li>20XX</li>) }
           <TimelineLoading loadProgress={loadProgress} timelineActive={isActive}/>
         </ul>
         <ul className="timeLinks">
