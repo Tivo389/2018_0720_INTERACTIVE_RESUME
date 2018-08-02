@@ -44,8 +44,9 @@ h5 {
 }
 
 h6 {
+  font-family: $ffBody;
   font-size: $fsH6;
-  font-weight: bolder;
+  font-weight: 400;
 }
 
 p, li {

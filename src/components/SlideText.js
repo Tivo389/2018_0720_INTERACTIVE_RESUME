@@ -10,7 +10,7 @@ class SlideText extends Component {
         className="slideText"
         data-slidenum={this.props.slideNum}
         data-loadingstatus={this.props.loadingStatus}>
-        <p>SlideText</p>
+        {this.props.text.map(item => <p>{item}</p>)}
       </section>
     );
   }

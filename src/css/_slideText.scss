@@ -1,0 +1,8 @@
+.slideText {
+  display: flex;
+  flex-direction: column;
+  p {
+    font-family: $ffHeader;
+    font-size: $fsH5;
+  }
+}
