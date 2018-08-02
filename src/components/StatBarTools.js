@@ -9,7 +9,7 @@ class StatBarTools extends Component {
     while (list.length > 0) listSets.push(list.splice(0,7));
     return (
       <div className="statBarBlock statBarList">
-        <h6>Tools<span className="subText"> (Frameworks, Libraries, etc.)</span></h6>
+        <h6>Tools<span className="subText60"> (Frameworks, Libraries, etc.)</span></h6>
         <div className="listSetContainer">
           {Object.keys(listSets).map(keyOne =>
             <div key={keyOne} className="listSet">
