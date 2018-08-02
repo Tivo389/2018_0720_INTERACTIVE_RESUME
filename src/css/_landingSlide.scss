@@ -1,3 +1,47 @@
-.landingSlide {
-
+@keyframes scroll {
+  0% {transform: translateY(-200%);}
+  // 85% {transform: translateY(15%);}
+  100% {transform: translateY(0%);}
 }
+
+@keyframes swipe {
+  0% {transform: translateX(0%);}
+  // 85% {transform: translateX(calc(-115% - 0.25em));}
+  100% {transform: translateX(calc(-100% - 0.25em));}
+}
+
+.slideLanding {
+  flex-direction: column;
+  .navTextWrapper {
+    display: flex;
+    flex: 0 0 auto;
+    height: 2rem;
+    margin-top: 3em;
+    p {
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      font-weight: 100;
+      color: $colorLightGray;
+    }
+    .navTextContainer {
+      overflow: hidden;
+    }
+    .scroll {
+      animation: 2.4s infinite ease-in-out scroll;
+    }
+    .swipe {
+      animation: 2.4s infinite ease-in-out swipe;
+    }
+    .swipeWrapper {
+      width: 4rem;
+      .swipeContainer {
+        display: flex;
+        p + p {
+          margin-left: 0.25em;
+        }
+      }
+    }
+  }
+}
+
+

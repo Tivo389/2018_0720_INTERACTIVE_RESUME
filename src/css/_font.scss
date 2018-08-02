@@ -9,6 +9,7 @@ h1, h2, h3, h4, h5, h6, p, a, li {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $ffHeader;
+  font-weight: 400;
   margin: 0 0 0.25em 0;
 }
 
@@ -59,7 +60,19 @@ a {
   }
 }
 
+.alignCenter {
+  text-align: center;
+}
 
+.colorMain {
+  color: $colorMain;
+}
+
+.subText60 {
+  font-size: 60%;
+  line-height: 60%;
+  letter-spacing: 0.085em;
+}
 
 @media (min-width: 768px) and (max-width: 1024px) {
   html {

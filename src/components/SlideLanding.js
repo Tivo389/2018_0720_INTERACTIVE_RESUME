@@ -9,7 +9,22 @@ class SlideLanding extends Component {
         id={`s${this.props.slideNum}`}
         className="slideLanding"
         data-slidenum={this.props.slideNum}>
-        <p>SlideLanding</p>
+        <h1 className="alignCenter">Hello I'm <span className="colorMain">Shunjiro Miyaki</span><br/>a Front-end Developer & Graphic Designer</h1>
+        <div className="navTextWrapper">
+          <div className="navTextContainer">
+            <p className="scroll">scroll</p>
+            <p className="scroll">scroll</p>
+            <p className="scroll">scroll</p>
+          </div>
+          <p>&emsp;or&emsp;</p>
+          <div className="navTextContainer swipeWrapper">
+            <div className="swipeContainer swipe">
+              <p>swipe</p>
+              <p>swipe</p>
+              <p>swipe</p>
+            </div>
+          </div>
+        </div>
       </section>
     );
   }

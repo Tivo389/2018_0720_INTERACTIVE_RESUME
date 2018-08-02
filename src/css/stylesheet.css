@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,400");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,400|Crimson+Text");
 html {
   line-height: 1.15;
   /* 1 */
@@ -311,11 +311,12 @@ html {
   font-size: 62.5%; }
 
 h1, h2, h3, h4, h5, h6, p, a, li {
-  color: #222222;
+  color: #333333;
   line-height: 125%; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Text", "Times New Roman", "Times", "Georgia", "Palatino", serif;
+  font-weight: 400;
   margin: 0 0 0.25em 0; }
 
 p, a, li {
@@ -323,10 +324,10 @@ p, a, li {
   margin: 0; }
 
 h1 {
-  font-size: calc(1.6rem * 4.48); }
+  font-size: calc(1.6rem * 2.46); }
 
 h2 {
-  font-size: calc(1.6rem * 3.32); }
+  font-size: calc(1.6rem * 2.46); }
 
 h3 {
   font-size: calc(1.6rem * 2.46); }
@@ -347,9 +348,20 @@ p, li {
 a {
   font-size: 1.6rem; }
   a:visited, a:focus, a:active {
-    color: #222222;
+    color: #333333;
     outline: none;
     text-decoration: none; }
+
+.alignCenter {
+  text-align: center; }
+
+.colorMain {
+  color: #00A5D5; }
+
+.subText60 {
+  font-size: 60%;
+  line-height: 60%;
+  letter-spacing: 0.085em; }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   html {
@@ -585,6 +597,43 @@ a {
     .barGraphWrapper .barGraph .barDark {
       background-color: #0093BF; }
 
+@keyframes scroll {
+  0% {
+    transform: translateY(-200%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes swipe {
+  0% {
+    transform: translateX(0%); }
+  100% {
+    transform: translateX(calc(-100% - 0.25em)); } }
+
+.slideLanding {
+  flex-direction: column; }
+  .slideLanding .navTextWrapper {
+    display: flex;
+    flex: 0 0 auto;
+    height: 2rem;
+    margin-top: 3em; }
+    .slideLanding .navTextWrapper p {
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      font-weight: 100;
+      color: #AAAAAA; }
+    .slideLanding .navTextWrapper .navTextContainer {
+      overflow: hidden; }
+    .slideLanding .navTextWrapper .scroll {
+      animation: 2.4s infinite ease-in-out scroll; }
+    .slideLanding .navTextWrapper .swipe {
+      animation: 2.4s infinite ease-in-out swipe; }
+    .slideLanding .navTextWrapper .swipeWrapper {
+      width: 4rem; }
+      .slideLanding .navTextWrapper .swipeWrapper .swipeContainer {
+        display: flex; }
+        .slideLanding .navTextWrapper .swipeWrapper .swipeContainer p + p {
+          margin-left: 0.25em; }
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -603,11 +652,6 @@ section {
   height: 100vh;
   justify-content: center;
   width: 100vw; }
-
-.subText {
-  font-size: 60%;
-  line-height: 60%;
-  letter-spacing: 0.085em; }
 
 .mainWrapper {
   align-items: center;
