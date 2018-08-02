@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="580" height="158" viewBox="0 0 580 158">
+  <defs>
+    <rect id="frontenddev-a" width="252" height="157.5" rx="4"/>
+    <rect id="frontenddev-c" width="252" height="157.5" rx="4"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="frontenddev-b" fill="#fff">
+      <use xlink:href="#frontenddev-a"/>
+    </mask>
+    <use fill="#DCE3E6" xlink:href="#frontenddev-a"/>
+    <rect width="252" height="148.05" y="9.45" fill="#404040" mask="url(#frontenddev-b)"/>
+    <g mask="url(#frontenddev-b)">
+      <g transform="translate(9.45 20.475)">
+        <rect width="78.75" height="4.725" fill="#EE86A8"/>
+        <rect width="7.875" height="4.725" y="21.262" fill="#EE86A8"/>
+        <rect width="94.5" height="4.725" x="4.725" y="7.088" fill="#0093BF"/>
+        <rect width="126" height="4.725" x="4.725" y="14.175" fill="#0093BF"/>
+        <g transform="translate(0 37.013)">
+          <rect width="78.75" height="4.725" fill="#EE86A8"/>
+          <rect width="7.875" height="4.725" y="56.7" fill="#EE86A8"/>
+          <rect width="110.25" height="4.725" x="4.725" y="7.088" fill="#0093BF"/>
+          <rect width="110.25" height="4.725" x="9.45" y="28.35" fill="#0093BF"/>
+          <rect width="110.25" height="4.725" x="9.45" y="42.525" fill="#0093BF"/>
+          <rect width="47.25" height="4.725" x="4.725" y="21.262" fill="#0093BF"/>
+          <rect width="31.5" height="4.725" x="4.725" y="35.438" fill="#0093BF"/>
+          <rect width="7.875" height="4.725" x="4.725" y="49.612" fill="#0093BF"/>
+          <rect width="141.75" height="4.725" x="4.725" y="14.175" fill="#0093BF"/>
+        </g>
+        <g transform="translate(0 109.463)">
+          <rect width="78.75" height="4.725" fill="#EE86A8"/>
+          <rect width="110.25" height="4.725" x="4.725" y="7.088" fill="#0093BF"/>
+          <rect width="47.25" height="4.725" x="4.725" y="21.262" fill="#0093BF"/>
+          <rect width="141.75" height="4.725" x="4.725" y="14.175" fill="#0093BF"/>
+        </g>
+      </g>
+    </g>
+    <g fill="gray" mask="url(#frontenddev-b)">
+      <g transform="translate(3.15 2.362)">
+        <circle cx="2.362" cy="2.362" r="2.362"/>
+        <circle cx="9.45" cy="2.362" r="2.362"/>
+        <circle cx="16.538" cy="2.362" r="2.362"/>
+      </g>
+    </g>
+    <g transform="translate(328)">
+      <mask id="frontenddev-d" fill="#fff">
+        <use xlink:href="#frontenddev-c"/>
+      </mask>
+      <use fill="#DCE3E6" xlink:href="#frontenddev-c"/>
+      <rect width="252" height="135.45" y="22.05" fill="#E4EEF2" mask="url(#frontenddev-d)"/>
+      <rect width="245.7" height="7.875" x="3.15" y="11.025" fill="#FFF" mask="url(#frontenddev-d)" rx="2"/>
+      <g fill="gray" mask="url(#frontenddev-d)">
+        <g transform="translate(3.15 2.362)">
+          <circle cx="2.362" cy="2.362" r="2.362"/>
+          <circle cx="9.45" cy="2.362" r="2.362"/>
+          <circle cx="16.538" cy="2.362" r="2.362"/>
+        </g>
+      </g>
+      <rect width="75.6" height="135.45" y="22.05" fill="#0093BF" mask="url(#frontenddev-d)"/>
+      <g mask="url(#frontenddev-d)">
+        <g transform="translate(88.2 34.65)">
+          <rect width="31.5" height="6.3" x="34.65" y="103.95" fill="#A9BEC7" rx="3.15"/>
+          <rect width="31.5" height="6.3" x="70.875" y="103.95" fill="#EE86A8" rx="3.15"/>
+          <g>
+            <rect width="102.375" height="3.15" y="12.6" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="18.9" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="25.2" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="31.5" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="37.8" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="44.1" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="50.4" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="56.7" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="63" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="69.3" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="75.6" fill="#0093BF"/>
+            <rect width="102.375" height="3.15" y="81.9" fill="#0093BF"/>
+            <rect width="70.875" height="3.15" y="88.2" fill="#0093BF"/>
+            <rect width="70.875" height="6.3" fill="#A9BEC7"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path fill="#EE86A8" d="M291.846154,72.4375 L291.846154,64 L314,79 L291.846154,94 L291.846154,85.5625 L266,85.5625 L266,72.4375 L291.846154,72.4375 Z"/>
+  </g>
+</svg>

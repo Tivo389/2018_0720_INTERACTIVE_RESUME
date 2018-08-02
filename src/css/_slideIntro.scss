@@ -1,0 +1,19 @@
+.slideIntro {
+  display: flex;
+  flex-direction: column;
+  object {
+    pointer-events: none;
+  }
+  .textBox {
+    width: 580px;
+    h4 {
+      margin: 1.5em 0 0 0;
+    }
+    ul {
+      padding: 0 0 0 1.6em;
+      li + li {
+        margin-top: 0.75em;
+      }
+    }
+  }
+}

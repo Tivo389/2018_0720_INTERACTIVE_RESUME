@@ -62,10 +62,18 @@ class App extends Component {
         <SlideLanding slideNum="1"/>
         <SlideIntro
           slideNum="2"
-          loadingStatus="1/3"/>
+          loadingStatus="1/3"
+          imagePath={require('./images/frontEndDev.svg')}
+          title="Front-end Developer"
+          pointOne="A developer with the technical knowledge of code to create the visual elements  for a software, application, or website."
+          pointTwo="Also takes part in the User-Interface (UI) and User-Experience (UX) process to  ensure the product has the appropriate look and feel."/>
         <SlideIntro
           slideNum="3"
-          loadingStatus="2/3"/>
+          loadingStatus="2/3"
+          imagePath={require('./images/graphicDesigner.svg')}
+          title="Graphic Designer"
+          pointOne="A designer with the technical knowledge to communicate information through  visual means such as image and typography."
+          pointTwo="Since it's a broad term you may come across designers who work in a specific field, such as branding, logo, editorial, and packaging."/>
         <SlideText
           slideNum="4"
           loadingStatus="3/3"/>
