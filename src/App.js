@@ -76,7 +76,8 @@ class App extends Component {
           pointTwo="Since it's a broad term you may come across designers who work in a specific field, such as branding, logo, editorial, and packaging."/>
         <SlideText
           slideNum="4"
-          loadingStatus="3/3"/>
+          loadingStatus="3/3"
+          text={["My journey so far..."]}/>
         <SlideJourney
           slideNum="5"
           slideJNum="1"
@@ -105,7 +106,9 @@ class App extends Component {
           slideNum="11"
           slideJNum="7"
           details={this.state.journeyDetails.j7}/>
-        <SlideText slideNum="12"/>
+        <SlideText
+          slideNum="12"
+          text={["Thank you for taking your time to read my resume.", "That's my journey so far."]}/>
         <SlideContact slideNum="13"/>
       </main>
     );

@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,300|Crimson+Text");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,300,400|Crimson+Text");
 html {
   line-height: 1.15;
   /* 1 */
@@ -340,8 +340,9 @@ h5 {
   font-size: calc(1.6rem * 1.35); }
 
 h6 {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
-  font-weight: bolder; }
+  font-weight: 400; }
 
 p, li {
   font-size: 1.6rem; }
@@ -648,6 +649,13 @@ a {
       padding: 0 0 0 1.6em; }
       .slideIntro .textBox ul li + li {
         margin-top: 0.75em; }
+
+.slideText {
+  display: flex;
+  flex-direction: column; }
+  .slideText p {
+    font-family: "Crimson Text", "Times New Roman", "Times", "Georgia", "Palatino", serif;
+    font-size: calc(1.6rem * 1.35); }
 
 #root {
   width: 100vw;
