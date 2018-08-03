@@ -108,7 +108,7 @@ class App extends Component {
           details={this.state.journeyDetails.j7}/>
         <SlideText
           slideNum="12"
-          text={["Thank you for taking your time to read my resume.", "That's my journey so far."]}/>
+          text={["Thank you for your time.", "That's my journey so far."]}/>
         <SlideContact slideNum="13"/>
       </main>
     );

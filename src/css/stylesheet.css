@@ -601,7 +601,7 @@ a {
 
 @keyframes scroll {
   0% {
-    transform: translateY(-200%); }
+    transform: translateY(-100%); }
   100% {
     transform: translateY(0%); } }
 
@@ -656,6 +656,73 @@ a {
   .slideText p {
     font-family: "Crimson Text", "Times New Roman", "Times", "Georgia", "Palatino", serif;
     font-size: calc(1.6rem * 1.35); }
+
+.slideContact .formWrapper {
+  width: 60%; }
+  .slideContact .formWrapper h4 {
+    margin-bottom: 1em; }
+  .slideContact .formWrapper button, .slideContact .formWrapper input, .slideContact .formWrapper textarea, .slideContact .formWrapper label {
+    font-size: 1.4rem;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300; }
+  .slideContact .formWrapper label, .slideContact .formWrapper input, .slideContact .formWrapper textarea {
+    transition-duration: 0.3s; }
+  .slideContact .formWrapper input, .slideContact .formWrapper textarea {
+    padding: 1.2em 0.6em 0.6em 0.6em;
+    border: 0;
+    width: 100%; }
+    .slideContact .formWrapper input:focus, .slideContact .formWrapper textarea:focus {
+      outline: none; }
+  .slideContact .formWrapper button {
+    background-color: #EE86A8;
+    border-radius: 500px;
+    border: 0;
+    color: #FFFFFF;
+    float: right;
+    font-weight: 100;
+    letter-spacing: 0.075em;
+    padding: 0.6em 1.6em; }
+    .slideContact .formWrapper button:active {
+      transform: translateY(2px); }
+    .slideContact .formWrapper button:hover {
+      background-color: #e85988; }
+    .slideContact .formWrapper button:focus {
+      outline: none; }
+  .slideContact .formWrapper input {
+    line-height: 1; }
+  .slideContact .formWrapper label {
+    color: #777777;
+    font-size: 1.2rem;
+    left: 0.6em;
+    letter-spacing: 0.025em;
+    position: absolute;
+    top: 0.6em;
+    transform: translateY(-50%); }
+    .slideContact .formWrapper label[for="email"], .slideContact .formWrapper label[for="subject"] {
+      top: 50%; }
+    .slideContact .formWrapper label[for="message"] {
+      top: 1.6em; }
+  .slideContact .formWrapper textarea {
+    resize: none;
+    line-height: 165%;
+    height: 14em; }
+  .slideContact .formWrapper .formGroup {
+    border-radius: 0.15em;
+    border: 1px solid #00A5D5;
+    position: relative; }
+    .slideContact .formWrapper .formGroup.active label {
+      font-size: 0.8rem;
+      left: 0.8em;
+      top: 1em; }
+    .slideContact .formWrapper .formGroup:last-of-type {
+      margin-bottom: 1.2em; }
+    .slideContact .formWrapper .formGroup + .formGroup {
+      margin-top: 1.2em; }
+    .slideContact .formWrapper .formGroup .characterCount {
+      color: #777777;
+      position: absolute;
+      right: 0.6em;
+      bottom: 0.6em; }
 
 #root {
   width: 100vw;
