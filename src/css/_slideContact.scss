@@ -1,0 +1,88 @@
+.slideContact {
+  .formWrapper {
+    width: 60%;
+    h4 {
+      margin-bottom: 1em;
+    }
+    button, input, textarea, label {
+      font-size: 1.4rem;
+      font-family: $ffBody;
+      font-weight: 300;
+    }
+    label, input, textarea {
+      transition-duration: $transitionS;
+    }
+    input, textarea {
+      padding: 1.2em 0.6em 0.6em 0.6em;
+      border: 0;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      background-color: $colorSub;
+      border-radius: 500px;
+      border: 0;
+      color: $colorWhite;
+      float: right;
+      font-weight: 100;
+      letter-spacing: 0.075em;
+      padding: 0.6em 1.6em;
+      &:active {
+        transform: translateY(2px);
+      }
+      &:hover {
+        background-color: darken($colorSub, 10%);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    input {
+      line-height: 1;
+    }
+    label {
+      color: $colorGray;
+      font-size: 1.2rem;
+      left: 0.6em;
+      letter-spacing: 0.025em;
+      position: absolute;
+      top: 0.6em;
+      transform: translateY(-50%);
+      &[for="email"], &[for="subject"] {
+        top: 50%;
+      }
+      &[for="message"] {
+        top: 1.6em;
+      }
+    }
+    textarea {
+      resize: none;
+      line-height: 165%;
+      height: 14em;
+    }
+    .formGroup {
+      border-radius: 0.15em;
+      border: 1px solid $colorMain;
+      position: relative;
+      &.active label {
+        font-size: 0.8rem;
+        left: 0.8em;
+        top: 1em;
+      }
+      &:last-of-type {
+        margin-bottom: 1.2em;
+      }
+      + .formGroup {
+        margin-top: 1.2em;
+      }
+      .characterCount {
+        color: $colorGray;
+        position: absolute;
+        right: 0.6em;
+        bottom: 0.6em;
+      }
+    }
+  }
+}
