@@ -29,10 +29,9 @@ const db = {
         ],
       folioUrl: null,
       descriptions: {
-        d1: 'The tomato is the edible, often red, fruit/berry of the plant Solanum lycopersicum, commonly known as a tomato plant. The plant belongs to the nightshade family, Solanaceae. The species originated in western South America.',
+        d1: 'The tomato is the edible, often red, fruit/berry of the plant Solanum lycopersicum, commonly known as a tomato plant. The plant belongs to the family, Solanaceae.',
         d2: 'The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. Potato may be applied to both the plant and the edible tuber.',
-        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.',
-        d4: 'Fish are gill-bearing aquatic craniate animals that lack limbs with digits. They form a sister group to the tunicates, together forming the olfactores.'
+        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.'
       }
     }
   },
@@ -65,7 +64,7 @@ const db = {
     details: {
       name: 'Planet Ads & Design',
       location: 'Japan',
-      www: 'www.planetad.com.sg',
+      www: 'http://www.planetad.com.sg',
       role: 'Graphic Designer',
       contributions: [
           'Advertisement Design',
@@ -76,8 +75,7 @@ const db = {
       descriptions: {
         d1: 'The tomato is the edible, often red, fruit/berry of the plant Solanum lycopersicum, commonly known as a tomato plant. The plant belongs to the nightshade family, Solanaceae. The species originated in western South America.',
         d2: 'The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. Potato may be applied to both the plant and the edible tuber.',
-        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.',
-        d4: 'Fish are gill-bearing aquatic craniate animals that lack limbs with digits. They form a sister group to the tunicates, together forming the olfactores.'
+        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.'
       }
     }
   },
@@ -119,7 +117,7 @@ const db = {
     details: {
       name: 'Minook International',
       location: 'Singapore',
-      www: 'www.mangosteen.com.sg/company/',
+      www: 'http://www.mangosteen.com.sg/company/',
       role: 'Graphic Designer',
       contributions: [
           'Advertisement Design',
@@ -129,8 +127,7 @@ const db = {
       descriptions: {
         d1: 'Publish a monthly editorial that communicates the current trends and new stores to the Japanese expat community in Singapore.',
         d2: 'The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. Potato may be applied to both the plant and the edible tuber.',
-        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.',
-        d4: 'Fish are gill-bearing aquatic craniate animals that lack limbs with digits. They form a sister group to the tunicates, together forming the olfactores.'
+        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.'
       }
     }
   },
@@ -182,8 +179,7 @@ const db = {
       descriptions: {
         d1: 'The tomato is the edible, often red, fruit/berry of the plant Solanum lycopersicum, commonly known as a tomato plant. The plant belongs to the nightshade family, Solanaceae. The species originated in western South America.',
         d2: 'The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. Potato may be applied to both the plant and the edible tuber.',
-        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.',
-        d4: 'Fish are gill-bearing aquatic craniate animals that lack limbs with digits. They form a sister group to the tunicates, together forming the olfactores.'
+        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.'
       }
     }
   },
@@ -234,7 +230,7 @@ const db = {
     details: {
       name: 'Auckland Council',
       location: 'New Zealand',
-      www: 'www.aucklandcouncil.govt.nz',
+      www: 'http://www.aucklandcouncil.govt.nz',
       role: 'Digital Designer',
       contributions: [
           'UI',
@@ -244,8 +240,7 @@ const db = {
       descriptions: {
         d1: 'To communicate building regulations using visuals and design icons for an online platform.',
         d2: 'The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. Potato may be applied to both the plant and the edible tuber.',
-        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.',
-        d4: 'Fish are gill-bearing aquatic craniate animals that lack limbs with digits. They form a sister group to the tunicates, together forming the olfactores.'
+        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.'
       }
     }
   },
@@ -307,17 +302,16 @@ const db = {
       ]
     },
     details: {
-      name: 'Le Wagon Coding Bootcamp',
+      name: 'Le Wagon Bootcamp',
       location: 'Japan',
-      www: 'www.lewagon.com/tokyo',
+      www: 'http://www.lewagon.com/tokyo',
       role: 'Fullstack Developer Student',
       contributions: null,
       folioUrl: null,
       descriptions: {
         d1: 'The tomato is the edible, often red, fruit/berry of the plant Solanum lycopersicum, commonly known as a tomato plant. The plant belongs to the nightshade family, Solanaceae. The species originated in western South America.',
         d2: 'The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. Potato may be applied to both the plant and the edible tuber.',
-        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.',
-        d4: 'Fish are gill-bearing aquatic craniate animals that lack limbs with digits. They form a sister group to the tunicates, together forming the olfactores.'
+        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.'
       }
     }
   },
@@ -393,7 +387,7 @@ const db = {
     details: {
       name: 'TransRoad',
       location: 'Japan',
-      www: 'www.transroad.jp',
+      www: 'http://www.transroad.jp',
       role: 'Front-end Developer',
       contributions: [
           'Front-end Design',
@@ -404,8 +398,7 @@ const db = {
       descriptions: {
         d1: 'Develop a B2B service that helps businesses find a transportation company based on their shipment details.',
         d2: 'The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. Potato may be applied to both the plant and the edible tuber.',
-        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.',
-        d4: 'Fish are gill-bearing aquatic craniate animals that lack limbs with digits. They form a sister group to the tunicates, together forming the olfactores.'
+        d3: 'Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.'
       }
     }
   }
