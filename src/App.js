@@ -59,6 +59,7 @@ class App extends Component {
           journeyDetails={this.state.journeyDetails}
           currentSlideNum={this.state.currentSlideNum}
           currentJourneySlideNum={this.state.currentJourneySlideNum}/>
+        <div className="hidden">
         <SlideLanding slideNum="1"/>
         <SlideIntro
           slideNum="2"
@@ -78,34 +79,42 @@ class App extends Component {
           slideNum="4"
           loadingStatus="3/3"
           text={["My journey so far..."]}/>
+        </div>
         <SlideJourney
           slideNum="5"
           slideJNum="1"
-          details={this.state.journeyDetails.j1}/>
+          journey={this.state.journeyDetails.j1.details}
+          imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="6"
           slideJNum="2"
-          details={this.state.journeyDetails.j2}/>
+          journey={this.state.journeyDetails.j2.details}
+          imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="7"
           slideJNum="3"
-          details={this.state.journeyDetails.j3}/>
+          journey={this.state.journeyDetails.j3.details}
+          imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="8"
           slideJNum="4"
-          details={this.state.journeyDetails.j4}/>
+          journey={this.state.journeyDetails.j4.details}
+          imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="9"
           slideJNum="5"
-          details={this.state.journeyDetails.j5}/>
+          journey={this.state.journeyDetails.j5.details}
+          imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="10"
           slideJNum="6"
-          details={this.state.journeyDetails.j6}/>
+          journey={this.state.journeyDetails.j6.details}
+          imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="11"
           slideJNum="7"
-          details={this.state.journeyDetails.j7}/>
+          journey={this.state.journeyDetails.j7.details}
+          imagePath={require('./images/dummy.svg')}/>
         <SlideText
           slideNum="12"
           text={["Thank you for your time.", "That's my journey so far."]}/>

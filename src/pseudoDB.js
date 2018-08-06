@@ -18,7 +18,6 @@ const db = {
       tools: [],
     },
     details: {
-      imageurl: '../images/dummy.svg',
       name: 'Freelance',
       location: 'United Kingdom',
       www: null,
@@ -64,7 +63,6 @@ const db = {
       tools: []
     },
     details: {
-      imageurl: '../images/dummy.svg',
       name: 'Planet Ads & Design',
       location: 'Japan',
       www: 'www.planetad.com.sg',
@@ -119,7 +117,6 @@ const db = {
       tools: []
     },
     details: {
-      imageurl: '../images/dummy.svg',
       name: 'Minook International',
       location: 'Singapore',
       www: 'www.mangosteen.com.sg/company/',
@@ -173,7 +170,6 @@ const db = {
       tools: []
     },
     details: {
-      imageurl: '../images/dummy.svg',
       name: 'Freelance',
       location: 'Japan',
       www: null,
@@ -236,7 +232,6 @@ const db = {
       ]
     },
     details: {
-      imageurl: '../images/dummy.svg',
       name: 'Auckland Council',
       location: 'New Zealand',
       www: 'www.aucklandcouncil.govt.nz',
@@ -312,7 +307,6 @@ const db = {
       ]
     },
     details: {
-      imageurl: '../images/dummy.svg',
       name: 'Le Wagon Coding Bootcamp',
       location: 'Japan',
       www: 'www.lewagon.com/tokyo',
@@ -397,7 +391,6 @@ const db = {
       ]
     },
     details: {
-      imageurl: '../images/dummy.svg',
       name: 'TransRoad',
       location: 'Japan',
       www: 'www.transroad.jp',

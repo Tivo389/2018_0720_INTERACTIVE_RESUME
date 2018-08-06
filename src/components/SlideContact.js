@@ -55,7 +55,6 @@ class SlideContact extends Component {
                 type="textarea"
                 name="message"
                 maxlength="600"
-                row="5"
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
