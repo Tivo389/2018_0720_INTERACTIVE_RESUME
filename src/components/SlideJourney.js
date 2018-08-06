@@ -13,27 +13,50 @@ class SlideJourney extends Component {
         data-slidejnum={slideJNum}>
         <div className="journeyWrapper">
 
-          <div className="spriteBox">
+          <div className="spriteContainer">
             <object
               data={imagePath}
               type="image/svg+xml"
-              alt={`Image for Journey ${slideJNum}`}>
+            alt={`Image for Journey ${slideJNum}`}>
             </object>
           </div>
 
-          <div>
+          <div className="infoContainer">
             <h6>{journey.name}</h6>
-            <p><i className="fas fa-map-marker-alt"></i> {journey.location}</p>
-            {journey.www && <p><i className="fas fa-link"></i> {journey.www}</p>}
+            <div>
+              <i className="fas fa-map-marker-alt"></i>
+              <p>{journey.location}</p>
+            </div>
+            {journey.www &&
+              <div>
+                <a href={journey.www}>
+                  <i className="fas fa-link"></i>
+                  <p>{journey.name} Website</p>
+                </a>
+              </div>
+            }
             <h6>Role &amp; Contribution</h6>
-            <p><i className="fas fa-id-badge"></i> {journey.role}</p>
+            <div>
+              <i class="fas fa-id-card-alt"></i>
+              <p>{journey.role}</p>
+            </div>
             {journey.contributions && journey.contributions.map((element,key) => (
-                <p key={key}><i className="fas fa-trophy"></i> {element}</p>
+              <div>
+                <i className="fas fa-trophy"></i>
+                <p key={key}>{element}</p>
+              </div>
             ))}
-            {journey.folioUrl && <p><i className="fas fa-link"></i> {journey.folioUrl}</p>}
+            {journey.folioUrl &&
+              <div>
+                <a href={journey.folioUrl}>
+                  <i className="fas fa-link"></i>
+                  <p>See it on my portfolio</p>
+                </a>
+              </div>
+            }
           </div>
 
-          <div>
+          <div className="descriptionContainer">
             <h6>Description</h6>
             {Object.keys(journey.descriptions).map(key => (
               <p key={key}>&bull; {journey.descriptions[key]}</p>

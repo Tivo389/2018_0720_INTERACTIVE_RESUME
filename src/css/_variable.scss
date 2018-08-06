@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,300,400|Crimson+Text');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,300,400,500|Crimson+Text');
 // font-family: 'Roboto Condensed', sans-serif;
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Crimson Text', serif;
@@ -19,7 +19,7 @@ $colorGraphDark: #0093BF;
 $ffBody: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $ffBodyCon: "Roboto Condensed", "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $ffHeader: "Crimson Text", "Times New Roman", "Times", "Georgia", "Palatino", serif;
-$fsP: 1.4rem;                   // BODY TEXT
+$fsP: 1.6rem;                   // BODY TEXT
 $fsH1: calc(#{$fsP} * 2.46);    // PAGE BANNER
 $fsH2: calc(#{$fsP} * 2.46);    // PAGE MAIN HEADER
 $fsH3: calc(#{$fsP} * 2.46);    // PAGE SUB HEADER

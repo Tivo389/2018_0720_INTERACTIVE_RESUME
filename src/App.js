@@ -59,7 +59,6 @@ class App extends Component {
           journeyDetails={this.state.journeyDetails}
           currentSlideNum={this.state.currentSlideNum}
           currentJourneySlideNum={this.state.currentJourneySlideNum}/>
-        <div className="hidden">
         <SlideLanding slideNum="1"/>
         <SlideIntro
           slideNum="2"
@@ -79,7 +78,6 @@ class App extends Component {
           slideNum="4"
           loadingStatus="3/3"
           text={["My journey so far..."]}/>
-        </div>
         <SlideJourney
           slideNum="5"
           slideJNum="1"
