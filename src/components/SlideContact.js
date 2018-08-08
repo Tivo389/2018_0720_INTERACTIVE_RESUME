@@ -25,36 +25,36 @@ class SlideContact extends Component {
             method="post"
             action="php/mail.php">
             {/* 888 NEED TO TEST PHP LATER*/}
-            <div class="formGroup">
-              <label for="email">your email</label>
+            <div className="formGroup">
+              <label htmlFor="email">your email</label>
               <input
                 id="email"
                 type="email"
                 name="email"
-                maxlength="50"
+                maxLength="50"
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 required/>
             </div>
-            <div class="formGroup">
-              <label for="subject">subject</label>
+            <div className="formGroup">
+              <label htmlFor="subject">subject</label>
               <input
                 id="subject"
                 type="text"
                 name="subject"
-                maxlength="50"
+                maxLength="50"
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 required/>
             </div>
-            <div class="formGroup">
-              <label for="message">message</label>
+            <div className="formGroup">
+              <label htmlFor="message">message</label>
               <span className="characterCount">600</span>
               <textarea
                 id="message"
                 type="textarea"
                 name="message"
-                maxlength="600"
+                maxLength="600"
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
