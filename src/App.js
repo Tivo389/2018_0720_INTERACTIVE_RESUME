@@ -35,6 +35,7 @@ class App extends Component {
   }
   componentDidUpdate() {
     // console.log('componentDidUpdate!');
+    this.statBarPadding();
   }
 
   // RENDER OF COMPONENT
@@ -219,6 +220,21 @@ class App extends Component {
     this.checkSlideAttributes();
     this.checkActiveStatus();
   }, 250);
+
+  // FUNCTION THAT CHECKS IF STATBAR IS ACTIVE.
+  // - If the statBar is active, padding-top will be added to the slide.
+  // - 38px is based on the timeline + margin distance from the bottom of viewport.
+  statBarPadding = () => {
+    // console.log('statBarPadding');
+    const slides = document.querySelectorAll("section[class^='slide']");
+    if(this.state.statBarActive) {
+      const statBar = document.querySelector('#statBar');
+      const statBarHeight = `${statBar.getBoundingClientRect().height - 38}px`;
+      slides.forEach(slide => slide.style.paddingTop = statBarHeight);
+    } else {
+      slides.forEach(slide => slide.style.paddingTop = 0);
+    }
+  };
 
 }
 

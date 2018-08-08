@@ -223,7 +223,6 @@ const db = {
       tools: [
         'Github',
         'Koala',
-        'Slack',
         'Sublime Text'
       ]
     },
@@ -297,7 +296,6 @@ const db = {
         'Github',
         'jQuery',
         'Koala',
-        'Slack',
         'Sublime Text'
       ]
     },
@@ -362,24 +360,17 @@ const db = {
         c5: {
           appName: 'Rails',
           appStat: 60
-        },
-        c6: {
-          appName: 'Angular',
-          appStat: 40
-        },
-        c7: {
-          appName: 'React',
-          appStat: 40
         }
       },
       tools: [
+        'Angular',
         'Google AdWords',
         'Google Analytics',
         'Github',
         'Gulp',
         'jQuery',
         'Koala',
-        'Slack',
+        'React',
         'Sublime Text',
         'Snap.svg'
       ]
