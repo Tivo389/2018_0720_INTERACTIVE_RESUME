@@ -4,17 +4,17 @@ class StatBarTools extends Component {
 
   // RENDER OF COMPONENT
   render() {
-    const list = [...this.props.statTools];
-    const listSets = [];
-    while (list.length > 0) listSets.push(list.splice(0,7));
+    const statTools = [...this.props.statTools];
+    const tools = [];
+    while (statTools.length > 0) tools.push(statTools.splice(0,5));
     return (
-      <div className="statBarBlock statBarList">
+      <div className="statBarBlock statBarTools">
         <h6>Tools<span className="subText60"> (Frameworks, Libraries, etc.)</span></h6>
-        <div className="listSetContainer">
-          {Object.keys(listSets).map(keyOne =>
+        <div className="toolsContainer">
+          {Object.keys(tools).map(keyOne =>
             <div key={keyOne} className="listSet">
-              {Object.keys(listSets[keyOne]).map(keyTwo =>
-                <p key={keyTwo}>&bull; { listSets[keyOne][keyTwo] }</p>
+              {Object.keys(tools[keyOne]).map(keyTwo =>
+                <p key={keyTwo}>&bull; { tools[keyOne][keyTwo] }</p>
               )}
             </div>
           )}

@@ -7,7 +7,7 @@
 @import '_mediaQuery';
 
 @import '_statBarLoading';
-@import '_statBarList';
+@import '_statBarTools';
 @import '_statBar';
 
 @import '_timelineLoading';
@@ -46,6 +46,10 @@ section {
 }
 
 // CLASS LEVEL ------------------------------------------------------------------------------------
+[class^="slide"] {
+  transition-duration: $transitionS;
+}
+
 .mainWrapper {
   align-items: center;
   display: flex;

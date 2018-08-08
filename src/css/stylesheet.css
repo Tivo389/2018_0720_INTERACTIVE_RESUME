@@ -401,26 +401,29 @@ a {
   width: 100vw;
   z-index: -10; }
 
-.statBarList {
+.statBarTools {
   display: flex;
   flex-direction: column; }
-  .statBarList h5 {
+  .statBarTools h5 {
     display: inline-block;
     margin: 0; }
-  .statBarList .listSetContainer {
+  .statBarTools .toolsContainer {
     display: flex; }
-    .statBarList .listSetContainer .listSet {
-      display: inline-block; }
-      .statBarList .listSetContainer .listSet + .listSet {
-        margin-left: 2em; }
-      .statBarList .listSetContainer .listSet p:not(:first-child) {
-        margin-top: 0.3rem; }
+  .statBarTools .listSet {
+    display: inline-block; }
+    .statBarTools .listSet + .listSet {
+      margin-left: 2em; }
+    .statBarTools .listSet p {
+      font-size: 1.2rem;
+      letter-spacing: 0.05em; }
+      .statBarTools .listSet p:not(:first-child) {
+        margin-top: calc(0.33em * 0.6); }
 
-#statBar {
+.statBar {
   background-color: #00A5D5;
   display: flex;
   left: 0;
-  padding: 2em 4em;
+  padding: 1.6em 3.2em;
   position: fixed;
   right: 0;
   top: 0;
@@ -428,18 +431,18 @@ a {
   transition-delay: 0.3s;
   transition-duration: 0.3s;
   width: 100vw; }
-  #statBar.active {
+  .statBar.active {
     transform: translateY(0); }
-  #statBar .statBarBlock {
+  .statBar .statBarBlock {
     flex: 1 0;
     margin-left: 6.5em; }
-  #statBar h6, #statBar p {
+  .statBar h6, .statBar p {
     color: #FFFFFF; }
-  #statBar h6 {
+  .statBar h6 {
     font-weight: 400;
     letter-spacing: 0.035em;
-    margin-bottom: 0.3rem; }
-  #statBar p {
+    margin-bottom: 0.33em; }
+  .statBar p {
     font-size: 1.35rem;
     font-weight: 100;
     letter-spacing: 0.075em; }
@@ -553,9 +556,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  .radarGraphContainer p {
-    color: inherit;
-    font-size: inherit; }
   .radarGraphContainer .top {
     top: 0;
     left: 50%;
@@ -573,7 +573,7 @@ a {
   align-items: center;
   display: flex; }
   .barGraphWrapper + .barGraphWrapper {
-    margin-top: 0.3rem; }
+    margin-top: 0.33em; }
   .barGraphWrapper .barTitle {
     flex: 0 0 auto;
     max-width: 114px;
@@ -654,7 +654,7 @@ a {
   flex-direction: column; }
   .slideText p {
     font-family: "Crimson Text", "Times New Roman", "Times", "Georgia", "Palatino", serif;
-    font-size: calc(1.6rem * 1.35); }
+    font-size: calc(1.6rem * 1.83); }
 
 .slideContact .formWrapper {
   width: 60%; }
@@ -794,6 +794,9 @@ section {
   height: 100vh;
   justify-content: center;
   width: 100vw; }
+
+[class^="slide"] {
+  transition-duration: 0.3s; }
 
 .mainWrapper {
   align-items: center;

@@ -8,7 +8,7 @@ class StatBar extends Component {
   // RENDER OF COMPONENT
   render() {
     const isActive = this.props.statBarActive;
-    const classValue = isActive ? 'active' : '';
+    const classValue = isActive ? 'statBar active' : 'statBar';
     const jData = this.props.journeyDetails;
     const jNum = `j${this.props.currentJourneySlideNum}`;
     const radarPoints = jData[jNum].stats.radar;
