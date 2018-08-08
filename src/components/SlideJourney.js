@@ -37,13 +37,13 @@ class SlideJourney extends Component {
             }
             <h6>Role &amp; Contribution</h6>
             <div>
-              <i class="fas fa-id-card-alt"></i>
+              <i className="fas fa-id-card-alt"></i>
               <p>{journey.role}</p>
             </div>
             {journey.contributions && journey.contributions.map((element,key) => (
-              <div>
+              <div key={key}>
                 <i className="fas fa-trophy"></i>
-                <p key={key}>{element}</p>
+                <p>{element}</p>
               </div>
             ))}
             {journey.folioUrl &&
@@ -58,8 +58,8 @@ class SlideJourney extends Component {
 
           <div className="descriptionContainer">
             <h6>Description</h6>
-            {Object.keys(journey.descriptions).map(key => (
-              <p key={key}>&bull; {journey.descriptions[key]}</p>
+            {Object.keys(journey.descriptions).map((element,key) => (
+              <p key={key}>&bull; {journey.descriptions[element]}</p>
             ))}
           </div>
 
