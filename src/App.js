@@ -16,7 +16,7 @@ class App extends Component {
 
   // STATE & PROPERTIES OF COMPONENT
   state = {
-    currentJourneySlideNum: 1,
+    currentJourneySlideNum: 0,
     currentSlideNum: 1,
     journeyDetails: db,
     loadProgress: 0,
@@ -177,7 +177,7 @@ class App extends Component {
     let sHasLoadAttr;
     let loadingStatus;
     let slideNum = this.state.currentSlideNum;
-    let slideJNum = this.state.currentJourneySlideNum;
+    let slideJNum = 0;
     app.childNodes.forEach((slide) => {
       const sInView = slide.getBoundingClientRect().x === 0;
       const sHasLoading = slide.attributes['data-loadingstatus'];

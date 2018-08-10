@@ -1,4 +1,23 @@
 const db = {
+  j0: {
+    yearStart: 0,
+    yearEnd: 0,
+    stats: {
+      radar: '90 93.106 97.91 107.506 65.955 117.248',
+      apps: {},
+      codes: {},
+      tools: []
+    },
+    details: {
+      name: '',
+      location: '',
+      www: null,
+      role: '',
+      contributions: [],
+      folioUrl: null,
+      descriptions: {}
+    }
+  },
   j1: {
     yearStart: 2008,
     yearEnd: 2009,
@@ -15,7 +34,7 @@ const db = {
         }
       },
       codes: {},
-      tools: [],
+      tools: []
     },
     details: {
       name: 'Freelance',

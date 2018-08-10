@@ -22,3 +22,14 @@
     }
   }
 }
+
+// CSSTransition styling
+.barGraphWrapper {
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition-duration: $transitionS;
+}
+.barGraphTransition-enter-active,
+.barGraphTransition-enter-done {
+  transform: scaleY(1);
+}
