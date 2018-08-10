@@ -6,26 +6,20 @@ class StatBarTools extends Component {
   // RENDER OF COMPONENT
   render() {
     const statTools = [...this.props.statTools];
-    const tools = [];
-    while (statTools.length > 0) tools.push(statTools.splice(0,5));
     return (
       <div className="statBarBlock statBarTools">
         <h6>
           Tools<span className="subText60"> (Frameworks, Libraries, etc.)</span>
         </h6>
         <div className="toolsContainer">
-          {Object.keys(tools).map(keyOne =>
-            <TransitionGroup component="div" key={keyOne} className="listSet">
-              {Object.keys(tools[keyOne]).map(keyTwo =>
-                <CSSTransition
-                  key={keyTwo}
-                  classNames="listSetText"
-                  timeout={3000}>
-                  <p key={keyTwo}>&bull; { tools[keyOne][keyTwo] }</p>
-                </CSSTransition>
-              )}
-            </TransitionGroup>
-          )}
+          <TransitionGroup component="div" className="listSet">
+            {Object.keys(statTools).map(key =>
+              statTools[key].active &&
+              <CSSTransition key={key} classNames="listSetText" timeout={300}>
+                <p className="active" key={key}>&bull; {statTools[key].name}</p>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
         </div>
       </div>
     );

@@ -6,7 +6,48 @@ const db = {
       radar: '90 93.106 97.91 107.506 65.955 117.248',
       apps: {},
       codes: {},
-      tools: []
+      tools: [
+        {
+          name: 'Angular',
+          active: false
+        },
+        {
+          name: 'Google AdWords',
+          active: false
+        },
+        {
+          name: 'Google Analytics',
+          active: false
+        },
+        {
+          name: 'Github',
+          active: false
+        },
+        {
+          name: 'Gulp',
+          active: false
+        },
+        {
+          name: 'jQuery',
+          active: false
+        },
+        {
+          name: 'Koala',
+          active: false
+        },
+        {
+          name: 'React',
+          active: false
+        },
+        {
+          name: 'Sublime Text',
+          active: false
+        },
+         {
+          name: 'Snap.svg',
+          active: false
+        }
+      ]
     },
     details: {
       name: '',
@@ -34,7 +75,48 @@ const db = {
         }
       },
       codes: {},
-      tools: []
+      tools: [
+        {
+          name: 'Angular',
+          active: false
+        },
+        {
+          name: 'Google AdWords',
+          active: false
+        },
+        {
+          name: 'Google Analytics',
+          active: false
+        },
+        {
+          name: 'Github',
+          active: false
+        },
+        {
+          name: 'Gulp',
+          active: false
+        },
+        {
+          name: 'jQuery',
+          active: false
+        },
+        {
+          name: 'Koala',
+          active: false
+        },
+        {
+          name: 'React',
+          active: false
+        },
+        {
+          name: 'Sublime Text',
+          active: false
+        },
+        {
+          name: 'Snap.svg',
+          active: false
+        }
+      ]
     },
     details: {
       name: 'Freelance',
@@ -78,7 +160,48 @@ const db = {
         }
       },
       codes: {},
-      tools: []
+      tools: [
+        {
+          name: 'Angular',
+          active: false
+        },
+        {
+          name: 'Google AdWords',
+          active: false
+        },
+        {
+          name: 'Google Analytics',
+          active: false
+        },
+        {
+          name: 'Github',
+          active: false
+        },
+        {
+          name: 'Gulp',
+          active: false
+        },
+        {
+          name: 'jQuery',
+          active: false
+        },
+        {
+          name: 'Koala',
+          active: false
+        },
+        {
+          name: 'React',
+          active: false
+        },
+        {
+          name: 'Sublime Text',
+          active: false
+        },
+        {
+          name: 'Snap.svg',
+          active: false
+        }
+      ]
     },
     details: {
       name: 'Planet Ads & Design',
@@ -131,7 +254,48 @@ const db = {
           appStat: 20
         }
       },
-      tools: []
+      tools: [
+        {
+          name: 'Angular',
+          active: false
+        },
+        {
+          name: 'Google AdWords',
+          active: false
+        },
+        {
+          name: 'Google Analytics',
+          active: false
+        },
+        {
+          name: 'Github',
+          active: false
+        },
+        {
+          name: 'Gulp',
+          active: false
+        },
+        {
+          name: 'jQuery',
+          active: false
+        },
+        {
+          name: 'Koala',
+          active: false
+        },
+        {
+          name: 'React',
+          active: false
+        },
+        {
+          name: 'Sublime Text',
+          active: false
+        },
+        {
+          name: 'Snap.svg',
+          active: false
+        }
+      ]
     },
     details: {
       name: 'Minook International',
@@ -183,7 +347,48 @@ const db = {
           appStat: 20
         }
       },
-      tools: []
+      tools: [
+        {
+          name: 'Angular',
+          active: false
+        },
+        {
+          name: 'Google AdWords',
+          active: false
+        },
+        {
+          name: 'Google Analytics',
+          active: false
+        },
+        {
+          name: 'Github',
+          active: false
+        },
+        {
+          name: 'Gulp',
+          active: false
+        },
+        {
+          name: 'jQuery',
+          active: false
+        },
+        {
+          name: 'Koala',
+          active: false
+        },
+        {
+          name: 'React',
+          active: false
+        },
+        {
+          name: 'Sublime Text',
+          active: false
+        },
+        {
+          name: 'Snap.svg',
+          active: false
+        }
+      ]
     },
     details: {
       name: 'Freelance',
@@ -240,9 +445,46 @@ const db = {
         }
       },
       tools: [
-        'Github',
-        'Koala',
-        'Sublime Text'
+        {
+          name: 'Angular',
+          active: false
+        },
+        {
+          name: 'Google AdWords',
+          active: false
+        },
+        {
+          name: 'Google Analytics',
+          active: false
+        },
+        {
+          name: 'Github',
+          active: true
+        },
+        {
+          name: 'Gulp',
+          active: false
+        },
+        {
+          name: 'jQuery',
+          active: false
+        },
+        {
+          name: 'Koala',
+          active: true
+        },
+        {
+          name: 'React',
+          active: false
+        },
+        {
+          name: 'Sublime Text',
+          active: true
+        },
+        {
+          name: 'Snap.svg',
+          active: false
+        }
       ]
     },
     details: {
@@ -312,10 +554,46 @@ const db = {
         }
       },
       tools: [
-        'Github',
-        'jQuery',
-        'Koala',
-        'Sublime Text'
+        {
+          name: 'Angular',
+          active: false
+        },
+        {
+          name: 'Google AdWords',
+          active: false
+        },
+        {
+          name: 'Google Analytics',
+          active: false
+        },
+        {
+          name: 'Github',
+          active: true
+        },
+        {
+          name: 'Gulp',
+          active: false
+        },
+        {
+          name: 'jQuery',
+          active: true
+        },
+        {
+          name: 'Koala',
+          active: true
+        },
+        {
+          name: 'React',
+          active: false
+        },
+        {
+          name: 'Sublime Text',
+          active: true
+        },
+        {
+          name: 'Snap.svg',
+          active: false
+        }
       ]
     },
     details: {
@@ -382,16 +660,46 @@ const db = {
         }
       },
       tools: [
-        'Angular',
-        'Google AdWords',
-        'Google Analytics',
-        'Github',
-        'Gulp',
-        'jQuery',
-        'Koala',
-        'React',
-        'Sublime Text',
-        'Snap.svg'
+        {
+          name: 'Angular',
+          active: true
+        },
+        {
+          name: 'Google AdWords',
+          active: true
+        },
+        {
+          name: 'Google Analytics',
+          active: true
+        },
+        {
+          name: 'Github',
+          active: true
+        },
+        {
+          name: 'Gulp',
+          active: true
+        },
+        {
+          name: 'jQuery',
+          active: true
+        },
+        {
+          name: 'Koala',
+          active: true
+        },
+        {
+          name: 'React',
+          active: true
+        },
+        {
+          name: 'Sublime Text',
+          active: true
+        },
+        {
+          name: 'Snap.svg',
+          active: true
+        }
       ]
     },
     details: {

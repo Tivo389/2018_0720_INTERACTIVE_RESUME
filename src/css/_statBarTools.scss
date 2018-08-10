@@ -10,9 +10,7 @@
   }
   .listSet {
     display: inline-block;
-    + .listSet {
-      margin-left: 2em;
-    }
+    column-count: 2;
     p {
       font-size: 1.2rem;
       letter-spacing: 0.05em;
@@ -23,13 +21,13 @@
   }
 }
 
-// CSSTransition styling
-.barGraphWrapper {
+// React-CSSTransition Styling
+.listSet p {
   transform-origin: top center;
   transform: scaleY(0);
   transition-duration: $transitionS;
-}
-.barGraphTransition-enter-active,
-.barGraphTransition-enter-done {
-  transform: scaleY(1);
+  &.listSetText-enter-active,
+  &.listSetText-enter-done {
+    transform: scaleY(1);
+  }
 }
