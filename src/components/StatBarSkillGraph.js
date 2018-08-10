@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import StatBarBarGraph from './StatBarBarGraph';
 
 class StatBarSkillGraph extends Component {
@@ -9,14 +10,19 @@ class StatBarSkillGraph extends Component {
     return (
       <div className="statBarBlock">
         <h6>{title}</h6>
-        {
-          Object.keys(j.stats[path]).map(key =>
-            <StatBarBarGraph
+        <TransitionGroup component={null}>
+          {Object.keys(j.stats[path]).map(key =>
+            <CSSTransition
               key={key}
-              barIndex={key}
-              details={j.stats[path][key]}/>
-          )
-        }
+              classNames="barGraphTransition"
+              timeout={300}>
+              <StatBarBarGraph
+                key={key}
+                barIndex={key}
+                details={j.stats[path][key]}/>
+            </CSSTransition>
+          )}
+        </TransitionGroup>
       </div>
     );
   }

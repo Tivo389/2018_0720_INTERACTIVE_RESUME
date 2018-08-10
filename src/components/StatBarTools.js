@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class StatBarTools extends Component {
 
@@ -9,14 +10,21 @@ class StatBarTools extends Component {
     while (statTools.length > 0) tools.push(statTools.splice(0,5));
     return (
       <div className="statBarBlock statBarTools">
-        <h6>Tools<span className="subText60"> (Frameworks, Libraries, etc.)</span></h6>
+        <h6>
+          Tools<span className="subText60"> (Frameworks, Libraries, etc.)</span>
+        </h6>
         <div className="toolsContainer">
           {Object.keys(tools).map(keyOne =>
-            <div key={keyOne} className="listSet">
+            <TransitionGroup component="div" key={keyOne} className="listSet">
               {Object.keys(tools[keyOne]).map(keyTwo =>
-                <p key={keyTwo}>&bull; { tools[keyOne][keyTwo] }</p>
+                <CSSTransition
+                  key={keyTwo}
+                  classNames="listSetText"
+                  timeout={3000}>
+                  <p key={keyTwo}>&bull; { tools[keyOne][keyTwo] }</p>
+                </CSSTransition>
               )}
-            </div>
+            </TransitionGroup>
           )}
         </div>
       </div>

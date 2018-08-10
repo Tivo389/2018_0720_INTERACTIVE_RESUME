@@ -33,3 +33,14 @@
     }
   }
 }
+
+// CSSTransition styling
+.listSet p {
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition-duration: $transitionS;
+  &.listSetText-enter-active,
+  &.listSetText-enter-done {
+    transform: scaleY(1);
+  }
+}
