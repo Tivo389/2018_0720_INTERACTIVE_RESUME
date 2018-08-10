@@ -35,12 +35,12 @@
 }
 
 // CSSTransition styling
-.listSet p {
+.barGraphWrapper {
   transform-origin: top center;
   transform: scaleY(0);
   transition-duration: $transitionS;
-  &.listSetText-enter-active,
-  &.listSetText-enter-done {
-    transform: scaleY(1);
-  }
+}
+.barGraphTransition-enter-active,
+.barGraphTransition-enter-done {
+  transform: scaleY(1);
 }

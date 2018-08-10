@@ -230,7 +230,12 @@ class App extends Component {
     if(this.state.statBarActive) {
       const statBar = document.querySelector('#statBar');
       const statBarHeight = `${statBar.getBoundingClientRect().height - 38}px`;
-      slides.forEach(slide => slide.style.paddingTop = statBarHeight);
+      // Note the backup value for 'delay' is based on statBar.scss.
+      const delay = window.getComputedStyle(statBar).transitionDelay || '0.3s';
+      slides.forEach(slide => {
+        slide.style.transitionDelay = delay;
+        slide.style.paddingTop = statBarHeight;
+      });
     } else {
       slides.forEach(slide => slide.style.paddingTop = 0);
     }
