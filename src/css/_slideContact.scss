@@ -29,6 +29,7 @@
       font-weight: 100;
       letter-spacing: 0.075em;
       padding: 0.6em 1.6em;
+      box-shadow: $colorSub 0 2px;
       &:active {
         transform: translateY(2px);
       }
@@ -61,10 +62,14 @@
       resize: none;
       line-height: 165%;
       height: 14em;
+      &:invalid {
+        box-shadow: none;
+      }
     }
     .formGroup {
       border-radius: 0.15em;
       border: 1px solid $colorMain;
+      overflow: auto;
       position: relative;
       &.active label {
         font-size: 0.8rem;
@@ -78,6 +83,7 @@
         margin-top: 1.2em;
       }
       .characterCount {
+        font-family: $ffBody;
         color: $colorGray;
         position: absolute;
         right: 0.6em;

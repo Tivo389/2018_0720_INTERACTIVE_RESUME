@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,300,400,500|Crimson+Text');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:100,300,400,500|Crimson+Text');
 // font-family: 'Roboto Condensed', sans-serif;
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Crimson Text', serif;
@@ -32,6 +32,8 @@ $statLeading: 0.33em;
 $spaceUnitS: 3rem;
 $spaceUnitM: 6rem;
 $spaceUnitL: 9rem;
+
+$timeLineUnit: 2px;
 
 $transitionS: 0.3s;
 $transitionM: 0.6s;

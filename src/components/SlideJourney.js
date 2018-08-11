@@ -22,20 +22,20 @@ class SlideJourney extends Component {
           </div>
 
           <div className="infoContainer">
-            <h6>{journey.name}</h6>
+            <h5>{journey.name}</h5>
             <div>
               <i className="fas fa-map-marker-alt"></i>
               <p>{journey.location}</p>
             </div>
             {journey.www &&
               <div>
-                <a href={journey.www}>
+                <a href={journey.www} target="_blank">
                   <i className="fas fa-link"></i>
-                  <p>{journey.name} Website</p>
+                  <p>{journey.name}</p>
                 </a>
               </div>
             }
-            <h6>Role &amp; Contribution</h6>
+            <h5>Role &amp; Contribution</h5>
             <div>
               <i className="fas fa-id-card-alt"></i>
               <p>{journey.role}</p>
@@ -57,7 +57,7 @@ class SlideJourney extends Component {
           </div>
 
           <div className="descriptionContainer">
-            <h6>Description</h6>
+            <h5>Description</h5>
             {Object.keys(journey.descriptions).map((element,key) => (
               <p key={key}>&bull; {journey.descriptions[element]}</p>
             ))}

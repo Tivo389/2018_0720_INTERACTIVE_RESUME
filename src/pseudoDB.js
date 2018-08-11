@@ -1,7 +1,7 @@
 const db = {
   j0: {
-    yearStart: 0,
-    yearEnd: 0,
+    yearStart: '20XX',
+    yearEnd: '20XX',
     stats: {
       radar: '90 93.106 97.91 107.506 65.955 117.248',
       apps: {},
