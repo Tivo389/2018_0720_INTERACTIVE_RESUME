@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import TimelineLoading from './TimelineLoading';
+import AnimateOnChange from 'react-animate-on-change';
 
 class Timeline extends Component {
+
   // RENDER OF COMPONENT
   render() {
-    const isActive = this.props.timelineActive;
+    const isActive = this.props.activeTimeline;
     const loadProgress = this.props.loadProgress;
-    const jData = this.props.journeyDetails;
+    const jData = this.props.database;
     const sNum = this.props.currentSlideNum;
     const jNum = `j${this.props.currentJourneySlideNum}`;
     const j = jData[jNum];
@@ -14,7 +16,17 @@ class Timeline extends Component {
     return (
       <div id="timeline" className={classValue}>
         <ul className="timePeriod">
-          { sNum <= 11 ? (<li>{j.yearStart}</li>) : (<li>2019</li>) }
+          { (sNum >= 5 && sNum <= 11) ? (
+              <AnimateOnChange
+                customTag="li"
+                baseClassName="year"
+                animationClassName="yearActive"
+                animate={true}>
+                {j.yearStart}
+              </AnimateOnChange>
+            ) : (
+              <li>2019</li>
+          ) }
           <li></li>
           <li></li>
           <li></li>
@@ -28,8 +40,18 @@ class Timeline extends Component {
           <li></li>
           <li></li>
           <li></li>
-          { sNum <= 11 ? (<li>{j.yearEnd}</li>) : (<li>20XX</li>) }
-          <TimelineLoading loadProgress={loadProgress} timelineActive={isActive}/>
+          { (sNum >= 5 && sNum <= 11) ? (
+              <AnimateOnChange
+                customTag="li"
+                baseClassName="year"
+                animationClassName="yearActive"
+                animate={true}>
+                {j.yearEnd}
+              </AnimateOnChange>
+            ) : (
+              <li>20XX</li>
+          ) }
+          <TimelineLoading loadProgress={loadProgress} activeTimeline={isActive}/>
         </ul>
         <ul className="timeLinks">
           <a href="#s1" onClick={this.handleHashClick}>
@@ -72,6 +94,7 @@ class Timeline extends Component {
     const target = document.querySelector(e.currentTarget.attributes.href.value);
     target.scrollIntoView({ behavior:'smooth' });
   };
+
 }
 
 export default Timeline;
