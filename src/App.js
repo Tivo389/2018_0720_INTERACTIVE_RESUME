@@ -33,7 +33,7 @@ class App extends Component {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
   componentWillUpdate() {
-    // console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
+    console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
   }
   componentDidUpdate() {
     // console.log('componentDidUpdate!');
@@ -118,7 +118,7 @@ class App extends Component {
           imagePath={require('./images/dummy.svg')}/>
         <SlideText
           slideNum="12"
-          text={["Thank you for your time.", "That's my journey so far."]}/>
+          text={["That's my journey so far."]}/>
         <SlideContact slideNum="13"/>
       </main>
     );
@@ -209,10 +209,12 @@ class App extends Component {
   checkActiveStatus = () => {
     // console.log('checkActiveStatus');
     const { showStatBarOn, showTimelineOn, currentSlideNum } = this.state;
-    const sBarActive = showStatBarOn.find(integer => integer === currentSlideNum);
-    const tActive = showTimelineOn.find(integer => integer === currentSlideNum);
-    sBarActive ? this.setState({ activeStatBar: true }) : this.setState({ activeStatBar: false });
-    tActive ? this.setState({ activeTimeline: true }) : this.setState({ activeTimeline: false });
+    const sBarActive = Boolean(showStatBarOn.find(integer => integer === currentSlideNum));
+    const tActive = Boolean(showTimelineOn.find(integer => integer === currentSlideNum));
+    this.setState({
+      activeStatBar: sBarActive,
+      activeTimeline: tActive
+    });
   };
 
   // FUNCTION THAT RUNS FUNCTIONS AFTER THE SCROLL IS COMPLETE.
@@ -220,7 +222,7 @@ class App extends Component {
   handleScroll = debounce(() => {
     this.checkSlideAttributes();
     this.checkActiveStatus();
-  }, 250);
+  }, 350);
 
   // FUNCTION THAT CHECKS IF STATBAR IS ACTIVE.
   // - If the statBar is active, padding-top will be added to the slide.
