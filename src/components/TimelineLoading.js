@@ -4,7 +4,7 @@ class LoadingTimeline extends Component {
 
   // RENDER OF COMPONENT
   render() {
-    const isActive = this.props.timelineActive;
+    const isActive = this.props.activeTimeline;
     const loadProgress = isActive ? 1 : this.props.loadProgress;
     return (
       <div

@@ -16,12 +16,14 @@ class App extends Component {
 
   // STATE & PROPERTIES OF COMPONENT
   state = {
+    activeStatBar: false,
+    activeTimeline: false,
     currentJourneySlideNum: 0,
     currentSlideNum: 1,
-    journeyDetails: db,
+    database: db,
     loadProgress: 0,
-    statBarActive: false,
-    timelineActive: false
+    showStatBarOn: [5,6,7,8,9,10,11],
+    showTimelineOn: [5,6,7,8,9,10,11,12,13]
   };
   // - As a state it would require setState(), resulting in a rapid-rendering.
   scrolledPx = 0;
@@ -47,17 +49,17 @@ class App extends Component {
         onScroll={this.handleScroll}>
         <StatBarLoading
           loadProgress={this.state.loadProgress}
-          statBarActive={this.state.statBarActive}/>
+          activeStatBar={this.state.activeStatBar}/>
         <StatBar
-          statBarActive={this.state.statBarActive}
-          journeyDetails={this.state.journeyDetails}
+          activeStatBar={this.state.activeStatBar}
+          database={this.state.database}
           currentJourneySlideNum={this.state.currentJourneySlideNum}/>
         <Timeline
           loadProgress={this.state.loadProgress}
-          timelineActive={this.state.timelineActive}
+          activeTimeline={this.state.activeTimeline}
           checkSlideAttributes={this.checkSlideAttributes}
           checkActiveStatus={this.checkActiveStatus}
-          journeyDetails={this.state.journeyDetails}
+          database={this.state.database}
           currentSlideNum={this.state.currentSlideNum}
           currentJourneySlideNum={this.state.currentJourneySlideNum}/>
         <SlideLanding slideNum="1"/>
@@ -82,37 +84,37 @@ class App extends Component {
         <SlideJourney
           slideNum="5"
           slideJNum="1"
-          journey={this.state.journeyDetails.j1.details}
+          journey={this.state.database.j1.details}
           imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="6"
           slideJNum="2"
-          journey={this.state.journeyDetails.j2.details}
+          journey={this.state.database.j2.details}
           imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="7"
           slideJNum="3"
-          journey={this.state.journeyDetails.j3.details}
+          journey={this.state.database.j3.details}
           imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="8"
           slideJNum="4"
-          journey={this.state.journeyDetails.j4.details}
+          journey={this.state.database.j4.details}
           imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="9"
           slideJNum="5"
-          journey={this.state.journeyDetails.j5.details}
+          journey={this.state.database.j5.details}
           imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="10"
           slideJNum="6"
-          journey={this.state.journeyDetails.j6.details}
+          journey={this.state.database.j6.details}
           imagePath={require('./images/dummy.svg')}/>
         <SlideJourney
           slideNum="11"
           slideJNum="7"
-          journey={this.state.journeyDetails.j7.details}
+          journey={this.state.database.j7.details}
           imagePath={require('./images/dummy.svg')}/>
         <SlideText
           slideNum="12"
@@ -206,12 +208,11 @@ class App extends Component {
   // - If state.loadingStatus is 1, it will keep active class on.
   checkActiveStatus = () => {
     // console.log('checkActiveStatus');
-    const sBarSlides = [5,6,7,8,9,10,11];
-    const sBarActive = sBarSlides.find(integer => integer === this.state.currentSlideNum);
-    const timelineSlides = [5,6,7,8,9,10,11,12,13];
-    const tActive = timelineSlides.find(integer => integer === this.state.currentSlideNum);
-    sBarActive ? this.setState({ statBarActive: true }) : this.setState({ statBarActive: false });
-    tActive ? this.setState({ timelineActive: true }) : this.setState({ timelineActive: false });
+    const { showStatBarOn, showTimelineOn, currentSlideNum } = this.state;
+    const sBarActive = showStatBarOn.find(integer => integer === currentSlideNum);
+    const tActive = showTimelineOn.find(integer => integer === currentSlideNum);
+    sBarActive ? this.setState({ activeStatBar: true }) : this.setState({ activeStatBar: false });
+    tActive ? this.setState({ activeTimeline: true }) : this.setState({ activeTimeline: false });
   };
 
   // FUNCTION THAT RUNS FUNCTIONS AFTER THE SCROLL IS COMPLETE.
@@ -226,7 +227,7 @@ class App extends Component {
   statBarPadding = () => {
     // console.log('statBarPadding');
     const slides = document.querySelectorAll("section[class^='slide']");
-    if(this.state.statBarActive) {
+    if(this.state.activeStatBar) {
       const statBar = document.querySelector('#statBar');
       const statBarHeight = `${statBar.getBoundingClientRect().height}px`;
       // Note the backup value for 'delay' is based on statBar.scss.
