@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,300,400,500|Crimson+Text");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:100,300,400,500|Crimson+Text");
 html {
   line-height: 1.15;
   /* 1 */
@@ -299,7 +299,8 @@ template {
   display: none; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased; }
 
 a {
   text-decoration: none; }
@@ -455,7 +456,7 @@ a {
 
 #loadingTimeline {
   background-color: #EE86A8;
-  height: 1px;
+  height: 2px;
   left: 0;
   position: absolute;
   right: 0;
@@ -483,7 +484,6 @@ a {
     padding: 0; }
     #timeline ul li {
       font-family: "Roboto Condensed", "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 300;
       font-size: 1.6rem;
       letter-spacing: 0.1em; }
   #timeline .timePeriod {
@@ -493,16 +493,17 @@ a {
     #timeline .timePeriod li {
       background-color: #EE86A8;
       color: #EE86A8;
+      font-weight: 400;
       min-height: 1.6rem;
-      min-width: 1px;
+      min-width: 2px;
       text-align: center;
       transform: translateY(5em);
       transition-duration: 0.3s;
       transition-timing-function: cubic-bezier(0.5, -0.35, 0.5, 1.35); }
       #timeline .timePeriod li:first-of-type, #timeline .timePeriod li:last-of-type {
         background-color: #FFFFFF;
-        border-left: 1px solid #EE86A8;
-        border-right: 1px solid #EE86A8;
+        border-left: 2px solid #EE86A8;
+        border-right: 2px solid #EE86A8;
         padding: 0 0.4em 0 0.5em; }
       #timeline .timePeriod li:nth-child(1) {
         transition-delay: calc(0.05s * 1); }
@@ -517,7 +518,15 @@ a {
       #timeline .timePeriod li:nth-child(6) {
         transition-delay: calc(0.05s * 6); }
       #timeline .timePeriod li:nth-child(7) {
-        transition-delay: calc(0.05s * 7); }
+        transition-delay: calc(0.05s * 7);
+        position: relative; }
+        #timeline .timePeriod li:nth-child(7) svg {
+          color: #EE86A8;
+          font-size: 2.4rem;
+          top: 2.8rem;
+          left: 1px;
+          position: absolute;
+          transform: translate(-50%, -50%); }
       #timeline .timePeriod li:nth-child(8) {
         transition-delay: calc(0.05s * 8); }
       #timeline .timePeriod li:nth-child(9) {
@@ -533,15 +542,15 @@ a {
   #timeline .timeLinks {
     background-color: #EE86A8;
     justify-content: center;
-    margin: 1.5em 0 0 0; }
+    margin: 2.2em 0 0 0; }
     #timeline .timeLinks a:last-child > li {
-      border-right: 1px solid #FFFFFF; }
+      border-right: 2px solid #FFFFFF; }
     #timeline .timeLinks a li {
       padding: 0.45em 0.9em;
       color: #FFFFFF;
       display: flex;
       align-items: center;
-      border-left: 1px solid #FFFFFF; }
+      border-left: 2px solid #FFFFFF; }
       #timeline .timeLinks a li:hover {
         background-color: #e85988; }
       #timeline .timeLinks a li svg {
@@ -695,7 +704,8 @@ a {
     float: right;
     font-weight: 100;
     letter-spacing: 0.075em;
-    padding: 0.6em 1.6em; }
+    padding: 0.6em 1.6em;
+    box-shadow: #EE86A8 0 2px; }
     .slideContact .formWrapper button:active {
       transform: translateY(2px); }
     .slideContact .formWrapper button:hover {
@@ -720,9 +730,12 @@ a {
     resize: none;
     line-height: 165%;
     height: 14em; }
+    .slideContact .formWrapper textarea:invalid {
+      box-shadow: none; }
   .slideContact .formWrapper .formGroup {
     border-radius: 0.15em;
     border: 1px solid #00A5D5;
+    overflow: auto;
     position: relative; }
     .slideContact .formWrapper .formGroup.active label {
       font-size: 0.8rem;
@@ -733,6 +746,7 @@ a {
     .slideContact .formWrapper .formGroup + .formGroup {
       margin-top: 1.2em; }
     .slideContact .formWrapper .formGroup .characterCount {
+      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
       color: #777777;
       position: absolute;
       right: 0.6em;
@@ -748,14 +762,16 @@ a {
     margin-right: 3em; }
     .journeyWrapper > div:last-child {
       flex: 1 0 50%; }
-  .journeyWrapper h6 {
+  .journeyWrapper h5 {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #777777;
     font-weight: 500;
     letter-spacing: 0.02em;
     line-height: 100%;
-    margin-bottom: 0.4em; }
-    .journeyWrapper h6:not(:first-of-type) {
-      margin-top: 1.2em; }
+    margin-bottom: 0.4em;
+    font-size: 1.8rem; }
+    .journeyWrapper h5:not(:first-of-type) {
+      margin-top: 1.4em; }
 
 .spriteContainer {
   border-radius: 1em;
@@ -775,14 +791,32 @@ a {
 .infoContainer svg {
   color: #EE86A8;
   font-size: calc(1.6rem * 0.85);
-  margin-right: 0.25em;
-  width: 1.25em !important; }
+  margin-right: 0.4em;
+  width: 1.2em !important; }
 
 .infoContainer p {
   line-height: 100%; }
 
-.infoContainer a > p {
-  display: inline-block; }
+.infoContainer a {
+  position: relative; }
+  .infoContainer a::after {
+    background-color: #EE86A8;
+    bottom: -2px;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition-duration: 0.3s;
+    width: 100%;
+    z-index: -10; }
+  .infoContainer a:hover::after {
+    transform: scaleX(1); }
+  .infoContainer a > p {
+    display: inline-block; }
 
 .descriptionContainer p {
   padding: 0 0 0 0.6em;
@@ -811,7 +845,8 @@ section {
   width: 100vw; }
 
 [class^="slide"] {
-  transition-duration: 0.3s; }
+  transition-duration: 0.3s;
+  padding: 0 0 38px 0; }
 
 .mainWrapper {
   align-items: center;

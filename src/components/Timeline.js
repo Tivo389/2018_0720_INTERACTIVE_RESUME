@@ -20,7 +20,9 @@ class Timeline extends Component {
           <li></li>
           <li></li>
           <li></li>
-          <li></li>
+          <li>
+            <i class="fas fa-caret-down"></i>
+          </li>
           <li></li>
           <li></li>
           <li></li>

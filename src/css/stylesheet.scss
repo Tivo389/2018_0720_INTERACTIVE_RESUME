@@ -48,6 +48,7 @@ section {
 // CLASS LEVEL ------------------------------------------------------------------------------------
 [class^="slide"] {
   transition-duration: $transitionS;
+  padding: 0 0 38px 0; // 38px based on timeline + margin.
 }
 
 .mainWrapper {

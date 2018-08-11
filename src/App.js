@@ -223,13 +223,12 @@ class App extends Component {
 
   // FUNCTION THAT CHECKS IF STATBAR IS ACTIVE.
   // - If the statBar is active, padding-top will be added to the slide.
-  // - 38px is based on the timeline + margin distance from the bottom of viewport.
   statBarPadding = () => {
     // console.log('statBarPadding');
     const slides = document.querySelectorAll("section[class^='slide']");
     if(this.state.statBarActive) {
       const statBar = document.querySelector('#statBar');
-      const statBarHeight = `${statBar.getBoundingClientRect().height - 38}px`;
+      const statBarHeight = `${statBar.getBoundingClientRect().height}px`;
       // Note the backup value for 'delay' is based on statBar.scss.
       const delay = window.getComputedStyle(statBar).transitionDelay || '0.3s';
       slides.forEach(slide => {
