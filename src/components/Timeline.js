@@ -21,7 +21,7 @@ class Timeline extends Component {
           <li></li>
           <li></li>
           <li>
-            <i class="fas fa-caret-down"></i>
+            <i className="fas fa-caret-down"></i>
           </li>
           <li></li>
           <li></li>
@@ -48,11 +48,11 @@ class Timeline extends Component {
             <li>2016</li>
           </a>
           <a href="#s9" onClick={this.handleHashClick}>
-            <li>2017</li>
+            <li>2017-A</li>
           </a>
           <a href="#s10" onClick={this.handleHashClick}>
-            <li><i className="fas fa-code"></i></li>
-            {/*<li><i className="fas fa-shuttle-van"></i></li>*/}
+            <li>2017-B</li>
+            {/*<li><i className="fas fa-code"></i></li>*/}
           </a>
           <a href="#s11" onClick={this.handleHashClick}>
             <li>2017 – 2018</li>

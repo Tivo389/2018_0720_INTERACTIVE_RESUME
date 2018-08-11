@@ -799,20 +799,36 @@ a {
 
 .infoContainer a {
   position: relative; }
+  .infoContainer a::before, .infoContainer a::after {
+    display: inline-block;
+    left: 0;
+    position: absolute;
+    z-index: -10;
+    transition-duration: 0.3s; }
+  .infoContainer a::before {
+    background-color: #AAAAAA;
+    border-radius: 0.4em;
+    bottom: -2.2em;
+    color: #FFFFFF;
+    content: 'Will open in a new tab';
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    opacity: 0;
+    padding: 0.4em 0.5em 0.3em 0.5em;
+    transform: translateY(-100%); }
+  .infoContainer a:hover::before {
+    transform: translateY(0);
+    opacity: 1; }
   .infoContainer a::after {
     background-color: #EE86A8;
     bottom: -2px;
     content: '';
-    display: block;
     height: 2px;
-    left: 0;
-    position: absolute;
     right: 0;
     transform-origin: left center;
     transform: scaleX(0);
-    transition-duration: 0.3s;
-    width: 100%;
-    z-index: -10; }
+    width: 100%; }
   .infoContainer a:hover::after {
     transform: scaleX(1); }
   .infoContainer a > p {

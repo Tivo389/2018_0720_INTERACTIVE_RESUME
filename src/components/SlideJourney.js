@@ -31,7 +31,7 @@ class SlideJourney extends Component {
               <div>
                 <a href={journey.www} target="_blank">
                   <i className="fas fa-link"></i>
-                  <p>{journey.name}</p>
+                  <p>{journey.www.substr(7, journey.www.length)}</p>
                 </a>
               </div>
             }
@@ -48,9 +48,9 @@ class SlideJourney extends Component {
             ))}
             {journey.folioUrl &&
               <div>
-                <a href={journey.folioUrl}>
+                <a href={journey.folioUrl} target="_blank">
                   <i className="fas fa-link"></i>
-                  <p>See it on my portfolio</p>
+                  <p>See it in my portfolio</p>
                 </a>
               </div>
             }

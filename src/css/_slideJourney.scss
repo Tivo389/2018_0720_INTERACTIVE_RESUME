@@ -53,20 +53,39 @@
   }
   a {
     position: relative;
+    &::before, &::after {
+      display: inline-block;
+      left: 0;
+      position: absolute;
+      z-index: -10;
+      transition-duration: $transitionS;
+    }
+    &::before {
+      background-color: $colorLightGray;
+      border-radius: 0.4em;
+      bottom: -2.2em;
+      color: $colorWhite;
+      content: 'Will open in a new tab';
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      opacity: 0;
+      padding: 0.4em 0.5em 0.3em 0.5em;
+      transform: translateY(-100%);
+    }
+    &:hover::before {
+      transform: translateY(0);
+      opacity: 1;
+    }
     &::after {
       background-color: $colorSub;
       bottom: -2px;
       content: '';
-      display: block;
       height: 2px;
-      left: 0;
-      position: absolute;
       right: 0;
       transform-origin: left center;
       transform: scaleX(0);
-      transition-duration: $transitionS;
       width: 100%;
-      z-index: -10;
     }
     &:hover::after {
       transform: scaleX(1);
