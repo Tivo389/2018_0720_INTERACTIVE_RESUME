@@ -57,7 +57,7 @@ const db = {
       location: 'United Kingdom',
       www: null,
       role: 'Freelance Graphic Designer',
-      contributions: [ 'Logo Design', 'Packaging Design', 'Marketing Material Design' ],
+      contributions: [ 'Logo Design', 'Packaging Design', 'Marketing Assets Design' ],
       folioUrl: null,
       descriptions: [
         'Designed business cards, marketing assets, logos, and packaging for clients in London and Tokyo',
@@ -140,7 +140,8 @@ const db = {
       contributions: [ 'Advertisement Design', 'Editorial Design' ],
       folioUrl: 'http://www.shunmiyaki.com/mangosteen_detail.html',
       descriptions: [
-        'Supervised a design team of 5 designers and organised an average workload of 150 briefs a month',
+        'Supervised a team of 5 designers to publish a monthly editorial',
+        'Organised an average workload of 150 briefs per month',
         'Supported the marketing team by creating a pdf form that made management of brief sheets easier',
         'Updated the company website using WordPress and HTML'
       ]
@@ -179,7 +180,7 @@ const db = {
       location: 'Japan',
       www: null,
       role: 'Freelance Graphic Designer',
-      contributions: [ 'Icon Design', 'Marketing Material Design' ],
+      contributions: [ 'Icon Design', 'Marketing Assets Design' ],
       folioUrl: null,
       descriptions: [
         'Designed editorials, forms, apparel, and marketing assets for a range of departments and audiences',
@@ -223,7 +224,7 @@ const db = {
       location: 'New Zealand',
       www: 'http://www.aucklandcouncil.govt.nz',
       role: 'Digital Designer',
-      contributions: [ 'UI', 'Visual Communication' ],
+      contributions: [ 'Icon Design', 'Visual Communication' ],
       folioUrl: 'http://www.shunmiyaki.com/auckland_detail.html',
       descriptions: [
         'Worked as part of a scrum team in an agile environment to design infographics for building regulations',
