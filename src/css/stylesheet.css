@@ -786,11 +786,11 @@ a {
     .journeyWrapper h5:not(:first-of-type) {
       margin-top: 1.4em; }
 
-.spriteContainer {
+.imageContainer {
   border-radius: 1em;
   line-height: 0;
   overflow: hidden; }
-  .spriteContainer object {
+  .imageContainer object {
     height: 100%;
     width: 100%; }
 

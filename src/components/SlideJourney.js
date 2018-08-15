@@ -1,10 +1,38 @@
 import React, { Component } from 'react';
+import InlineSVG from 'svg-inline-react';
+import { j1 } from '../images/journeyImage1.js';
+import { j2 } from '../images/journeyImage2.js';
+import { j3 } from '../images/journeyImage3.js';
+import { j4 } from '../images/journeyImage4.js';
+import { j5 } from '../images/journeyImage5.js';
+import { j6 } from '../images/journeyImage6.js';
+import { j7 } from '../images/journeyImage7.js';
 
 class SlideJourney extends Component {
 
+  // LIFECYCLE METHODS
+  // - componentDidUpdate: Image in current slide will become active (animate)!
+  componentDidUpdate() {
+    // console.log('componentDidUpdate!');
+    const {slideJNum, currentJNum} = this.props;
+    const img = document.querySelector(`#journeyImage${slideJNum}`);
+    (+slideJNum === +currentJNum) ? img.classList.add('active') : img.classList.remove('active');
+  }
+
   // RENDER OF COMPONENT
   render() {
-    const {slideNum, slideJNum, imagePath, journey} = this.props;
+    const {slideNum, slideJNum, journey} = this.props;
+    let svgSource;
+    switch (slideJNum) {
+      case '1': svgSource = j1; break;
+      case '2': svgSource = j2; break;
+      case '3': svgSource = j3; break;
+      case '4': svgSource = j4; break;
+      case '5': svgSource = j5; break;
+      case '6': svgSource = j6; break;
+      case '7': svgSource = j7; break;
+      default: console.error('Unknown case detected');
+    };
     return (
       <section
         id={`s${slideNum}`}
@@ -13,12 +41,8 @@ class SlideJourney extends Component {
         data-slidejnum={slideJNum}>
         <div className="journeyWrapper">
 
-          <div className="spriteContainer">
-            <object
-              data={imagePath}
-              type="image/svg+xml"
-            alt={`Image for Journey ${slideJNum}`}>
-            </object>
+          <div className="imageContainer">
+            <InlineSVG id={`journeyImage${slideJNum}`} src={svgSource} />
           </div>
 
           <div className="infoContainer">
