@@ -33,7 +33,7 @@ class App extends Component {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
   componentWillUpdate() {
-    console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
+    // console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
   }
   componentDidUpdate() {
     // console.log('componentDidUpdate!');
@@ -62,6 +62,7 @@ class App extends Component {
           database={this.state.database}
           currentSlideNum={this.state.currentSlideNum}
           currentJourneySlideNum={this.state.currentJourneySlideNum}/>
+  <div className="hidden">
         <SlideLanding slideNum="1"/>
         <SlideIntro
           slideNum="2"
@@ -81,41 +82,42 @@ class App extends Component {
           slideNum="4"
           loadingStatus="3/3"
           text={["My journey so far..."]}/>
+  </div>
         <SlideJourney
           slideNum="5"
           slideJNum="1"
-          journey={this.state.database.j1.details}
-          imagePath={require('./images/dummy.svg')}/>
+          currentJNum={this.state.currentJourneySlideNum}
+          journey={this.state.database.j1.details}/>
         <SlideJourney
           slideNum="6"
           slideJNum="2"
-          journey={this.state.database.j2.details}
-          imagePath={require('./images/dummy.svg')}/>
+          currentJNum={this.state.currentJourneySlideNum}
+          journey={this.state.database.j2.details}/>
         <SlideJourney
           slideNum="7"
           slideJNum="3"
-          journey={this.state.database.j3.details}
-          imagePath={require('./images/dummy.svg')}/>
+          currentJNum={this.state.currentJourneySlideNum}
+          journey={this.state.database.j3.details}/>
         <SlideJourney
           slideNum="8"
           slideJNum="4"
-          journey={this.state.database.j4.details}
-          imagePath={require('./images/dummy.svg')}/>
+          currentJNum={this.state.currentJourneySlideNum}
+          journey={this.state.database.j4.details}/>
         <SlideJourney
           slideNum="9"
           slideJNum="5"
-          journey={this.state.database.j5.details}
-          imagePath={require('./images/dummy.svg')}/>
+          currentJNum={this.state.currentJourneySlideNum}
+          journey={this.state.database.j5.details}/>
         <SlideJourney
           slideNum="10"
           slideJNum="6"
-          journey={this.state.database.j6.details}
-          imagePath={require('./images/dummy.svg')}/>
+          currentJNum={this.state.currentJourneySlideNum}
+          journey={this.state.database.j6.details}/>
         <SlideJourney
           slideNum="11"
           slideJNum="7"
-          journey={this.state.database.j7.details}
-          imagePath={require('./images/dummy.svg')}/>
+          currentJNum={this.state.currentJourneySlideNum}
+          journey={this.state.database.j7.details}/>
         <SlideText
           slideNum="12"
           text={["That's my journey so far."]}/>
