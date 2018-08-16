@@ -854,10 +854,6 @@ a {
 .descriptionContainer p + p {
   margin-top: 0.6em; }
 
-#journeyImage1 svg .card, #journeyImage1 svg .package, #journeyImage1 svg .booklet, #journeyImage1 svg .leaflet {
-  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
-  transition-duration: 0.6s; }
-
 #journeyImage1 svg .card {
   transform: translate(131.774px, -300px); }
 
@@ -869,6 +865,10 @@ a {
 
 #journeyImage1 svg .leaflet {
   transform: translate(24px, -300px); }
+
+#journeyImage1.active svg .card, #journeyImage1.active svg .package, #journeyImage1.active svg .booklet, #journeyImage1.active svg .leaflet {
+  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+  transition-duration: 0.6s; }
 
 #journeyImage1.active svg .card {
   transform: translate(131.774px, 15px); }
@@ -882,10 +882,6 @@ a {
 #journeyImage1.active svg .leaflet {
   transform: translate(24px, 220.865px); }
 
-#journeyImage2 svg .poster, #journeyImage2 svg .xBanner, #journeyImage2 svg .printer, #journeyImage2 svg .print {
-  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
-  transition-duration: 0.6s; }
-
 #journeyImage2 svg .poster {
   transform: translate(72px, -289px); }
 
@@ -897,6 +893,10 @@ a {
 
 #journeyImage2 svg .print {
   transform: translate(16px, -117px); }
+
+#journeyImage2.active svg .poster, #journeyImage2.active svg .xBanner, #journeyImage2.active svg .printer, #journeyImage2.active svg .print {
+  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+  transition-duration: 0.6s; }
 
 #journeyImage2.active svg .poster {
   transform: translate(72px, 11px); }
@@ -911,10 +911,6 @@ a {
   transition-delay: calc(0.6s * 1.4);
   transition-duration: 1s;
   transform: translate(16px, 0); }
-
-#journeyImage3 svg [class^="cal"], #journeyImage3 svg [class^="mag"] {
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
 
 #journeyImage3 svg [class^="cal"] {
   transform: translate(-100px, 6px); }
@@ -954,6 +950,10 @@ a {
 
 #journeyImage3 svg .mag12 {
   transform: translate(-60px, 218px); }
+
+#journeyImage3.active svg [class^="cal"], #journeyImage3.active svg [class^="mag"] {
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
 
 #journeyImage3.active svg [class^="cal"] {
   transform: translate(6px, 6px); }
@@ -1038,10 +1038,6 @@ a {
   transform: translate(241px, 218px);
   transition-delay: calc(0.3s * 11); }
 
-#journeyImage4 svg .phone, #journeyImage4 svg .shirt, #journeyImage4 svg .planeLeaflet, #journeyImage4 svg .treeLeaflet, #journeyImage4 svg .senbei {
-  transition-duration: 0.4s;
-  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
-
 #journeyImage4 svg .phone {
   transform: translate(0, 300px); }
 
@@ -1056,6 +1052,10 @@ a {
 
 #journeyImage4 svg .treeLeaflet {
   transform: translate(89px, -300px); }
+
+#journeyImage4.active svg .phone, #journeyImage4.active svg .shirt, #journeyImage4.active svg .planeLeaflet, #journeyImage4.active svg .treeLeaflet, #journeyImage4.active svg .senbei {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
 
 #journeyImage4.active svg .phone {
   transition-delay: 0.2s; }
@@ -1083,6 +1083,72 @@ a {
 
 #journeyImage4.active svg .treeLeaflet {
   transform: translate(89px, 77px); }
+
+#journeyImage5 svg .arrowLeft {
+  transform: translate(300px, 0); }
+
+#journeyImage5 svg .shedSet {
+  transform: translate(509px, 155px); }
+
+#journeyImage5 svg .no {
+  transform: translate(0, -300px); }
+
+#journeyImage5 svg .yes {
+  transform: translate(0, -300px); }
+
+@keyframes keyShedSet {
+  0% {
+    transform: translate(209px, 155px); }
+  15% {
+    transform: translate(209px, 155px); }
+  50% {
+    transform: translate(159px, 155px); }
+  100% {
+    transform: translate(209px, 155px); } }
+
+@keyframes keyNo {
+  0% {
+    transform: translate(0, -300px); }
+  15% {
+    transform: translate(0, -300px); }
+  50% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(0, -300px); } }
+
+@keyframes keyYes {
+  0% {
+    transform: translate(0, 0); }
+  15% {
+    transform: translate(0, 0); }
+  50% {
+    transform: translate(0, -300px); }
+  100% {
+    transform: translate(0, 0); } }
+
+#journeyImage5.active svg .shedSet, #journeyImage5.active svg .arrowLeft, #journeyImage5.active svg .no, #journeyImage5.active svg .yes {
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
+
+#journeyImage5.active svg .shedSet, #journeyImage5.active svg .no, #journeyImage5.active svg .yes {
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s; }
+
+#journeyImage5.active svg .shedSet {
+  animation-name: keyShedSet;
+  transform: translate(209px, 155px); }
+
+#journeyImage5.active svg .arrowLeft {
+  transform: translate(0, 0); }
+
+#journeyImage5.active svg .no {
+  animation-name: keyNo; }
+
+#journeyImage5.active svg .yes {
+  transform: translate(0, 0);
+  animation-name: keyYes; }
 
 #root {
   width: 100vw;
