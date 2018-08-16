@@ -856,9 +856,7 @@ a {
 
 #journeyImage1 svg .card, #journeyImage1 svg .package, #journeyImage1 svg .booklet, #journeyImage1 svg .leaflet {
   transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
-  animation-duration: 0.6s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; }
+  transition-duration: 0.6s; }
 
 #journeyImage1 svg .card {
   transform: translate(131.774px, -300px); }
@@ -873,56 +871,46 @@ a {
   transform: translate(24px, -300px); }
 
 #journeyImage1.active svg .card {
-  animation-name: bounceCard; }
-
-@keyframes bounceCard {
-  0% {
-    transform: translate(131.774px, -300px); }
-  33% {
-    transform: translate(131.774px, 15px); }
-  66% {
-    transform: translate(131.774px, -25px); }
-  100% {
-    transform: translate(131.774px, 15px); } }
+  transform: translate(131.774px, 15px); }
 
 #journeyImage1.active svg .package {
-  animation-name: bouncePackage; }
-
-@keyframes bouncePackage {
-  0% {
-    transform: translate(34px, -300px); }
-  33% {
-    transform: translate(34px, 98px); }
-  66% {
-    transform: translate(34px, 58px); }
-  100% {
-    transform: translate(34px, 98px); } }
+  transform: translate(34px, 98px); }
 
 #journeyImage1.active svg .booklet {
-  animation-name: bounceBooklet; }
-
-@keyframes bounceBooklet {
-  0% {
-    transform: translate(118.302px, -300px); }
-  33% {
-    transform: translate(118.302px, 164.44px); }
-  66% {
-    transform: translate(118.302px, 134.44px); }
-  100% {
-    transform: translate(118.302px, 164.44px); } }
+  transform: translate(118.302px, 164.44px); }
 
 #journeyImage1.active svg .leaflet {
-  animation-name: bounceLeaflet; }
+  transform: translate(24px, 220.865px); }
 
-@keyframes bounceLeaflet {
-  0% {
-    transform: translate(24px, -300px); }
-  33% {
-    transform: translate(24px, 220.865px); }
-  66% {
-    transform: translate(24px, 200.865px); }
-  100% {
-    transform: translate(24px, 220.865px); } }
+#journeyImage2 svg .poster, #journeyImage2 svg .xBanner, #journeyImage2 svg .printer, #journeyImage2 svg .print {
+  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+  transition-duration: 0.6s; }
+
+#journeyImage2 svg .poster {
+  transform: translate(72px, -289px); }
+
+#journeyImage2 svg .xBanner {
+  transform: translate(486px, 23px); }
+
+#journeyImage2 svg .printer {
+  transform: translate(-286px, 131px); }
+
+#journeyImage2 svg .print {
+  transform: translate(16px, -117px); }
+
+#journeyImage2.active svg .poster {
+  transform: translate(72px, 11px); }
+
+#journeyImage2.active svg .xBanner {
+  transform: translate(186px, 23px); }
+
+#journeyImage2.active svg .printer {
+  transform: translate(14px, 131px); }
+
+#journeyImage2.active svg .print {
+  transition-delay: calc(0.6s * 1.4);
+  transition-duration: 1s;
+  transform: translate(16px, 0); }
 
 #root {
   width: 100vw;
