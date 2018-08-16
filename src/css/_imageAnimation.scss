@@ -1,15 +1,15 @@
 // IMAGE 1
 #journeyImage1 svg {
-  .card, .package, .booklet, .leaflet {
-    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
-    transition-duration: $transitionM;
-  }
   .card {transform: translate(131.774px, -300px);}
   .package {transform: translate(34px, -300px);}
   .booklet {transform: translate(118.302px, -300px);}
   .leaflet {transform: translate(24px, -300px);}
 }
 #journeyImage1.active svg {
+  .card, .package, .booklet, .leaflet {
+    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+    transition-duration: $transitionM;
+  }
   .card {transform: translate(131.774px, 15px);}
   .package {transform: translate(34px, 98px);}
   .booklet {transform: translate(118.302px, 164.44px);}
@@ -20,16 +20,16 @@
 
 // IMAGE 2
 #journeyImage2 svg {
-  .poster, .xBanner, .printer, .print {
-    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
-    transition-duration: $transitionM;
-  }
   .poster {transform: translate(72px, -289px);}
   .xBanner {transform: translate(486px, 23px);}
   .printer {transform: translate(-286px, 131px);}
   .print {transform: translate(16px, -117px);}
 }
 #journeyImage2.active svg {
+  .poster, .xBanner, .printer, .print {
+    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+    transition-duration: $transitionM;
+  }
   .poster {transform: translate(72px, 11px);}
   .xBanner {transform: translate(186px, 23px);}
   .printer {transform: translate(14px, 131px);}
@@ -44,10 +44,6 @@
 
 // IMAGE 3
 #journeyImage3 svg {
-  [class^="cal"], [class^="mag"] {
-    transition-duration: $transitionL;
-    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
-  }
   [class^="cal"] {transform: translate(-100px, 6px);}
   .mag01 {transform: translate(-236px, 55px);}
   .mag02 {transform: translate(-178px, 55px);}
@@ -63,6 +59,10 @@
   .mag12 {transform: translate(-60px, 218px);}
 }
 #journeyImage3.active svg {
+  [class^="cal"], [class^="mag"] {
+    transition-duration: $transitionL;
+    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+  }
   [class^="cal"] {transform: translate(6px, 6px);}
   .cal02 {transition-delay: calc(#{$transitionS} * 1);}
   .cal03 {transition-delay: calc(#{$transitionS} * 2);}
@@ -126,10 +126,6 @@
 
 // IMAGE 4
 #journeyImage4 svg {
-  .phone, .shirt, .planeLeaflet, .treeLeaflet, .senbei {
-    transition-duration: 0.4s;
-    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
-  }
   .phone {transform: translate(0, 300px);}
   .shirt {transform: translate(5px, 307px);}
   .planeLeaflet {transform: translate(5px, 436px);}
@@ -137,6 +133,10 @@
   .treeLeaflet {transform: translate(89px, -300px);}
 }
 #journeyImage4.active svg {
+  .phone, .shirt, .planeLeaflet, .treeLeaflet, .senbei {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+  }
   .phone {transition-delay: 0.2s;}
   .shirt {transition-delay: 0.4s;}
   .planeLeaflet {transition-delay: 0.6s;}
@@ -153,9 +153,58 @@
 
 // IMAGE 5
 #journeyImage5 svg {
+  .arrowLeft {transform: translate(300px, 0);}
+  .shedSet {transform: translate(509px, 155px);}
+  .no {transform: translate(0, -300px);}
+  .yes {transform: translate(0, -300px);}
 }
 #journeyImage5.active svg {
+  @keyframes keyShedSet {
+    0% {transform: translate(209px, 155px);}
+    15% {transform: translate(209px, 155px);}
+    50% {transform: translate(159px, 155px);;}
+    100% {transform: translate(209px, 155px);;}
+  }
+  @keyframes keyNo {
+    0% {transform: translate(0, -300px);}
+    15% {transform: translate(0, -300px);}
+    50% {transform: translate(0, 0);;}
+    100% {transform: translate(0, -300px);;}
+  }
+  @keyframes keyYes {
+    0% {transform: translate(0, 0);}
+    15% {transform: translate(0, 0);}
+    50% {transform: translate(0, -300px);;}
+    100% {transform: translate(0, 0);;}
+  }
+  .shedSet, .arrowLeft, .no, .yes {
+    transition-duration: $transitionS;
+    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+  }
+  .shedSet, .no, .yes {
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: $transitionS;
+  }
+  .shedSet {
+    animation-name: keyShedSet;
+    transform: translate(209px, 155px);
+  }
+  .arrowLeft {
+    transform: translate(0, 0);
+  }
+  .no {
+    animation-name: keyNo;
+  }
+  .yes {
+    transform: translate(0, 0);
+    animation-name: keyYes;
+  }
 }
+
+
+
 
 // IMAGE 6
 #journeyImage6 svg {
