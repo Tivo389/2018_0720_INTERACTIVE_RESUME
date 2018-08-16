@@ -44,9 +44,85 @@
 
 // IMAGE 3
 #journeyImage3 svg {
+  [class^="cal"], [class^="mag"] {
+    transition-duration: $transitionXL;
+    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+  }
+  [class^="cal"] {transform: translate(-100px, 6px);}
+  .mag01 {transform: translate(-236px, 55px);}
+  .mag02 {transform: translate(-178px, 55px);}
+  .mag03 {transform: translate(-118px, 55px);}
+  .mag04 {transform: translate(-60px, 55px);}
+  .mag05 {transform: translate(-236px, 137px);}
+  .mag06 {transform: translate(-178px, 137px);}
+  .mag07 {transform: translate(-118px, 137px);}
+  .mag08 {transform: translate(-60px, 137px);}
+  .mag09 {transform: translate(-236px, 218px);}
+  .mag10 {transform: translate(-178px, 219px);}
+  .mag11 {transform: translate(-118px, 218px);}
+  .mag12 {transform: translate(-60px, 218px);}
 }
 #journeyImage3.active svg {
+  [class^="cal"] {transform: translate(6px, 6px);}
+  .cal02 {transition-delay: calc(#{$transitionS} * 1);}
+  .cal03 {transition-delay: calc(#{$transitionS} * 2);}
+  .cal04 {transition-delay: calc(#{$transitionS} * 3);}
+  .cal05 {transition-delay: calc(#{$transitionS} * 4);}
+  .cal06 {transition-delay: calc(#{$transitionS} * 5);}
+  .cal07 {transition-delay: calc(#{$transitionS} * 6);}
+  .cal08 {transition-delay: calc(#{$transitionS} * 7);}
+  .cal09 {transition-delay: calc(#{$transitionS} * 8);}
+  .cal10 {transition-delay: calc(#{$transitionS} * 9);}
+  .cal11 {transition-delay: calc(#{$transitionS} * 10);}
+  .cal12 {transition-delay: calc(#{$transitionS} * 11);}
+  .mag01 {transform: translate(63px, 55px);}
+  .mag02 {
+    transform: translate(122px, 55px);
+    transition-delay: calc(#{$transitionS} * 1);
+  }
+  .mag03 {
+    transform: translate(182px, 55px);
+    transition-delay: calc(#{$transitionS} * 2);
+  }
+  .mag04 {
+    transform: translate(241px, 55px);
+    transition-delay: calc(#{$transitionS} * 3);
+  }
+  .mag05 {
+    transform: translate(65px, 137px);
+    transition-delay: calc(#{$transitionS} * 4);
+  }
+  .mag06 {
+    transform: translate(124px, 137px);
+    transition-delay: calc(#{$transitionS} * 5);
+  }
+  .mag07 {
+    transform: translate(182px, 137px);
+    transition-delay: calc(#{$transitionS} * 6);
+  }
+  .mag08 {
+    transform: translate(241px, 137px);
+    transition-delay: calc(#{$transitionS} * 7);
+  }
+  .mag09 {
+    transform: translate(65px, 218px);
+    transition-delay: calc(#{$transitionS} * 8);
+  }
+  .mag10 {
+    transform: translate(123px, 219px);
+    transition-delay: calc(#{$transitionS} * 9);
+  }
+  .mag11 {
+    transform: translate(182px, 218px);
+    transition-delay: calc(#{$transitionS} * 10);
+  }
+  .mag12 {
+    transform: translate(241px, 218px);
+    transition-delay: calc(#{$transitionS} * 11);
+  }
 }
+
+
 
 // IMAGE 4
 #journeyImage4 svg {
