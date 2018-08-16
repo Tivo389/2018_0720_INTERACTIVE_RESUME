@@ -2,9 +2,7 @@
 #journeyImage1 svg {
   .card, .package, .booklet, .leaflet {
     transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
-    animation-duration: $transitionM;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    transition-duration: $transitionM;
   }
   .card {transform: translate(131.774px, -300px);}
   .package {transform: translate(34px, -300px);}
@@ -12,49 +10,37 @@
   .leaflet {transform: translate(24px, -300px);}
 }
 #journeyImage1.active svg {
-  .card {
-    @keyframes bounceCard {
-      0% {transform: translate(131.774px, -300px);}
-      33% {transform: translate(131.774px, 15px);}
-      66% {transform: translate(131.774px, -25px);}
-      100% {transform: translate(131.774px, 15px);}
-    }
-    animation-name: bounceCard;
-  }
-  .package {
-    @keyframes bouncePackage {
-      0% {transform: translate(34px, -300px);}
-      33% {transform: translate(34px, 98px);}
-      66% {transform: translate(34px, 58px);}
-      100% {transform: translate(34px, 98px);}
-    }
-    animation-name: bouncePackage;
-  }
-  .booklet {
-    @keyframes bounceBooklet {
-      0% {transform: translate(118.302px, -300px);}
-      33% {transform: translate(118.302px, 164.44px);}
-      66% {transform: translate(118.302px, 134.44px);}
-      100% {transform: translate(118.302px, 164.44px);}
-    }
-    animation-name: bounceBooklet;
-  }
-  .leaflet {
-    @keyframes bounceLeaflet {
-      0% {transform: translate(24px, -300px);}
-      33% {transform: translate(24px, 220.865px);}
-      66% {transform: translate(24px, 200.865px);}
-      100% {transform: translate(24px, 220.865px);}
-    }
-    animation-name: bounceLeaflet;
-  }
+  .card {transform: translate(131.774px, 15px);}
+  .package {transform: translate(34px, 98px);}
+  .booklet {transform: translate(118.302px, 164.44px);}
+  .leaflet {transform: translate(24px, 220.865px);}
 }
+
+
 
 // IMAGE 2
 #journeyImage2 svg {
+  .poster, .xBanner, .printer, .print {
+    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+    transition-duration: $transitionM;
+  }
+  .poster {transform: translate(72px, -289px);}
+  .xBanner {transform: translate(486px, 23px);}
+  .printer {transform: translate(-286px, 131px);}
+  .print {transform: translate(16px, -117px);}
 }
 #journeyImage2.active svg {
+  .poster {transform: translate(72px, 11px);}
+  .xBanner {transform: translate(186px, 23px);}
+  .printer {transform: translate(14px, 131px);}
+  .print {
+    transition-delay: calc(#{$transitionM} * 1.4);
+    transition-duration: $transitionL;
+    transform: translate(16px, 0);
+  }
 }
+
+
 
 // IMAGE 3
 #journeyImage3 svg {

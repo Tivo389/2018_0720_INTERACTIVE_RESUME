@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 300 300">
   <defs>
     <polygon id="journeyimage02-a" points="0 0 111 0 111 146 99 158 0 158"/>
     <polygon id="journeyimage02-c" points="6 0 95 0 95 252.415 85.378 262 6 262"/>
     <rect id="journeyimage02-e" width="113" height="124"/>
   </defs>
   <g fill="none" fill-rule="evenodd">
-    <g transform="translate(72 11)">
+    <g class="poster" transform="translate(72 11)">
       <mask id="journeyimage02-b" fill="#fff">
         <use xlink:href="#journeyimage02-a"/>
       </mask>
@@ -17,7 +17,7 @@
       <rect width="64" height="12" x="24" y="27" fill="#0093BF"/>
       <polygon fill="gray" points="99 0 111 0 99 12" transform="matrix(1 0 0 -1 0 12)"/>
     </g>
-    <g transform="translate(186 23)">
+    <g class="xBanner" transform="translate(186 23)">
       <g stroke="gray" stroke-linecap="round" stroke-width="4.8" transform="translate(0 81)">
         <path d="M22,0 L0,179"/>
         <path d="M102,0 L80,179" transform="matrix(-1 0 0 1 182 0)"/>
@@ -36,7 +36,7 @@
       <circle cx="89" cy="6" r="3" fill="#A9BEC7" fill-rule="nonzero"/>
       <path fill="#0093BF" fill-rule="nonzero" d="M51.41875,73.4548202 C51.4973214,73.9046236 53,82.4987403 53,85.7813483 C53,90.7866078 50.2696429,94.3563244 46.2330357,95.7918672 L47.5,118.578718 C47.56875,119.889847 46.4982143,121 45.1428571,121 L38.8571429,121 C37.5116071,121 36.43125,119.899417 36.5,118.578718 L37.7669643,95.7918672 C33.7205357,94.3563244 31,90.7770375 31,85.7813483 C31,82.48917 32.5026786,73.9046236 32.58125,73.4548202 C32.8955357,71.5120522 37.0303571,71.4833413 37.2857143,73.5600933 L37.2857143,87.0733369 C37.4133929,87.3987266 38.76875,87.379586 38.8571429,87.0733369 C38.9946429,84.6520546 39.6330357,73.751499 39.6428571,73.5026716 C39.9669643,71.5120522 44.0330357,71.5120522 44.3473214,73.5026716 C44.3669643,73.7610693 44.9955357,84.6520546 45.1330357,87.0733369 C45.2214286,87.379586 46.5866071,87.3987266 46.7044643,87.0733369 L46.7044643,73.5600933 C46.9598214,71.4929116 51.1044643,71.5120522 51.41875,73.4548202 Z M62.6640909,100.79707 L61.2575821,118.511719 C61.1450614,119.851562 62.1858779,121 63.4986195,121 L68.7495858,121 C69.9966904,121 71,119.975977 71,118.703125 L71,74.296875 C71,73.0335937 69.9966904,72 68.7495858,72 C61.0137872,72 47.9895153,89.0830078 62.6640909,100.79707 Z"/>
     </g>
-    <g transform="translate(14 131)">
+    <g class="printer" transform="translate(14 131)">
       <rect width="90" height="10" x="29" fill="#0093BF"/>
       <rect width="148" height="50" y="10" fill="#E4EEF2" rx="4"/>
       <path stroke="#0093BF" stroke-width="2" d="M66,-27 L66,61 L77,61 C79.7614237,61 82,58.7614237 82,56 L82,-22 C82,-24.7614237 79.7614237,-27 77,-27 L66,-27 Z" transform="rotate(90 74 17)"/>
@@ -55,7 +55,7 @@
           <use xlink:href="#journeyimage02-e"/>
         </mask>
         <g mask="url(#journeyimage02-f)">
-          <g transform="translate(16 -117)">
+          <g class="print" transform="translate(16 -117)">
             <polygon fill="#EE86A8" points="0 0 82 0 82 108.114 73.135 117 0 117"/>
             <polygon fill="gray" points="73 108 82 108 73 117"/>
             <circle cx="17" cy="19" r="7" fill="#E4EEF2"/>
