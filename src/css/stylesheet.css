@@ -866,7 +866,7 @@ a {
 #journeyImage1 svg .leaflet {
   transform: translate(24px, -300px); }
 
-#journeyImage1.active svg .card, #journeyImage1.active svg .package, #journeyImage1.active svg .booklet, #journeyImage1.active svg .leaflet {
+#journeyImage1.active svg [class] {
   transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
   transition-duration: 0.6s; }
 
@@ -894,7 +894,7 @@ a {
 #journeyImage2 svg .print {
   transform: translate(16px, -117px); }
 
-#journeyImage2.active svg .poster, #journeyImage2.active svg .xBanner, #journeyImage2.active svg .printer, #journeyImage2.active svg .print {
+#journeyImage2.active svg [class] {
   transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
   transition-duration: 0.6s; }
 
@@ -951,7 +951,7 @@ a {
 #journeyImage3 svg .mag12 {
   transform: translate(-60px, 218px); }
 
-#journeyImage3.active svg [class^="cal"], #journeyImage3.active svg [class^="mag"] {
+#journeyImage3.active svg [class] {
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
 
@@ -1053,7 +1053,7 @@ a {
 #journeyImage4 svg .treeLeaflet {
   transform: translate(89px, -300px); }
 
-#journeyImage4.active svg .phone, #journeyImage4.active svg .shirt, #journeyImage4.active svg .planeLeaflet, #journeyImage4.active svg .treeLeaflet, #journeyImage4.active svg .senbei {
+#journeyImage4.active svg [class] {
   transition-duration: 0.4s;
   transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
 
@@ -1126,7 +1126,7 @@ a {
   100% {
     transform: translate(0, 0); } }
 
-#journeyImage5.active svg .shedSet, #journeyImage5.active svg .arrowLeft, #journeyImage5.active svg .no, #journeyImage5.active svg .yes {
+#journeyImage5.active svg [class] {
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
 
@@ -1149,6 +1149,73 @@ a {
 #journeyImage5.active svg .yes {
   transform: translate(0, 0);
   animation-name: keyYes; }
+
+#journeyImage6 svg .laptopSet {
+  transform: translate(-285px, 62px); }
+  #journeyImage6 svg .laptopSet .code > * {
+    opacity: 0;
+    transform: translateY(-4px); }
+
+@keyframes keyLaptopSet {
+  0% {
+    transform: translate(-285px, 62px); }
+  20% {
+    transform: translate(15px, 62px); }
+  100% {
+    transform: translate(15px, 62px); } }
+
+@keyframes keyCode {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px); }
+  30% {
+    opacity: 0;
+    transform: translateY(-4px); }
+  40% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+#journeyImage6.active svg [class] {
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
+
+#journeyImage6.active svg .laptopSet {
+  animation: 3s 1 keyLaptopSet;
+  animation-fill-mode: forwards; }
+  #journeyImage6.active svg .laptopSet .code > * {
+    animation: 3s 1 keyCode;
+    animation-fill-mode: forwards; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(1) {
+      animation-delay: 0.28s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(2) {
+      animation-delay: 0.26s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(3) {
+      animation-delay: 0.24s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(4) {
+      animation-delay: 0.22s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(5) {
+      animation-delay: 0.20s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(6) {
+      animation-delay: 0.18s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(7) {
+      animation-delay: 0.16s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(8) {
+      animation-delay: 0.14s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(9) {
+      animation-delay: 0.12s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(10) {
+      animation-delay: 0.10s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(11) {
+      animation-delay: 0.08s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(12) {
+      animation-delay: 0.06s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(13) {
+      animation-delay: 0.04s; }
+    #journeyImage6.active svg .laptopSet .code > *:nth-child(14) {
+      animation-delay: 0.02s; }
 
 #root {
   width: 100vw;
