@@ -45,7 +45,7 @@
 // IMAGE 3
 #journeyImage3 svg {
   [class^="cal"], [class^="mag"] {
-    transition-duration: $transitionXL;
+    transition-duration: $transitionL;
     transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
   }
   [class^="cal"] {transform: translate(-100px, 6px);}
@@ -126,9 +126,30 @@
 
 // IMAGE 4
 #journeyImage4 svg {
+  .phone, .shirt, .planeLeaflet, .treeLeaflet, .senbei {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1);
+  }
+  .phone {transform: translate(0, 300px);}
+  .shirt {transform: translate(5px, 307px);}
+  .planeLeaflet {transform: translate(5px, 436px);}
+  .senbei {transform: translate(165px, 305px);}
+  .treeLeaflet {transform: translate(89px, -300px);}
 }
 #journeyImage4.active svg {
+  .phone {transition-delay: 0.2s;}
+  .shirt {transition-delay: 0.4s;}
+  .planeLeaflet {transition-delay: 0.6s;}
+  .senbei {transition-delay: 0.8s;}
+  .phone {transform: translate(0, 0);}
+  .shirt {transform: translate(5px, 7px);}
+  .planeLeaflet {transform: translate(5px, 136px);}
+  .senbei {transform: translate(165px, 5px);}
+  .treeLeaflet {transform: translate(89px, 77px);}
 }
+
+
+
 
 // IMAGE 5
 #journeyImage5 svg {

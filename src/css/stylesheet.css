@@ -913,7 +913,7 @@ a {
   transform: translate(16px, 0); }
 
 #journeyImage3 svg [class^="cal"], #journeyImage3 svg [class^="mag"] {
-  transition-duration: 1.3s;
+  transition-duration: 1s;
   transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
 
 #journeyImage3 svg [class^="cal"] {
@@ -1037,6 +1037,52 @@ a {
 #journeyImage3.active svg .mag12 {
   transform: translate(241px, 218px);
   transition-delay: calc(0.3s * 11); }
+
+#journeyImage4 svg .phone, #journeyImage4 svg .shirt, #journeyImage4 svg .planeLeaflet, #journeyImage4 svg .treeLeaflet, #journeyImage4 svg .senbei {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0, 1.15, 0.5, 1); }
+
+#journeyImage4 svg .phone {
+  transform: translate(0, 300px); }
+
+#journeyImage4 svg .shirt {
+  transform: translate(5px, 307px); }
+
+#journeyImage4 svg .planeLeaflet {
+  transform: translate(5px, 436px); }
+
+#journeyImage4 svg .senbei {
+  transform: translate(165px, 305px); }
+
+#journeyImage4 svg .treeLeaflet {
+  transform: translate(89px, -300px); }
+
+#journeyImage4.active svg .phone {
+  transition-delay: 0.2s; }
+
+#journeyImage4.active svg .shirt {
+  transition-delay: 0.4s; }
+
+#journeyImage4.active svg .planeLeaflet {
+  transition-delay: 0.6s; }
+
+#journeyImage4.active svg .senbei {
+  transition-delay: 0.8s; }
+
+#journeyImage4.active svg .phone {
+  transform: translate(0, 0); }
+
+#journeyImage4.active svg .shirt {
+  transform: translate(5px, 7px); }
+
+#journeyImage4.active svg .planeLeaflet {
+  transform: translate(5px, 136px); }
+
+#journeyImage4.active svg .senbei {
+  transform: translate(165px, 5px); }
+
+#journeyImage4.active svg .treeLeaflet {
+  transform: translate(89px, 77px); }
 
 #root {
   width: 100vw;
