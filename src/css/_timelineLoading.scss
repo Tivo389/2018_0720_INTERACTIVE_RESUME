@@ -1,14 +1,14 @@
 #loadingTimeline {
   background-color: $colorSub;
+  bottom: 34px;
   height: $timeLineUnit;
   left: 0;
-  position: absolute;
+  position: fixed;
   right: 0;
-  top: calc(50% - 1px);
   transform-origin: left center;
   transform: scaleX(0);
   transition-duration: $transitionS;
   transition-timing-function: ease-in-out;
-  width: 100vw;
+  width: 100%;
   z-index: -10;
 }

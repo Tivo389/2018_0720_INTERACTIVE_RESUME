@@ -3,46 +3,35 @@
 }
 
 #timeline {
-  bottom: 0;
+  bottom: 24px;
   left: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
-  transform: translateY(4em);
   transition-duration: $transitionS;
-  &:hover {
-    transform: translateY(0);
-  }
-  ul {
+  .timePeriod {
     display: flex;
+    justify-content: space-between;
     list-style: none;
     margin: 0;
-    padding: 0;
-    li {
-      font-family: $ffBodyCon;
-      font-size: 1.6rem;
-      letter-spacing: 0.1em;
-    }
-  }
-
-  .timePeriod {
-    justify-content: space-between;
-    padding: 0 2em;
-    position: relative;
+    padding: 0 4em;
     li {
       background-color: $colorSub;
-      color: $colorSub;
-      font-weight: 400;
       min-height: 1.6rem;
       min-width: $timeLineUnit;
-      text-align: center;
-      transform: translateY(5em);
+      transform: translateY(5em); // Hides the timeline-bars and years
       transition-duration: $transitionS;
       transition-timing-function: cubic-bezier(0.5 , -0.35, 0.5, 1.35);
       &:first-of-type, &:last-of-type {
         background-color: $colorWhite;
         border-left: $timeLineUnit solid $colorSub;
         border-right: $timeLineUnit solid $colorSub;
+        color: $colorSub;
+        font-family: $ffBodyCon;
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
         padding: 0 0.4em 0 0.5em; // 0.4em to cater for last-letter-spacing.
+        text-align: center;
       }
       &:nth-child(1) { @include delay(1); }
       &:nth-child(2) { @include delay(2); }
@@ -50,18 +39,7 @@
       &:nth-child(4) { @include delay(4); }
       &:nth-child(5) { @include delay(5); }
       &:nth-child(6) { @include delay(6); }
-      &:nth-child(7) {
-        @include delay(7);
-        position: relative;
-        svg {
-          color: $colorSub;
-          font-size: 2.4rem;
-          top: 2.8rem;
-          left: 1px;
-          position: absolute;
-          transform: translate(-50%, -50%);
-        }
-      }
+      &:nth-child(7) { @include delay(7); }
       &:nth-child(8) { @include delay(8); }
       &:nth-child(9) { @include delay(9); }
       &:nth-child(10) { @include delay(10); }
@@ -70,36 +48,10 @@
       &:nth-child(13) { @include delay(13); }
     }
   }
-
-  .timeLinks {
-    background-color: $colorSub;
-    justify-content: center;
-    margin: 2.2em 0 0 0;
-    a {
-      &:last-child > li {
-        border-right: $timeLineUnit solid $colorWhite;
-      }
-      li {
-        padding: 0.45em 0.9em;
-        color: $colorWhite;
-        display: flex;
-        align-items: center;
-        border-left: $timeLineUnit solid $colorWhite;
-        &:hover {
-          background-color: darken($colorSub, 10%);
-        }
-        svg {
-          font-size: 125%;
-        }
-      }
-    }
-  }
 }
 
-#timeline.active {
-  .timePeriod li {
-    transform: translateY(0);
-  }
+#timeline.active .timePeriod li {
+  transform: translateY(0);
 }
 
 // AnimateOnChange Styling

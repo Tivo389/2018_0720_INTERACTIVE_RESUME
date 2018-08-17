@@ -12,6 +12,7 @@
 
 @import '_timelineLoading';
 @import '_timeline';
+@import '_timelineNavBar';
 
 @import '_graphRadar';
 @import '_graphBar';
@@ -50,7 +51,7 @@ section {
 // CLASS LEVEL ------------------------------------------------------------------------------------
 [class^="slide"] {
   transition-duration: $transitionS;
-  padding: 0 0 38px 0; // 38px based on timeline + margin.
+  padding: 0 0 0 0;
 }
 
 .mainWrapper {

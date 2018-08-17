@@ -1,6 +1,10 @@
+.slideJourney {
+  position: relative;
+}
 .journeyWrapper {
   display: flex;
   margin-left: -6em;
+  padding: 0 0 38px 0; // 38px based on timeline + margin.
   max-width: 1200px;
   width: 82%;
   > div {
