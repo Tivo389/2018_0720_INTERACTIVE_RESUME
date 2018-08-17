@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import { wheelNormalise } from './js/wheelNormalise';
 import { debounce } from './js/debounce';
-import StatBar from './components/StatBar';
 import StatBarLoading from './components/StatBarLoading';
-import Timeline from './components/Timeline';
+import StatBar from './components/StatBar';
+import TimelineLoading from './components/TimelineLoading';
+import TimelineNavBar from './components/TimelineNavBar';
 import SlideLanding from './components/SlideLanding';
 import SlideIntro from './components/SlideIntro';
 import SlideJourney from './components/SlideJourney';
@@ -54,15 +55,10 @@ class App extends Component {
           activeStatBar={this.state.activeStatBar}
           database={this.state.database}
           currentJourneySlideNum={this.state.currentJourneySlideNum}/>
-        <Timeline
+        <TimelineLoading
           loadProgress={this.state.loadProgress}
-          activeTimeline={this.state.activeTimeline}
-          checkSlideAttributes={this.checkSlideAttributes}
-          checkActiveStatus={this.checkActiveStatus}
-          database={this.state.database}
-          currentSlideNum={this.state.currentSlideNum}
-          currentJourneySlideNum={this.state.currentJourneySlideNum}/>
-  <div className="hidden">
+          activeTimeline={this.state.activeTimeline}/>
+        <TimelineNavBar></TimelineNavBar>
         <SlideLanding slideNum="1"/>
         <SlideIntro
           slideNum="2"
@@ -82,42 +78,48 @@ class App extends Component {
           slideNum="4"
           loadingStatus="3/3"
           text={["My journey so far..."]}/>
-  </div>
         <SlideJourney
           slideNum="5"
           slideJNum="1"
-          currentJNum={this.state.currentJourneySlideNum}
-          journey={this.state.database.j1.details}/>
+          checkSlideAttributes={this.checkSlideAttributes}
+          checkActiveStatus={this.checkActiveStatus}
+          state={this.state}/>
         <SlideJourney
           slideNum="6"
           slideJNum="2"
-          currentJNum={this.state.currentJourneySlideNum}
-          journey={this.state.database.j2.details}/>
+          checkSlideAttributes={this.checkSlideAttributes}
+          checkActiveStatus={this.checkActiveStatus}
+          state={this.state}/>
         <SlideJourney
           slideNum="7"
           slideJNum="3"
-          currentJNum={this.state.currentJourneySlideNum}
-          journey={this.state.database.j3.details}/>
+          checkSlideAttributes={this.checkSlideAttributes}
+          checkActiveStatus={this.checkActiveStatus}
+          state={this.state}/>
         <SlideJourney
           slideNum="8"
           slideJNum="4"
-          currentJNum={this.state.currentJourneySlideNum}
-          journey={this.state.database.j4.details}/>
+          checkSlideAttributes={this.checkSlideAttributes}
+          checkActiveStatus={this.checkActiveStatus}
+          state={this.state}/>
         <SlideJourney
           slideNum="9"
           slideJNum="5"
-          currentJNum={this.state.currentJourneySlideNum}
-          journey={this.state.database.j5.details}/>
+          checkSlideAttributes={this.checkSlideAttributes}
+          checkActiveStatus={this.checkActiveStatus}
+          state={this.state}/>
         <SlideJourney
           slideNum="10"
           slideJNum="6"
-          currentJNum={this.state.currentJourneySlideNum}
-          journey={this.state.database.j6.details}/>
+          checkSlideAttributes={this.checkSlideAttributes}
+          checkActiveStatus={this.checkActiveStatus}
+          state={this.state}/>
         <SlideJourney
           slideNum="11"
           slideJNum="7"
-          currentJNum={this.state.currentJourneySlideNum}
-          journey={this.state.database.j7.details}/>
+          checkSlideAttributes={this.checkSlideAttributes}
+          checkActiveStatus={this.checkActiveStatus}
+          state={this.state}/>
         <SlideText
           slideNum="12"
           text={["That's my journey so far."]}/>

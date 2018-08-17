@@ -1,0 +1,47 @@
+.timelineNavBarWrapper {
+  bottom: 0;
+  left: 0;
+  padding: 20px 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  transform: translateY(calc(100% - 46px));
+  transition-duration: $transitionS;
+  width: 100%;
+  z-index: 9999;
+  &:hover {
+    transform: translateY(0);
+  }
+  > svg {
+    color: $colorSub;
+    font-size: 2.4rem;
+  }
+  .timelineNavBar {
+    background-color: $colorSub;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    a li {
+      align-items: center;
+      border-left: $timeLineUnit solid $colorWhite;
+      color: $colorWhite;
+      display: flex;
+      font-family: $ffBodyCon;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      line-height: 135%;
+      padding: 0.45em 0.9em;
+      &:hover {
+        background-color: darken($colorSub, 10%);
+      }
+      svg {
+        font-size: 125%;
+      }
+    }
+    a:last-child li {
+      border-right: $timeLineUnit solid $colorWhite;
+    }
+  }
+}
