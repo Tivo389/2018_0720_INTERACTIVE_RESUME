@@ -578,6 +578,10 @@ a {
         background-color: #e85988; }
       .timelineNavBarWrapper .timelineNavBar a li svg {
         font-size: 125%; }
+    .timelineNavBarWrapper .timelineNavBar a.active li {
+      background-color: #e85988;
+      position: relative;
+      font-weight: 400; }
     .timelineNavBarWrapper .timelineNavBar a:last-child li {
       border-right: 2px solid #FFFFFF; }
 

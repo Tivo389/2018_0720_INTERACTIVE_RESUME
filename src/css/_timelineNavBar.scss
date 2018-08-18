@@ -40,6 +40,11 @@
         font-size: 125%;
       }
     }
+    a.active li {
+      background-color: darken($colorSub, 10%);
+      position: relative;
+      font-weight: 400;
+    }
     a:last-child li {
       border-right: $timeLineUnit solid $colorWhite;
     }

@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 class TimelineNavBar extends Component {
 
+  // LIFECYCLE METHODS
+  componentDidUpdate() {
+    this.highlightCurrent();
+  }
+
   // RENDER OF COMPONENT
   render() {
     return (
@@ -47,6 +52,18 @@ class TimelineNavBar extends Component {
     e.preventDefault();
     const target = document.querySelector(e.currentTarget.attributes.href.value);
     target.scrollIntoView({ behavior:'smooth' });
+  };
+
+  // FUNCTION TO ADD ACTIVE CLASS IF SLIDE IS IN TIMELINENAVBAR
+  // - If currentSlideNum matches the href, it will add active class to that element.
+  highlightCurrent = () => {
+    // console.log('highlightCurrent');
+    const cSlideNum = this.props.currentSlideNum;
+    const anchors = [...document.querySelectorAll('.timelineNavBar > a')];
+    for (let e of anchors) {
+      let href = e.attributes.href.value.substring(2, e.attributes.href.value.length);
+      (+href === cSlideNum) ? e.classList.add('active') : e.classList.remove('active');
+    }
   };
 
 }
