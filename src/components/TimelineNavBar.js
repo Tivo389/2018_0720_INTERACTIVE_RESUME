@@ -38,7 +38,7 @@ class TimelineNavBar extends Component {
           <a href="#s11" onClick={this.handleHashClick}>
             <li>2017 – 2018</li>
           </a>
-          <a href="#s13" onClick={this.handleHashClick}>
+          <a href="#s12" onClick={this.handleHashClick}>
             <li><i className="fas fa-paper-plane"></i></li>
           </a>
         </ul>

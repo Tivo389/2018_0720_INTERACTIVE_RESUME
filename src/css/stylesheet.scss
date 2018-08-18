@@ -37,6 +37,9 @@
   padding-bottom: 10px; // Confirmed for Chrome & FF & Safari in OSX.
   position: relative;
 }
+#screenTooSmall {
+  display: none;
+}
 
 // ELEMENT LEVEL ----------------------------------------------------------------------------------
 section {
@@ -69,3 +72,35 @@ section {
     flex-direction: initial;
   }
 }
+
+// MEDIA QUERY ------------------------------------------------------------------------------------
+@media (max-width: 1279px) {
+  #app > *:not([id="screenTooSmall"]) {
+    display: none;
+  }
+  #screenTooSmall {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+    > div {
+      margin: 0 0 4em 0;
+    }
+    p {
+      font-family: 'Pacifico', 'Crimson Text', cursive;
+      text-align: center;
+      font-size: 2.2rem;
+      line-height: 135%;
+    }
+    p + p {
+      margin: 0.5em 0 0 0;
+    }
+    img {
+      max-width: 400px;
+      width: 80%;
+    }
+  }
+}
+

@@ -11,6 +11,7 @@ import SlideIntro from './components/SlideIntro';
 import SlideJourney from './components/SlideJourney';
 import SlideText from './components/SlideText';
 import SlideContact from './components/SlideContact';
+import ScreenTooSmall from './components/ScreenTooSmall';
 import db from './pseudoDB';
 
 class App extends Component {
@@ -51,6 +52,7 @@ class App extends Component {
         tabIndex="0"
         onWheel={this.handleWheel}
         onScroll={this.handleScroll}>
+        <ScreenTooSmall></ScreenTooSmall>
         <StatBarLoading
           loadProgress={this.state.loadProgress}
           activeStatBar={this.state.activeStatBar}/>
@@ -123,10 +125,7 @@ class App extends Component {
           checkSlideAttributes={this.checkSlideAttributes}
           checkActiveStatus={this.checkActiveStatus}
           state={this.state}/>
-        <SlideText
-          slideNum="12"
-          text={["That's my journey so far."]}/>
-        <SlideContact slideNum="13"/>
+        <SlideContact slideNum="12"/>
       </main>
     );
   }
