@@ -19,7 +19,7 @@ class SlideContact extends Component {
         className="slideContact"
         data-slidenum={this.props.slideNum}>
         <div className="formWrapper">
-          <h4>Let's get in touch and talk about the future.</h4>
+          <h4>That's my journey so far.<br/>Let's get in touch and talk about the future.</h4>
           <form
             id="contactForm"
             method="post"

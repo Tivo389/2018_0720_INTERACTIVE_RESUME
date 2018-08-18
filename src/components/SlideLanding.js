@@ -16,14 +16,14 @@ class SlideLanding extends Component {
             <p className="scroll">scroll</p>
             <p className="scroll">scroll</p>
           </div>
-          <p>&emsp;or&emsp;</p>
+          {/*<p>&emsp;or&emsp;</p>
           <div className="navTextContainer swipeWrapper">
             <div className="swipeContainer swipe">
               <p>swipe</p>
               <p>swipe</p>
               <p>swipe</p>
             </div>
-          </div>
+          </div>*/}
           <p>&emsp;or&emsp;</p>
           <div className="navIconWrapper">
             <p className="arrowKey">

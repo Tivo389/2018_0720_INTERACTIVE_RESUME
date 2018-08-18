@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:100,300,400,500|Crimson+Text");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:100,300,400,500|Crimson+Text|Pacifico");
 html {
   line-height: 1.15;
   /* 1 */
@@ -548,7 +548,7 @@ a {
   position: fixed;
   right: 0;
   text-align: center;
-  transform: translateY(calc(100% - 46px));
+  transform: translateY(calc(100% - 4.2em));
   transition-duration: 0.3s;
   width: 100%;
   z-index: 9999; }
@@ -749,9 +749,10 @@ a {
     font-weight: 100;
     letter-spacing: 0.075em;
     padding: 0.6em 1.6em;
-    box-shadow: #EE86A8 0 2px; }
+    box-shadow: #e54378 0 3px; }
     .slideContact .formWrapper button:active {
-      transform: translateY(2px); }
+      transform: translateY(2px);
+      box-shadow: #e54378 0 0; }
     .slideContact .formWrapper button:hover {
       background-color: #e85988; }
     .slideContact .formWrapper button:focus {
@@ -1323,6 +1324,9 @@ a {
   padding-bottom: 10px;
   position: relative; }
 
+#screenTooSmall {
+  display: none; }
+
 section {
   align-items: center;
   display: flex;
@@ -1349,3 +1353,26 @@ section {
   @media (min-width: 1024px) {
     .mainWrapper {
       flex-direction: initial; } }
+
+@media (max-width: 1279px) {
+  #app > *:not([id="screenTooSmall"]) {
+    display: none; }
+  #screenTooSmall {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw; }
+    #screenTooSmall > div {
+      margin: 0 0 4em 0; }
+    #screenTooSmall p {
+      font-family: 'Pacifico', 'Crimson Text', cursive;
+      text-align: center;
+      font-size: 2.2rem;
+      line-height: 135%; }
+    #screenTooSmall p + p {
+      margin: 0.5em 0 0 0; }
+    #screenTooSmall img {
+      max-width: 400px;
+      width: 80%; } }
