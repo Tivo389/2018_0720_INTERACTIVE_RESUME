@@ -61,7 +61,7 @@ class App extends Component {
         <TimelineLoading
           loadProgress={this.state.loadProgress}
           activeTimeline={this.state.activeTimeline}/>
-        <TimelineNavBar></TimelineNavBar>
+        <TimelineNavBar currentSlideNum={this.state.currentSlideNum}></TimelineNavBar>
         <SlideLanding slideNum="1"/>
         <SlideIntro
           slideNum="2"
