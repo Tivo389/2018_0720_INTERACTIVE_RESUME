@@ -24,6 +24,16 @@ class SlideLanding extends Component {
               <p>swipe</p>
             </div>
           </div>
+          <p>&emsp;or&emsp;</p>
+          <div className="navIconWrapper">
+            <p className="arrowKey">
+              <i className="far fa-caret-square-left"></i>
+            </p>
+            &ensp;
+            <p className="arrowKey">
+              <i className="far fa-caret-square-right"></i>
+            </p>
+          </div>
         </div>
       </section>
     );
