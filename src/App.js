@@ -33,11 +33,13 @@ class App extends Component {
   componentWillMount() {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
   componentWillUpdate() {
     // console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
   }
   componentDidUpdate() {
-    // console.log('componentDidUpdate!');
     this.statBarPadding();
   }
 
@@ -46,6 +48,7 @@ class App extends Component {
     return (
       <main
         id="app"
+        tabIndex="0"
         onWheel={this.handleWheel}
         onScroll={this.handleScroll}>
         <StatBarLoading
@@ -245,6 +248,26 @@ class App extends Component {
     } else {
       slides.forEach(slide => slide.style.paddingTop = 0);
     }
+  };
+
+  // FUNCTION TO MOVE SLIDE BY PRESSING ARROW KEY
+  // - This is bound to window.eventListener and will not work while an input/textarea is focused.
+  handleKeyDown = (e) => {
+    // console.log('handleKeyDown');
+    const app = document.querySelector('#app');
+    const tagName = document.activeElement.tagName;
+    const inputIsActive = (tagName === "INPUT") || (tagName === "TEXTAREA");
+    const key = e.keyCode || e.which || e.key;
+    let scrollDirection;
+    if ((key === 37 && !inputIsActive) || (key === 'ArrowLeft' && !inputIsActive)) {
+      scrollDirection = false;
+    } else if ((key === 39 && !inputIsActive) || (key === 'ArrowRight' && !inputIsActive)) {
+      scrollDirection = true;
+    } else {
+      return;
+    };
+    e.preventDefault();
+    this.scrollAnimate(app, scrollDirection);
   };
 
 }

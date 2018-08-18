@@ -652,12 +652,30 @@ a {
 
 @keyframes swipe {
   0% {
-    transform: translateX(0%); }
+    transform: translateX(0); }
   100% {
     transform: translateX(calc(-100% - 0.25em)); } }
 
+@keyframes arrowKey {
+  0% {
+    transform: translateY(0); }
+  40% {
+    transform: translateY(0); }
+  60% {
+    transform: translateY(2px); }
+  80% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(0); } }
+
 .slideLanding {
   flex-direction: column; }
+  .slideLanding .navIconWrapper {
+    display: flex; }
+    .slideLanding .navIconWrapper .arrowKey {
+      animation: 1.2s infinite ease-in-out arrowKey; }
+      .slideLanding .navIconWrapper .arrowKey:nth-child(2) {
+        animation-delay: 0.6s; }
   .slideLanding .navTextWrapper {
     display: flex;
     flex: 0 0 auto;
