@@ -30,13 +30,18 @@ class App extends Component {
   };
   // - As a state it would require setState(), resulting in a rapid-rendering.
   scrolledPx = 0;
+  startPoint;
+  endPoint;
 
   // LIFECYCLE METHODS
   componentWillMount() {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown);
+    window.addEventListener('keydown', this.handleKeyDown, {passive: false});
+    window.addEventListener('touchstart', this.handleTouchStart, {passive: true});
+    window.addEventListener('touchmove', this.handleTouchMove, {passive: false});
+    window.addEventListener('touchend', this.handleTouchEnd, {passive: true});
   }
   componentWillUpdate() {
     // console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
@@ -278,6 +283,39 @@ class App extends Component {
     };
     e.preventDefault();
     this.scrollAnimate(app, scrollDirection);
+  };
+
+  // FUNCTION TO LOG TOUCH-START COORDINATES
+  // - Logs x-Coordinate of touch start.
+  handleTouchStart = (e) => {
+    // console.log('handleTouchStart');
+    this.startPoint = e.touches[0].clientX;
+    // console.log('startPoint: ' + this.startPoint);
+  };
+
+  // FUNCTION TO PREVENT DEFAULT TOUCH-MOVE DEFAULT
+  // - Prevents the default action of touch move.
+  handleTouchMove = (e) => {
+    // console.log('handleTouchMove');
+    e.preventDefault();
+  };
+
+  // FUNCTION TO LOG TOUCH-END COORDINATES AND DETERMINE SWIPE DIRECTION
+  // - Logs x-Coordinate of touch end and then determines the swipe direction.
+  handleTouchEnd = (e) => {
+    // console.log('handleTouchEnd');
+    this.endPoint = e.changedTouches[0].clientX;
+    const app = document.querySelector('#app');
+    const distance = this.startPoint - this.endPoint;
+    const swipeLeft = (distance > 0) && (distance > 100);
+    const swipeRight = (distance < 0) && (distance < -100);
+    if (swipeLeft) {
+      this.scrollAnimate(app, true);
+    } else if (swipeRight) {
+      this.scrollAnimate(app, false);
+    } else {
+      return;
+    }
   };
 
 }
