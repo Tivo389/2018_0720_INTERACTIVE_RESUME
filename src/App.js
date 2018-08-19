@@ -12,6 +12,7 @@ import SlideJourney from './components/SlideJourney';
 import SlideText from './components/SlideText';
 import SlideContact from './components/SlideContact';
 import ScreenTooSmall from './components/ScreenTooSmall';
+import TouchControl from './components/TouchControl';
 import db from './pseudoDB';
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
     database: db,
     loadProgress: 0,
     showStatBarOn: [5,6,7,8,9,10,11],
-    showTimelineOn: [5,6,7,8,9,10,11,12,13]
+    showTimelineOn: [5,6,7,8,9,10,11]
   };
   // - As a state it would require setState(), resulting in a rapid-rendering.
   scrolledPx = 0;
@@ -52,6 +53,10 @@ class App extends Component {
         tabIndex="0"
         onWheel={this.handleWheel}
         onScroll={this.handleScroll}>
+        <TouchControl
+          currentSlideNum={this.state.currentSlideNum}
+          scrollAnimate={this.scrollAnimate}>
+        </TouchControl>
         <ScreenTooSmall></ScreenTooSmall>
         <StatBarLoading
           loadProgress={this.state.loadProgress}

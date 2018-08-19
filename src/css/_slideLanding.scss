@@ -16,7 +16,7 @@
 
 .slideLanding {
   flex-direction: column;
-  .navIconWrapper {
+  .navMethodIcon {
     display: flex;
     .arrowKey {
       animation: 1.2s infinite ease-in-out arrowKey;
@@ -25,18 +25,23 @@
       }
     }
   }
-  .navTextWrapper {
+  .navMethodsWrapper {
     display: flex;
     flex: 0 0 auto;
     height: 2rem;
     margin-top: 3em;
+    transition-duration: $transitionM;
+    &.inactive {
+      opacity: 0;
+      height: 0;
+    }
     p {
       font-size: 1.4rem;
       letter-spacing: 0.05em;
       font-weight: 100;
       color: $colorLightGray;
     }
-    .navTextContainer {
+    .navMethodScroll {
       overflow: hidden;
     }
     .scroll {

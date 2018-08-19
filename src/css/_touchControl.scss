@@ -1,0 +1,24 @@
+#touchControl {
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 1rem;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(60vh);
+  transition-duration: $transitionM;
+  width: 100vw;
+  z-index: 9999;
+  &.active {
+    transform: translateY(-50%);
+  }
+  div.inactive {
+    pointer-events: none;
+    opacity: 0.35;
+  }
+  svg {
+    color: $colorSub;
+    font-size: 42px;
+  }
+}

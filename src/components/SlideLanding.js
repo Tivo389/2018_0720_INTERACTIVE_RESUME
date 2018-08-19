@@ -10,14 +10,14 @@ class SlideLanding extends Component {
         className="slideLanding"
         data-slidenum={this.props.slideNum}>
         <h1 className="alignCenter">Hello I'm <span className="colorMain">Shunjiro Miyaki</span><br/>a Front-end Developer & Graphic Designer</h1>
-        <div className="navTextWrapper">
-          <div className="navTextContainer">
+        <div className="navMethodsWrapper">
+          <div className="navMethodScroll">
             <p className="scroll">scroll</p>
             <p className="scroll">scroll</p>
             <p className="scroll">scroll</p>
           </div>
           {/*<p>&emsp;or&emsp;</p>
-          <div className="navTextContainer swipeWrapper">
+          <div className="navMethodScroll swipeWrapper">
             <div className="swipeContainer swipe">
               <p>swipe</p>
               <p>swipe</p>
@@ -25,7 +25,7 @@ class SlideLanding extends Component {
             </div>
           </div>*/}
           <p>&emsp;or&emsp;</p>
-          <div className="navIconWrapper">
+          <div className="navMethodIcon">
             <p className="arrowKey">
               <i className="far fa-caret-square-left"></i>
             </p>
