@@ -29,10 +29,10 @@
       font-weight: 100;
       letter-spacing: 0.075em;
       padding: 0.6em 1.6em;
-      box-shadow: darken($colorSub, 15%) 0 3px;
+      box-shadow: darken($colorSub, 10%) 0 3px;
       &:active {
         transform: translateY(2px);
-        box-shadow: darken($colorSub, 15%) 0 0;
+        box-shadow: darken($colorSub, 10%) 0 0;
       }
       &:hover {
         background-color: darken($colorSub, 10%);

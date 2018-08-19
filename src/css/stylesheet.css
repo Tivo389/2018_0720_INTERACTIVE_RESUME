@@ -749,10 +749,10 @@ a {
     font-weight: 100;
     letter-spacing: 0.075em;
     padding: 0.6em 1.6em;
-    box-shadow: #e54378 0 3px; }
+    box-shadow: #e85988 0 3px; }
     .slideContact .formWrapper button:active {
       transform: translateY(2px);
-      box-shadow: #e54378 0 0; }
+      box-shadow: #e85988 0 0; }
     .slideContact .formWrapper button:hover {
       background-color: #e85988; }
     .slideContact .formWrapper button:focus {
