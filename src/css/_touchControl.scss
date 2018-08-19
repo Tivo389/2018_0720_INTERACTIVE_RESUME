@@ -1,0 +1,22 @@
+#touchControl {
+  border: 1px dashed red;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(60vh);
+  // transform: translateY(-50%);
+  transition-duration: $transitionL;
+  padding: 0 3rem;
+  z-index: 9999;
+  svg {
+    color: $colorSub;
+    font-size: 48px;
+  }
+  &.active {
+    transform: translateY(-50%);
+  }
+}

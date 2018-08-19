@@ -890,6 +890,51 @@ a {
 .descriptionContainer p + p {
   margin-top: 0.6em; }
 
+#screenTooSmall {
+  display: none; }
+
+@media (max-width: 1279px) {
+  #app > *:not([id="screenTooSmall"]) {
+    display: none; }
+  #screenTooSmall {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw; }
+    #screenTooSmall > div {
+      margin: 0 0 4em 0; }
+    #screenTooSmall p {
+      font-family: 'Pacifico', 'Crimson Text', cursive;
+      text-align: center;
+      font-size: 2.2rem;
+      line-height: 135%; }
+    #screenTooSmall p + p {
+      margin: 0.5em 0 0 0; }
+    #screenTooSmall img {
+      max-width: 400px;
+      width: 80%; } }
+
+#touchControl {
+  border: 1px dashed red;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(60vh);
+  transition-duration: 1s;
+  padding: 0 3rem;
+  z-index: 9999; }
+  #touchControl svg {
+    color: #EE86A8;
+    font-size: 48px; }
+  #touchControl.active {
+    transform: translateY(-50%); }
+
 #journeyImage1 svg .card {
   transform: translate(131.774px, -300px); }
 
@@ -1324,9 +1369,6 @@ a {
   padding-bottom: 10px;
   position: relative; }
 
-#screenTooSmall {
-  display: none; }
-
 section {
   align-items: center;
   display: flex;
@@ -1353,26 +1395,3 @@ section {
   @media (min-width: 1024px) {
     .mainWrapper {
       flex-direction: initial; } }
-
-@media (max-width: 1279px) {
-  #app > *:not([id="screenTooSmall"]) {
-    display: none; }
-  #screenTooSmall {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    width: 100vw; }
-    #screenTooSmall > div {
-      margin: 0 0 4em 0; }
-    #screenTooSmall p {
-      font-family: 'Pacifico', 'Crimson Text', cursive;
-      text-align: center;
-      font-size: 2.2rem;
-      line-height: 135%; }
-    #screenTooSmall p + p {
-      margin: 0.5em 0 0 0; }
-    #screenTooSmall img {
-      max-width: 400px;
-      width: 80%; } }

@@ -12,6 +12,7 @@ import SlideJourney from './components/SlideJourney';
 import SlideText from './components/SlideText';
 import SlideContact from './components/SlideContact';
 import ScreenTooSmall from './components/ScreenTooSmall';
+import TouchControl from './components/TouchControl';
 import db from './pseudoDB';
 
 class App extends Component {
@@ -35,7 +36,13 @@ class App extends Component {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown);
+    window.addEventListener('keydown', this.handleKeyDown); // - Detect left/right arrow key press
+    window.addEventListener('touchstart', () => {          // - Add buttons if touch device
+      // console.log('[ TOUCH DETECTED ]');
+      const touchControl = document.querySelector('#touchControl');
+      touchControl.classList.add('active');
+      // CONTINUE HERE ALSO REMOVE THE SCROLL AND ARROW STUFF
+    }, {passive: true});
   }
   componentWillUpdate() {
     // console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
@@ -52,6 +59,7 @@ class App extends Component {
         tabIndex="0"
         onWheel={this.handleWheel}
         onScroll={this.handleScroll}>
+        <TouchControl scrollAnimate={this.scrollAnimate}></TouchControl>
         <ScreenTooSmall></ScreenTooSmall>
         <StatBarLoading
           loadProgress={this.state.loadProgress}
