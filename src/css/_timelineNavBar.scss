@@ -9,8 +9,11 @@
   transition-duration: $transitionS;
   width: 100%;
   z-index: 9999;
-  &:hover {
+  &:hover, &.active {
     transform: translateY(0);
+  }
+  &.inactive {
+    transform: translateY(calc(100% - 4.2em));
   }
   > svg {
     color: $colorSub;

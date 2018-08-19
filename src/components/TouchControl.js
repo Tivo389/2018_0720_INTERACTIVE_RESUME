@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class TouchControl extends Component {
+  touchControlActive = false;
 
   // LIFECYCLE METHODS
   componentDidMount() {
@@ -28,10 +29,15 @@ class TouchControl extends Component {
   // FUNCTION TO SHOW TOUCH CONTROL IF TOUCH IS DETECTED
   // - Will show the touchControl component and hide the nav methods.
   activateTouchControl = () => {
-    const touchControl = document.querySelector('#touchControl');
-    const navMethods = document.querySelector('.navMethodsWrapper');
-    touchControl.classList.add('active');
-    navMethods.classList.add('inactive');
+    // console.log('activateTouchControl');
+    if (!this.touchControlActive) {
+      const touchControl = document.querySelector('#touchControl');
+      const navMethods = document.querySelector('.navMethodsWrapper');
+      touchControl.classList.add('active');
+      navMethods.classList.add('inactive');
+      this.touchControlActive = true;
+    }
+    return;
   };
 
   // FUNCTION THAT HANDLES TOUCH EVENT FOR THE BUTTONS

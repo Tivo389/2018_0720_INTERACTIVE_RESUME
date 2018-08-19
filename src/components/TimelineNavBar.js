@@ -10,7 +10,9 @@ class TimelineNavBar extends Component {
   // RENDER OF COMPONENT
   render() {
     return (
-      <div className="timelineNavBarWrapper">
+      <div
+        className="timelineNavBarWrapper"
+        onTouchStart={this.handleTouchStart}>
         <i className="fas fa-caret-down"></i>
         <ul className="timelineNavBar">
           <a href="#s1" onClick={this.handleHashClick}>
@@ -49,6 +51,7 @@ class TimelineNavBar extends Component {
   // FUNCTION FOR CLICKING A HASH-LINK ANCHOR
   // - On click it will .scrollIntoView() the hash link.
   handleHashClick = (e) => {
+    // console.log('handleHashClick');
     e.preventDefault();
     const target = document.querySelector(e.currentTarget.attributes.href.value);
     target.scrollIntoView({ behavior:'smooth' });
@@ -63,6 +66,21 @@ class TimelineNavBar extends Component {
     for (let e of anchors) {
       let href = e.attributes.href.value.substring(2, e.attributes.href.value.length);
       (+href === cSlideNum) ? e.classList.add('active') : e.classList.remove('active');
+    }
+  };
+
+  // FUNCTION TO ALLOW TIMELINENAVBAR TO CATER FOR TOUCH DEVICE
+  // - Uses a add and remove class rather than toggle to counteract the :hover.
+  handleTouchStart = () => {
+    // console.log('handleTouchStart');
+    const navbar = document.querySelector('.timelineNavBarWrapper');
+    const isActive = navbar.classList.contains('active');
+    if (isActive) {
+      navbar.classList.remove('active');
+      navbar.classList.add('inactive');
+    } else {
+      navbar.classList.remove('inactive');
+      navbar.classList.add('active');
     }
   };
 
