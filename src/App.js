@@ -251,16 +251,22 @@ class App extends Component {
 
   // FUNCTION TO MOVE SLIDE BY PRESSING ARROW KEY
   // - This is bound to window.eventListener and will not work while an input/textarea is focused.
+  // - If input/textarea is focused and you scroll to a different slide it will blur first.
   handleKeyDown = (e) => {
     // console.log('handleKeyDown');
     const app = document.querySelector('#app');
     const tagName = document.activeElement.tagName;
+    const onContactSlide = this.state.currentSlideNum === 12;
     const inputIsActive = (tagName === "INPUT") || (tagName === "TEXTAREA");
     const key = e.keyCode || e.which || e.key;
+    const isLeftArrow = (key === 37) || (key === 'ArrowLeft');
+    const isRightArrow = (key === 39) || (key === 'ArrowRight');
     let scrollDirection;
-    if ((key === 37 && !inputIsActive) || (key === 'ArrowLeft' && !inputIsActive)) {
+    if (inputIsActive && !onContactSlide) {
+      document.activeElement.blur();
+    } else if (isLeftArrow && !inputIsActive) {
       scrollDirection = false;
-    } else if ((key === 39 && !inputIsActive) || (key === 'ArrowRight' && !inputIsActive)) {
+    } else if (isRightArrow && !inputIsActive) {
       scrollDirection = true;
     } else {
       return;
