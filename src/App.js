@@ -26,7 +26,7 @@ class App extends Component {
     database: db,
     loadProgress: 0,
     showStatBarOn: [5,6,7,8,9,10,11],
-    showTimelineOn: [5,6,7,8,9,10,11,12,13]
+    showTimelineOn: [5,6,7,8,9,10,11]
   };
   // - As a state it would require setState(), resulting in a rapid-rendering.
   scrolledPx = 0;
@@ -36,13 +36,7 @@ class App extends Component {
     smoothscroll.polyfill(); // - smoothscroll.polyfill() for handleHashClick().
   }
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown); // - Detect left/right arrow key press
-    window.addEventListener('touchstart', () => {          // - Add buttons if touch device
-      // console.log('[ TOUCH DETECTED ]');
-      const touchControl = document.querySelector('#touchControl');
-      touchControl.classList.add('active');
-      // CONTINUE HERE ALSO REMOVE THE SCROLL AND ARROW STUFF
-    }, {passive: true});
+    window.addEventListener('keydown', this.handleKeyDown);
   }
   componentWillUpdate() {
     // console.log('componentWillUpdate!'); // - Check if setState() isn't being rapid-fired.
@@ -59,7 +53,10 @@ class App extends Component {
         tabIndex="0"
         onWheel={this.handleWheel}
         onScroll={this.handleScroll}>
-        <TouchControl scrollAnimate={this.scrollAnimate}></TouchControl>
+        <TouchControl
+          currentSlideNum={this.state.currentSlideNum}
+          scrollAnimate={this.scrollAnimate}>
+        </TouchControl>
         <ScreenTooSmall></ScreenTooSmall>
         <StatBarLoading
           loadProgress={this.state.loadProgress}

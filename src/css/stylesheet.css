@@ -674,33 +674,37 @@ a {
 
 .slideLanding {
   flex-direction: column; }
-  .slideLanding .navIconWrapper {
+  .slideLanding .navMethodIcon {
     display: flex; }
-    .slideLanding .navIconWrapper .arrowKey {
+    .slideLanding .navMethodIcon .arrowKey {
       animation: 1.2s infinite ease-in-out arrowKey; }
-      .slideLanding .navIconWrapper .arrowKey:nth-child(2) {
+      .slideLanding .navMethodIcon .arrowKey:nth-child(2) {
         animation-delay: 0.6s; }
-  .slideLanding .navTextWrapper {
+  .slideLanding .navMethodsWrapper {
     display: flex;
     flex: 0 0 auto;
     height: 2rem;
-    margin-top: 3em; }
-    .slideLanding .navTextWrapper p {
+    margin-top: 3em;
+    transition-duration: 0.6s; }
+    .slideLanding .navMethodsWrapper.inactive {
+      opacity: 0;
+      height: 0; }
+    .slideLanding .navMethodsWrapper p {
       font-size: 1.4rem;
       letter-spacing: 0.05em;
       font-weight: 100;
       color: #AAAAAA; }
-    .slideLanding .navTextWrapper .navTextContainer {
+    .slideLanding .navMethodsWrapper .navMethodScroll {
       overflow: hidden; }
-    .slideLanding .navTextWrapper .scroll {
+    .slideLanding .navMethodsWrapper .scroll {
       animation: 2.4s infinite ease-in-out scroll; }
-    .slideLanding .navTextWrapper .swipe {
+    .slideLanding .navMethodsWrapper .swipe {
       animation: 2.4s infinite ease-in-out swipe; }
-    .slideLanding .navTextWrapper .swipeWrapper {
+    .slideLanding .navMethodsWrapper .swipeWrapper {
       width: 4rem; }
-      .slideLanding .navTextWrapper .swipeWrapper .swipeContainer {
+      .slideLanding .navMethodsWrapper .swipeWrapper .swipeContainer {
         display: flex; }
-        .slideLanding .navTextWrapper .swipeWrapper .swipeContainer p + p {
+        .slideLanding .navMethodsWrapper .swipeWrapper .swipeContainer p + p {
           margin-left: 0.25em; }
 
 .slideIntro {
@@ -917,23 +921,25 @@ a {
       width: 80%; } }
 
 #touchControl {
-  border: 1px dashed red;
-  position: fixed;
-  top: 50%;
-  left: 0;
-  right: 0;
-  width: 100vw;
   display: flex;
   justify-content: space-between;
+  left: 0;
+  padding: 0 1rem;
+  position: fixed;
+  right: 0;
+  top: 50%;
   transform: translateY(60vh);
-  transition-duration: 1s;
-  padding: 0 3rem;
+  transition-duration: 0.6s;
+  width: 100vw;
   z-index: 9999; }
-  #touchControl svg {
-    color: #EE86A8;
-    font-size: 48px; }
   #touchControl.active {
     transform: translateY(-50%); }
+  #touchControl div.inactive {
+    pointer-events: none;
+    opacity: 0.35; }
+  #touchControl svg {
+    color: #EE86A8;
+    font-size: 42px; }
 
 #journeyImage1 svg .card {
   transform: translate(131.774px, -300px); }

@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 
 class TouchControl extends Component {
 
+  // LIFECYCLE METHODS
+  componentDidMount() {
+    window.addEventListener('touchstart', this.activateTouchControl, {passive: true});
+    this.statusCheck();
+  }
+  componentDidUpdate() {
+    this.statusCheck();
+  }
+
   // RENDER OF COMPONENT
   render() {
     return (
@@ -15,6 +24,15 @@ class TouchControl extends Component {
       </div>
     );
   }
+
+  // FUNCTION TO SHOW TOUCH CONTROL IF TOUCH IS DETECTED
+  // - Will show the touchControl component and hide the nav methods.
+  activateTouchControl = () => {
+    const touchControl = document.querySelector('#touchControl');
+    const navMethods = document.querySelector('.navMethodsWrapper');
+    touchControl.classList.add('active');
+    navMethods.classList.add('inactive');
+  };
 
   // FUNCTION THAT HANDLES TOUCH EVENT FOR THE BUTTONS
   // - These buttons cater for touch devices.
@@ -30,6 +48,25 @@ class TouchControl extends Component {
       return;
     };
     this.props.scrollAnimate(app, scrollDirection)
+  };
+
+  // FUNCTION THAT DE/ACTIVATES BUTTON
+  // - 1st slide = left arrow deactivated, lastSlide = right arrow deactivated.
+  statusCheck = () => {
+    // console.log('statusCheck');
+    const currentSlideNum = this.props.currentSlideNum;
+    const touchControl = document.querySelector('#touchControl');
+    const left = touchControl.querySelector("[data-name='left']");
+    const right = touchControl.querySelector("[data-name='right']");
+    left.classList.remove('inactive');
+    right.classList.remove('inactive');
+    if (currentSlideNum === 1) {
+      left.classList.add('inactive');
+    } else if (currentSlideNum === 12) {
+      right.classList.add('inactive');
+    } else {
+      return;
+    }
   };
 
 }
