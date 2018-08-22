@@ -52,7 +52,7 @@ export const j2 = `
         <circle cx="134" cy="154" r="8" fill="#E4EEF2"/>
         <rect width="22" height="9" x="123" y="146" fill="gray" rx="1"/>
         <g transform="translate(17 44)">
-          <mask id="journeyimage02-f" fill="#fff">
+          <mask id="journeyimage02-f" fill="#fff" width="113" height="124">
             <use xlink:href="#journeyimage02-e"/>
           </mask>
           <g mask="url(#journeyimage02-f)">
