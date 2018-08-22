@@ -37,6 +37,7 @@
 #app {
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
   padding-bottom: 10px; // Confirmed for Chrome & FF & Safari in OSX.
   position: relative;
 }

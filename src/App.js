@@ -272,8 +272,12 @@ class App extends Component {
     const isLeftArrow = (key === 37) || (key === 'ArrowLeft');
     const isRightArrow = (key === 39) || (key === 'ArrowRight');
     let scrollDirection;
-    if (inputIsActive && !onContactSlide) {
+    if (isLeftArrow && inputIsActive && !onContactSlide) {
       document.activeElement.blur();
+      scrollDirection = false;
+    } else if (isRightArrow && inputIsActive && !onContactSlide) {
+      document.activeElement.blur();
+      scrollDirection = true;
     } else if (isLeftArrow && !inputIsActive) {
       scrollDirection = false;
     } else if (isRightArrow && !inputIsActive) {
