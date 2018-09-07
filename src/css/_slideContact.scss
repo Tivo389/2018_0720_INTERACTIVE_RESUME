@@ -21,6 +21,8 @@
       }
     }
     button {
+      pointer-events: none;
+      opacity: 0.4;
       background-color: $colorSub;
       border-radius: 500px;
       border: 0;
@@ -30,6 +32,10 @@
       letter-spacing: 0.075em;
       padding: 0.6em 1.6em;
       box-shadow: darken($colorSub, 10%) 0 3px;
+      &.active {
+        pointer-events: initial;
+        opacity: initial;
+      }
       &:active {
         transform: translateY(2px);
         box-shadow: darken($colorSub, 10%) 0 0;

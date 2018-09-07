@@ -33,6 +33,7 @@ class SlideContact extends Component {
                 maxLength="50"
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
+                onInput={this.handleInput}
                 required/>
             </div>
             <div className="formGroup">
@@ -44,6 +45,7 @@ class SlideContact extends Component {
                 maxLength="50"
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
+                onInput={this.handleInput}
                 required/>
             </div>
             <div className="formGroup">
@@ -78,10 +80,38 @@ class SlideContact extends Component {
   };
 
   handleInput = (e) => {
-    const counter = document.querySelector('span.characterCount');
-    const currentCount = this.maxCount - e.currentTarget.value.length;
-    currentCount < 100 ? counter.style.color = '#B2005A' : counter.style.color = '#777777';
-    counter.innerText = currentCount;
+    const ect = e.currentTarget.id;
+    switch (ect) {
+      case 'email': handleEmailInput(); break;
+      case 'subject': handleSubjectInput(); break;
+      case 'message': handleMessageInput(e); break;
+      default: console.error('Unknown case detected!');
+    };
+    function checkInputValue() {
+      const contactForm = document.querySelector('#contactForm');
+      const button = contactForm.querySelector("button[type='submit']");
+      const email = contactForm.querySelector('#email');
+      const subject = contactForm.querySelector('#subject');
+      const message = contactForm.querySelector('#message');
+      const eL = email.value.length;
+      const sL = subject.value.length;
+      const mL = message.value.length;
+      const minLength = ((eL > 5) && (sL > 0) && (mL > 6));
+      minLength ? button.classList.add('active') : button.classList.remove('active');
+    };
+    function handleEmailInput() {
+      checkInputValue();
+    };
+    function handleSubjectInput() {
+      checkInputValue();
+    };
+    function handleMessageInput(e) {
+      const counter = document.querySelector('span.characterCount');
+      const currentCount = e.currentTarget.maxLength - e.currentTarget.value.length;
+      currentCount < 100 ? counter.style.color = '#B2005A' : counter.style.color = '#777777';
+      counter.innerText = currentCount;
+      checkInputValue();
+    };
   };
 
 }
