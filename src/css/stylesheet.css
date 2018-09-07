@@ -748,6 +748,8 @@ a {
     .slideContact .formWrapper input:focus, .slideContact .formWrapper textarea:focus {
       outline: none; }
   .slideContact .formWrapper button {
+    pointer-events: none;
+    opacity: 0.4;
     background-color: #EE86A8;
     border-radius: 500px;
     border: 0;
@@ -757,6 +759,9 @@ a {
     letter-spacing: 0.075em;
     padding: 0.6em 1.6em;
     box-shadow: #e85988 0 3px; }
+    .slideContact .formWrapper button.active {
+      pointer-events: initial;
+      opacity: initial; }
     .slideContact .formWrapper button:active {
       transform: translateY(2px);
       box-shadow: #e85988 0 0; }
