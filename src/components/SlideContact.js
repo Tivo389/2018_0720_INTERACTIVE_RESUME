@@ -22,7 +22,7 @@ class SlideContact extends Component {
           <h4>That's my journey so far.<br/>Let's get in touch and talk about the future.</h4>
           <form
             id="contactForm"
-            action="php/mail.php"
+            action="contactForm/php/mail.php"
             method="POST">
             <div className="formGroup">
               <label htmlFor="email">your email</label>
