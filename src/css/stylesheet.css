@@ -1372,6 +1372,27 @@ a {
   animation-fill-mode: forwards;
   animation-delay: 1.8s; }
 
+#thankyou {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw; }
+  #thankyou div {
+    text-align: center; }
+  #thankyou p {
+    font-family: 'Pacifico', 'Crimson Text', cursive;
+    text-align: center;
+    font-size: 2.2rem;
+    line-height: 135%; }
+    #thankyou p + p {
+      margin: 0.5em 0 0 0; }
+  #thankyou img {
+    margin: 2rem 0 0 0;
+    max-width: 200px;
+    width: 50%; }
+
 #root {
   width: 100vw;
   height: 100vh;
